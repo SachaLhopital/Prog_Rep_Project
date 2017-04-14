@@ -13,7 +13,8 @@ Les objectifs de ce projet sont de mettre en oeuvre les technologies suivantes :
 
 ## Equipe
 
+- BRAZIER Louis
+- DUBOIS Thibault
 - LAFAYE DE MICHEAUX Yoan 
 - LHOPITAL Sacha
 - PRIEUR-DREVON Thomas
-- ?
