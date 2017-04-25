@@ -5,22 +5,6 @@
   Time: 17:08
   To change this template use File | Settings | File Templates.
 --%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<html>--%>
-  <%--<head>--%>
-    <%--<title>$Title$</title>--%>
-  <%--</head>--%>
-  <%--<body>--%>
-  <%--$END$--%>
-  <%--</body>--%>
-<%--</html>--%>
-<%--
-  Created by IntelliJ IDEA.
-  User: Sachouw
-  Date: 13/04/2017
-  Time: 17:55
-  To change this template use File | Settings | File Templates.
---%>
 <!doctype html>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -42,58 +26,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="span8 offset2">
-      <h1>Users</h1>
-      <form:form method="post" action="add" commandName="user" class="form-horizontal">
-      <div class="control-group">
-        <form:label cssClass="control-label" path="firstName">First Name:</form:label>
-        <div class="controls">
-          <form:input path="firstName"/>
-        </div>
-      </div>
-      <div class="control-group">
-        <form:label cssClass="control-label" path="lastName">Last Name:</form:label>
-        <div class="controls">
-          <form:input path="lastName"/>
-        </div>
-      </div>
-      <div class="control-group">
-        <form:label cssClass="control-label" path="email">Email:</form:label>
-        <div class="controls">
-          <form:input path="email"/>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <input type="submit" value="Add User" class="btn"/>
-          </form:form>
-        </div>
-      </div>
-
-      <c:if test="${!empty users}">
-        <h3>Users</h3>
-        <table class="table table-bordered table-striped">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>&nbsp;</th>
-          </tr>
-          </thead>
-          <tbody>
-          <c:forEach items="${users}" var="user">
-            <tr>
-              <td>${user.lastName}, ${user.firstName}</td>
-              <td>${user.email}</td>
-              <td>
-                <form action="delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
-              </td>
-            </tr>
-          </c:forEach>
-          </tbody>
-        </table>
-      </c:if>
-    </div>
+    Cette page s'affiche !
+    <a href="/actions">
+      <button type="button" class="btn btn-info" aria-label="Left Align">
+        <span class="fa fa-plus" aria-hidden="true">&nbsp;Liste des actions ???</span>
+      </button>
+    </a>
   </div>
 </div>
 

@@ -5,81 +5,47 @@
   Time: 17:55
   To change this template use File | Settings | File Templates.
 --%>
-<!doctype html>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Spring MVC Application</title>
-
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <title>Permis Piste</title>
 </head>
-
 <body>
-
-<div class="container">
-    <div class="row">
-        <div class="span8 offset2">
-            <h1>Users</h1>
-            <form:form method="post" action="add" commandName="user" class="form-horizontal">
-            <div class="control-group">
-                <form:label cssClass="control-label" path="firstName">First Name:</form:label>
-                <div class="controls">
-                    <form:input path="firstName"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <form:label cssClass="control-label" path="lastName">Last Name:</form:label>
-                <div class="controls">
-                    <form:input path="lastName"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <form:label cssClass="control-label" path="email">Email:</form:label>
-                <div class="controls">
-                    <form:input path="email"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <input type="submit" value="Add User" class="btn"/>
-                    </form:form>
-                </div>
-            </div>
-
-            <c:if test="${!empty users}">
-                <h3>Users</h3>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${users}" var="user">
-                        <tr>
-                            <td>${user.lastName}, ${user.firstName}</td>
-                            <td>${user.email}</td>
-                            <td>
-                                <form action="delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </c:if>
-        </div>
-    </div>
-</div>
-
+<h2>Action Management Screen</h2>
+ATTENTION NE FONCTIONNE PAS EN DBB A CAUSE DES CLEFS ETRANGERES : juste une test
+<form:form method="post" action="add" commandName="action">
+    <table>
+        <tr>
+            <td><form:label path="libaction"><spring:message code="label.libaction"/></form:label></td>
+            <td><form:input path="libaction" /></td>
+        </tr>
+        <tr>
+            <td><form:label path="scoremin"><spring:message code="label.scoremin"/></form:label></td>
+            <td><form:input path="scoremin" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="<spring:message code="label.add"/>"/>
+            </td>
+        </tr>
+    </table>
+</form:form>
+<h3>Actions</h3>
+<c:if  test="${!empty actionList}">
+    <table class="data">
+        <tr>
+            <th>libaction</th>
+            <th>scoremin</th>
+        </tr>
+        <c:forEach items="${actionList}" var="action">
+            <tr>
+                <td>${action.libaction}</td>
+                <td>${action.scoremin}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
 </body>
 </html>
