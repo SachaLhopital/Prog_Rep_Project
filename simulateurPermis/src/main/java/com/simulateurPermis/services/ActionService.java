@@ -1,7 +1,7 @@
 package com.simulateurPermis.services;
 
-import com.simulateurPermis.dao.ActionDAO;
 import com.simulateurPermis.entities.ActionEntity;
+import com.simulateurPermis.repositories.ActionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,24 +15,24 @@ import java.util.List;
 public class ActionService {
 
     @Autowired
-    private ActionDAO actionDAO;
+    private ActionRepository actionRepository;
 
     @Transactional
     public void add(ActionEntity action) {
-        actionDAO.add(action);
+        actionRepository.add(action);
     }
 
     @Transactional
     public List<ActionEntity> getAll() {
-        return actionDAO.getAll();
+        return actionRepository.getAll();
     }
 
     @Transactional
     public void delete(Integer actionId) {
-        actionDAO.delete(actionId);
+        actionRepository.delete(actionId);
     }
 
-    public void setActionDAO(ActionDAO actionDAO) {
-        this.actionDAO = actionDAO;
+    public void setRepository(ActionRepository actionRepository) {
+        this.actionRepository = actionRepository;
     }
 }

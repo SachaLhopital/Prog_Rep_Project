@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ActionDAO {
 
-    public void add(ActionEntity action);
-    public List<ActionEntity> getAll();
-    public void delete(int actionId);
+    void add(ActionEntity action);
+    List<ActionEntity> getAll();
+    void delete(int actionId);
 }
