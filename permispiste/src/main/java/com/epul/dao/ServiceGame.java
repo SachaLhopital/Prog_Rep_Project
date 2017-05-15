@@ -11,18 +11,32 @@ import java.util.List;
  */
 public class ServiceGame {
     public List<JeuEntity> getAll(){
-        List<JeuEntity> mesActions = null;
+        List<JeuEntity> mesJeux = null;
         try{
             Session session = ServiceHibernate.currentSession();
 
-            mesActions = session.createQuery("SELECT j FROM JeuEntity j order by id").getResultList();
+            mesJeux = session.createQuery("SELECT j FROM JeuEntity j order by id").getResultList();
 
             session.close();
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        return mesActions;
+        return mesJeux;
+    }
+
+    public JeuEntity get(int id_jeu){
+        JeuEntity jeu = null;
+        try{
+            Session session = ServiceHibernate.currentSession();
+            jeu = (JeuEntity)session.createQuery("SELECT j FROM JeuEntity j where id= :id order by id").setParameter("id",id_jeu).getSingleResult();
+
+            session.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return jeu;
+
     }
 
     public void save(JeuEntity jeuEntity){
