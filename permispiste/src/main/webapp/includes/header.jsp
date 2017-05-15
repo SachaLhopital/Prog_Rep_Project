@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: lafay
@@ -7,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html>
 <head>
     <title>Liscence T Learning</title>
@@ -30,8 +30,8 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="/games/"><span class="fa fa-user"></span>&nbsp;Gestion des Apprenants</a></li>
-                        <li><a href="#"><span class="fa fa-gamepad"></span>&nbsp;Lancer un Jeu</a></li>
+                        <li><a href="#"><span class="fa fa-user"></span>&nbsp;Gestion des Apprenants</a></li>
+                        <li><a href="/games/"><span class="fa fa-gamepad"></span>&nbsp;Lancer un Jeu</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

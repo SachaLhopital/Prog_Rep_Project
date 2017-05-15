@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sacha
-  Date: 15/05/2017
-  Time: 17:36
-  To change this template use File | Settings | File Templates.
---%>
+
 <jsp:include page="/includes/header.jsp" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 </h1>${pageTitle}<h1>
 
