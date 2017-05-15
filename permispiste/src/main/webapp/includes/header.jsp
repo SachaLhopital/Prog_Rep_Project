@@ -11,6 +11,7 @@
 <head>
     <title>Liscence T Learning</title>
     <link href="<c:url value="/includes/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/includes/font-awesome-4.7.0/css/font-awesome.min.css"/>" rel="stylesheet">
 </head>
 <body>
 
