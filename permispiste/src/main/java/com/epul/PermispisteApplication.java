@@ -7,6 +7,8 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @SpringBootApplication
 public class PermispisteApplication{
 
+	//Todo : remove
+
 	public static void main(String[] args) {
 		SpringApplication.run(PermispisteApplication.class, args);
 	}
