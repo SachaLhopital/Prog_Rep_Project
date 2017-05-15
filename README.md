@@ -13,7 +13,32 @@ Les objectifs de ce projet sont de mettre en oeuvre les technologies suivantes :
 
 ## Outils
 
-Utilisation de Trello (tableau à créer).
+Utilisation de Trello.
+
+## Documentation d'installation Dev
+
+_Pré-requis_
+
+1. Télécharger le projet depuis Github
+2. Installer Wamp
+3. Lancer le script sql (**/permispiste/database_dump/permispiste_dump.sql**) dans phpmyadmin et créer un utilisateur **userepul** / **epul** dans cette base
+4. Vérifier que Tomcat 8.5 est installé
+
+
+_Mise en place_
+
+(Il est possible que certaines étapes s'executent automatiquement en fonction des versions et des systèmes)
+
+1. Ouvrir le dossier **permispiste** avec IntelliJ
+2. Laisser Maven charger les dépendances (voir barre de progression en bas à droite)
+3. Définir le sdk du projet en java 1.8
+4. Vérifier que **pom.xml** contient bien le driver _mysql-connector-java_
+5. Ajouter une nouvelle Datasource au projet correspondant à votre base de donnée locale (MySQl, avec le nouvel utilisateur des pré-requis)
+6. Assigner la Datasource à la base de donnée hibernate (dans la vue persistance : **/View/Tool Windows/persistance**)
+7. Configurer Tomcat pour lancer le projet comme vu en cours
+
+Normalement l'application doit se lancer
+
 
 ## Equipe
 
