@@ -19,6 +19,6 @@ public class indexControlleur {
         ServiceAction service = new ServiceAction();
 
         model.addAttribute("name", service.getAll().get(0).getLibaction());
-        return "hello";
+        return "home";
     }
 }
