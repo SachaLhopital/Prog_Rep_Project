@@ -14,10 +14,7 @@ public class ServiceAction {
         List<ActionEntity> mesActions = null;
         try{
             Session session = ServiceHibernate.currentSession();
-
             mesActions = session.createQuery("SELECT a FROM ActionEntity a order by id").getResultList();
-
-            session.close();
         }catch (Exception e){
             e.printStackTrace();
         }

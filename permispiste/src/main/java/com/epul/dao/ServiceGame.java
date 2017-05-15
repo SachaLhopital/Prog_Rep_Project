@@ -4,20 +4,28 @@ import com.epul.conf.ServiceHibernate;
 import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by lafay on 15/05/2017.
  */
 public class ServiceGame {
+
     public List<JeuEntity> getAll(){
-        List<JeuEntity> mesJeux = null;
+        List<JeuEntity> mesJeux = new ArrayList();
         try{
             Session session = ServiceHibernate.currentSession();
 
-            mesJeux = session.createQuery("SELECT j FROM JeuEntity j order by id").getResultList();
+            List<JeuEntity> allGames = session.createQuery("SELECT j FROM JeuEntity j order by id").list();
 
-            session.close();
+            for (Iterator iterator1 = allGames.iterator(); iterator1.hasNext();){
+                JeuEntity game = (JeuEntity) iterator1.next();
+                mesJeux.add(game);
+            }
+
+            //session.close();
         }catch (Exception e){
             e.printStackTrace();
         }

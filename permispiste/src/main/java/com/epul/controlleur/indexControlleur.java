@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class indexControlleur {
+
     @RequestMapping("/")
     public String hello(Model model, @RequestParam(value="name",required =false, defaultValue = "world") String name){
 

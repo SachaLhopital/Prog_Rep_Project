@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
+        </div>
     </body>
     <footer>
 
