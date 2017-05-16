@@ -98,6 +98,21 @@ public class gameController {
         return errorPage();
     }
 
+    @RequestMapping("/delete/{id}")
+    public ModelAndView deleteGame(@PathVariable("id") int id, HttpServletRequest request) {
+        if(id == 0) {
+            request.setAttribute(ERROR_KEY, "Impossible de supprimer un jeu sans son id.");
+            return errorPage();
+        }
+        try {
+            service.delete(service.get(id));
+            return getAllGames(request);
+        } catch(Exception e){
+            request.setAttribute(ERROR_KEY, "Impossible de supprimer le jeu de la base");
+        }
+        return errorPage();
+    }
+
     /***
      * Return Error ModalAndView
      * @return

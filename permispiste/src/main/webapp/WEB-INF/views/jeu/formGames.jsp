@@ -8,7 +8,7 @@
         <input type="hidden" name="txtId" value="${jeu.numjeu}">
         <div class="panel-body">
             <div class="form-group">
-                <label class="col-sm-3">Libellé :</label>
+                <label class="col-sm-3">Libell&eacute; :</label>
                 <input type="text" name="txtlibelle" value="${jeu.libellejeu}" id ="libelle">
             </div>
 
@@ -21,7 +21,7 @@
 <SCRIPT language="Javascript" type="text/javascript">
     function teste(){
         if(document.identification.txtlibelle.value == ""){
-            alert("Veuillez entrer un libellé.")
+            alert("Veuillez entrer un libell&eacute;.")
             return false;
         }
         return true;
