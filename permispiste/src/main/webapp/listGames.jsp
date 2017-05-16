@@ -1,6 +1,7 @@
 
 <jsp:include page="/includes/header.jsp" />
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 </h1>${pageTitle}<h1>
 
@@ -11,9 +12,9 @@
             ${list}
             <table class="table table-hover table-striped table-bordered">
                 <caption>Jeux disponibles pour un entrainement</caption>
-                <c:forEach items="${list}" var="item">
+                <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.libelleJeu}</td>
+                        <td>${item.libellejeu}</td>
                         <td>
                             <a href="/games/lancer/${item.numjeu}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
