@@ -22,6 +22,11 @@
                                     <span class="fa fa-play-circle-o" aria-hidden="true"></span>
                                 </button>
                             </a>
+                            <a href="/games/detail/${item.numjeu}">
+                                <button type="button" class="btn btn-info" aria-label="Left Align">
+                                    <span class="fa fa-pencil" aria-hidden="true"></span>
+                                </button>
+                            </a>
                             <a href="/games/delete/${item.numjeu}">
                                 <button type="button" class="btn btn-danger" aria-label="Left Align">
                                     <span class="fa fa-times" aria-hidden="true"></span>

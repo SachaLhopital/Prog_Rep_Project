@@ -5,6 +5,7 @@ import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -42,7 +43,14 @@ public class ServiceGame {
             e.printStackTrace();
         }
         return jeu;
+    }
 
+    /***
+     * Last id inserted + 1
+     * @return
+     */
+    public int getNextIdToInsert() {
+        return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( j.numjeu ) FROM JeuEntity j").uniqueResult()) + 1;
     }
 
     public void save(JeuEntity jeuEntity){

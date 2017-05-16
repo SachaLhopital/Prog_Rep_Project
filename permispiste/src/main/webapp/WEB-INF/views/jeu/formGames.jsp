@@ -5,10 +5,11 @@
     <div class="panel-heading">Formulaire de jeu</div>
 
     <form name='identification' method="post" action="${actionSubmit}" onsubmit="return teste()">
+        <input type="hidden" name="txtId" value="${jeu.numjeu}">
         <div class="panel-body">
             <div class="form-group">
                 <label class="col-sm-3">Libellé :</label>
-                <input type="text" name="txtlibelle" value="${jeu.libelleJeu}" id ="libelle">
+                <input type="text" name="txtlibelle" value="${jeu.libellejeu}" id ="libelle">
             </div>
 
         <div class="panel-footer">
