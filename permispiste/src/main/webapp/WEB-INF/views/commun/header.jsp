@@ -32,6 +32,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#"><span class="fa fa-user"></span>&nbsp;Gestion des Apprenants</a></li>
                         <li><a href="/games/"><span class="fa fa-gamepad"></span>&nbsp;Gestion des Le&ccedil;ons</a></li>
+                        <li><a href="/missions/"><span class="fa fa-list-alt"></span>&nbsp;Historique des Missions</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

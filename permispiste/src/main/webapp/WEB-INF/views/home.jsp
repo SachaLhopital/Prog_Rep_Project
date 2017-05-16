@@ -8,6 +8,6 @@
 <jsp:include page="commun/header.jsp" />
 <div class="jumbotron">
     <h1>Bienvenue sur Licence T Learning</h1>
-    <p><img src="../../includes/images/LtL.png"/></p>
+    <p><img src="../../includes/images/LtL.png"></p>
 </div>
 <jsp:include page="commun/footer.jsp" />

@@ -17,7 +17,7 @@
                     <tr>
                         <td>${item.libellejeu}</td>
                         <td>
-                            <a href="/games/play/${item.numjeu}">
+                            <a href="/missions/add/${item.numjeu}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
                                     <span class="fa fa-play-circle-o" aria-hidden="true"></span>
                                 </button>
