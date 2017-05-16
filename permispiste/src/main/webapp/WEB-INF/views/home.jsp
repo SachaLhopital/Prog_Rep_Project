@@ -5,8 +5,8 @@
   Time: 08:53
   To change this template use File | Settings | File Templates.
 --%>
-<jsp:include page="/includes/header.jsp" />
+<jsp:include page="commun/header.jsp" />
 <h1>
     HELLO ${name}
 </h1>
-<jsp:include page="/includes/footer.jsp" />
+<jsp:include page="commun/footer.jsp" />

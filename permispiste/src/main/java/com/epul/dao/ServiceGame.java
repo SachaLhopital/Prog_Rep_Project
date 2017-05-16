@@ -3,6 +3,7 @@ package com.epul.dao;
 import com.epul.conf.ServiceHibernate;
 import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -25,7 +26,6 @@ public class ServiceGame {
                 mesJeux.add(game);
             }
 
-            //session.close();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -38,8 +38,6 @@ public class ServiceGame {
         try{
             Session session = ServiceHibernate.currentSession();
             jeu = (JeuEntity)session.createQuery("SELECT j FROM JeuEntity j where id= :id order by id").setParameter("id",id_jeu).getSingleResult();
-
-            session.close();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -50,10 +48,9 @@ public class ServiceGame {
     public void save(JeuEntity jeuEntity){
         try{
             Session session = ServiceHibernate.currentSession();
-
+            Transaction transaction = session.beginTransaction();
             session.save(jeuEntity);
-
-            session.close();
+            transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -62,10 +59,9 @@ public class ServiceGame {
     public void delete(JeuEntity jeuEntity){
         try{
             Session session = ServiceHibernate.currentSession();
-
+            Transaction transaction = session.beginTransaction();
             session.delete(jeuEntity);
-
-            session.close();
+            transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
         }

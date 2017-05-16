@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img alt="Brand" src="/includes/images/LtL.png" height="15%" width="25%">
+                    <%--<img alt="Brand" src="/includes/images/LtL.png" height="15%" width="25%">--%>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

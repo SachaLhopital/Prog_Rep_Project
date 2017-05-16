@@ -1,22 +1,23 @@
 
-<jsp:include page="/includes/header.jsp" />
+<jsp:include page="../commun/header.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 </h1>${pageTitle}<h1>
 
+<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
+
 <%-- Listing des Jeux --%>
 <div class="row">
     <div class="col-md-12">
         <div class="panel-body">
-            ${list}
             <table class="table table-hover table-striped table-bordered">
                 <caption>Jeux disponibles pour un entrainement</caption>
                 <c:forEach var="item" items="${list}">
                     <tr>
                         <td>${item.libellejeu}</td>
                         <td>
-                            <a href="/games/lancer/${item.numjeu}">
+                            <a href="/games/play/${item.numjeu}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
                                     <span class="fa fa-play-circle-o" aria-hidden="true"></span>
                                 </button>
@@ -33,4 +34,4 @@
         </div>
     </div>
 </div>
-<jsp:include page="/includes/footer.jsp" />
+<jsp:include page="../commun/footer.jsp" />
