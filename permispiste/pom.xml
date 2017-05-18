@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>permispiste</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Licence T Learning</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

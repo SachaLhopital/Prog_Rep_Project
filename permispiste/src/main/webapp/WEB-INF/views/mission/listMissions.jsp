@@ -15,7 +15,7 @@
                 <caption>Historique des Missions :</caption>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.jeu.libellejeu}</td>
+                        <td>Afficher le libelle du jeu ici</td>
                         <td>${item.libmission}</td>
                         <td>
                             <a href="/missions/delete/${item.nummission}">

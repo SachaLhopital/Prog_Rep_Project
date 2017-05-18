@@ -27,13 +27,13 @@ public class missionController {
     public ModelAndView getAllMissions(HttpServletRequest request) {
         request.setAttribute("pageTitle", "Liste des Missions");
         request.setAttribute("list", service.getAll());
-        return new ModelAndView("/missions/listMissions");
+        return new ModelAndView("/mission/listMissions");
     }
 
     @RequestMapping("/add/")
     public ModelAndView getMissionForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", "/missions/insert/");
-        return new ModelAndView("/missions/formMissions");
+        return new ModelAndView("/mission/formMissions");
     }
 
     @RequestMapping("/insert/")
@@ -70,7 +70,7 @@ public class missionController {
 
             request.setAttribute("mission", mission);
             request.setAttribute("actionSubmit", "/missions/edit/");
-            return new ModelAndView("/missions/formMissions");
+            return new ModelAndView("/mission/formMissions");
 
         } catch (Exception e) {
             e.printStackTrace();
