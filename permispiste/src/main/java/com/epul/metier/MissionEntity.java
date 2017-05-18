@@ -1,5 +1,7 @@
 package com.epul.metier;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 /**
@@ -8,9 +10,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "mission", schema = "permispiste", catalog = "")
 public class MissionEntity {
+
     private int nummission;
     private int numjeu;
     private String libmission;
+    public JeuEntity game;
 
     @Id
     @Column(name = "NUMMISSION")
@@ -22,14 +26,14 @@ public class MissionEntity {
         this.nummission = nummission;
     }
 
-    @Basic
-    @Column(name = "NUMJEU")
-    public int getNumjeu() {
-        return numjeu;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU")
+    public JeuEntity getGame() {
+        return game;
     }
 
-    public void setNumjeu(int numjeu) {
-        this.numjeu = numjeu;
+    public void setGame(JeuEntity game) {
+        this.game = game;
     }
 
     @Basic

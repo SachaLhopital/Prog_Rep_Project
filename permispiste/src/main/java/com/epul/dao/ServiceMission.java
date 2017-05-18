@@ -18,7 +18,8 @@ public class ServiceMission {
     public List<MissionEntity> getAll(){
         List<MissionEntity> missionList = new ArrayList();
         try{
-            List<MissionEntity> allMissions = ServiceHibernate.currentSession().createQuery("SELECT m FROM MissionEntity m order by id").list();
+            Session session = ServiceHibernate.currentSession();
+            List<MissionEntity> allMissions = session.createQuery("SELECT m FROM MissionEntity m order by id").list();
 
             for (Iterator iterator1 = allMissions.iterator(); iterator1.hasNext();){
                 MissionEntity mission = (MissionEntity) iterator1.next();

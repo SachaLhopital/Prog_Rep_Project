@@ -1,9 +1,7 @@
 package com.epul.controlleur;
 
-import com.epul.dao.ServiceGame;
 import com.epul.dao.ServiceMission;
 import com.epul.exception.CustomException;
-import com.epul.metier.JeuEntity;
 import com.epul.metier.MissionEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/missions")
 public class missionController {
 
-    private static String ERROR_KEY = "messageErreur"; //todo refactor ?
+    private static String ERROR_KEY = "messageErreur";
 
     private ServiceMission service = new ServiceMission();
 
