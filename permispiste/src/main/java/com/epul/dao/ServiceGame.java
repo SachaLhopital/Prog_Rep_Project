@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by lafay on 15/05/2017.
  */
-public class ServiceGame {
+public class ServiceGame extends Service {
 
     public List<JeuEntity> getAll(){
         List<JeuEntity> mesJeux = new ArrayList();
@@ -51,17 +51,6 @@ public class ServiceGame {
      */
     public int getNextIdToInsert() {
         return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( j.numjeu ) FROM JeuEntity j").uniqueResult()) + 1;
-    }
-
-    public void save(JeuEntity jeuEntity){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.save(jeuEntity);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 
     public void delete(JeuEntity jeuEntity){

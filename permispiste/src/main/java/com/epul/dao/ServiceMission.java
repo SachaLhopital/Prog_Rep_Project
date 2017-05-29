@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Sacha on 16/05/2017.
  */
-public class ServiceMission {
+public class ServiceMission extends Service {
 
     public List<MissionEntity> getAll(){
         List<MissionEntity> missionList = new ArrayList();
@@ -53,7 +53,7 @@ public class ServiceMission {
     }
 
     //Todo : refactor
-    public void save(MissionEntity mission){
+    /*public void save(MissionEntity mission){
         try{
             Session session = ServiceHibernate.currentSession();
             Transaction transaction = session.beginTransaction();
@@ -62,7 +62,7 @@ public class ServiceMission {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
 
     //TOdo : refactor
     public void delete(MissionEntity mission){
