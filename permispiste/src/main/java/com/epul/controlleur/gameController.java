@@ -3,8 +3,6 @@ package com.epul.controlleur;
 import com.epul.dao.ServiceGame;
 import com.epul.exception.CustomException;
 import com.epul.metier.JeuEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,36 +12,36 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Sacha on 15/05/2017.
  */
-@Controller
+@org.springframework.stereotype.Controller
 @RequestMapping("/games")
-public class gameController {
+public class GameController extends Controller {
 
-    private static String ERROR_KEY = "messageErreur";
     private static String INSERER_JEU = "/games/insert/";
 
     private ServiceGame service = new ServiceGame();
 
+    @Override
     @RequestMapping(value = "/")
-    public ModelAndView getAllGames(HttpServletRequest request) {
+    public ModelAndView getAll(HttpServletRequest request) {
         request.setAttribute("pageTitle", "Liste des Jeux");
         request.setAttribute("list", service.getAll());
         return new ModelAndView("/jeu/listGames");
     }
 
     @RequestMapping("/add/")
-    public ModelAndView getGamesForm(HttpServletRequest request) {
+    public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", INSERER_JEU);
         return new ModelAndView("/jeu/formGames");
     }
 
     @RequestMapping("/insert/")
-    public ModelAndView insertGame(HttpServletRequest request) {
+    public ModelAndView insert(HttpServletRequest request) {
         try {
             JeuEntity jeu = new JeuEntity();
             jeu.setNumjeu(service.getNextIdToInsert());
             jeu.setLibellejeu(request.getParameter("txtlibelle"));
             service.save(jeu);
-            return getAllGames(request);
+            return getAll(request);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,7 +51,7 @@ public class gameController {
     }
 
     @RequestMapping("/detail/{id}")
-    public ModelAndView getGame(@PathVariable("id") int id, HttpServletRequest request) {
+    public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
             if (id == 0) {
                 request.setAttribute(ERROR_KEY, "Id manquant dans le path");
@@ -89,7 +87,7 @@ public class gameController {
             JeuEntity jeuToUpdate = service.get(Integer.parseInt(request.getParameter("txtId")));
             jeuToUpdate.setLibellejeu(request.getParameter("txtlibelle"));
             service.save(jeuToUpdate);
-            return getAllGames(request);
+            return getAll(request);
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -106,7 +104,7 @@ public class gameController {
         }
         try {
             service.delete(service.get(id));
-            return getAllGames(request);
+            return getAll(request);
         } catch(Exception e){
             request.setAttribute(ERROR_KEY, "Impossible de supprimer le jeu de la base");
         }
