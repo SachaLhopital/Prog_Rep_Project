@@ -12,14 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by lafay on 03/05/2017.
  */
 @Controller
-public class indexControlleur {
+public class IndexController {
 
     @RequestMapping("/")
-    public String hello(Model model, @RequestParam(value="name",required =false, defaultValue = "world") String name){
-
-        ServiceAction service = new ServiceAction();
-
-        model.addAttribute("name", service.getAll().get(0).getLibaction());
+    public String hello(){
         return "home";
     }
 }

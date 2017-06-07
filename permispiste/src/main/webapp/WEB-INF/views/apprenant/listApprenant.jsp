@@ -1,29 +1,31 @@
+
 <jsp:include page="../commun/header.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<h1>${pageTitle}</h1>
+<h1>Liste des Apprenants</h1>
 
-<h2>Attention : vérifier dans le sujet du prof quel est le lien entre mission et jeux ???</h2>
+<a href="/apprenants/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouvel apprenant</a>
 
-<%-- Listing des Jeux --%>
+<%-- Listing des Apprenants --%>
 <div class="row">
     <div class="col-md-12">
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
-                <caption>Historique des Missions :</caption>
+                <caption>Apprenants actuellement inscrits :</caption>
                 <tr>
-                    <td>Jeux</td>
-                    <td>Intitul&eacute; de la mission</td>
+                    <td>Nom</td>
+                    <td>Pr&eacute;nom</td>
+                    <td></td>
                 </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.game.libellejeu}</td>
-                        <td>${item.libmission}</td>
+                        <td>${item.nomapprenant}</td>
+                        <td>${item.prenomapprenant}</td>
                         <td>
-                            <a href="/missions/delete/${item.nummission}">
-                                <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
+                            <a href="/apprenant/detail/${item.numapprenant}">
+                                <button type="button" class="btn btn-info" aria-label="Left Align">
+                                    <span class="fa fa-pencil" aria-hidden="true"></span>
                                 </button>
                             </a>
                         </td>

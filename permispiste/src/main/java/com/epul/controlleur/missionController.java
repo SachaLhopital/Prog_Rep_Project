@@ -3,7 +3,6 @@ package com.epul.controlleur;
 import com.epul.dao.ServiceMission;
 import com.epul.exception.CustomException;
 import com.epul.metier.MissionEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,36 +12,34 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Sacha on 16/05/2017.
  */
-@Controller
+@org.springframework.stereotype.Controller
 @RequestMapping("/missions")
-public class missionController {
-
-    private static String ERROR_KEY = "messageErreur";
+public class MissionController extends Controller {
 
     private ServiceMission service = new ServiceMission();
 
+    @Override
     @RequestMapping(value = "/")
-    public ModelAndView getAllMissions(HttpServletRequest request) {
+    public ModelAndView getAll(HttpServletRequest request) {
         request.setAttribute("pageTitle", "Liste des Missions");
         request.setAttribute("list", service.getAll());
         return new ModelAndView("/mission/listMissions");
     }
 
     @RequestMapping("/add/")
-    public ModelAndView getMissionForm(HttpServletRequest request) {
+    public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", "/missions/insert/");
         return new ModelAndView("/mission/formMissions");
     }
 
     @RequestMapping("/insert/")
-    public ModelAndView insertGame(HttpServletRequest request) {
+    public ModelAndView insert(HttpServletRequest request) {
         try {
             MissionEntity mission = new MissionEntity();
             mission.setNummission(service.getNextIdToInsert()); //todo refactor ?
-            //mission.setNumjeu(request.getParameter("txtlibelle"));
             mission.setLibmission("todo");
             service.save(mission);
-            return getAllMissions(request);
+            return getAll(request);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +49,7 @@ public class missionController {
     }
 
     @RequestMapping("/detail/{id}")
-    public ModelAndView getMission(@PathVariable("id") int id, HttpServletRequest request) {
+    public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
             if (id == 0) {
                 request.setAttribute(ERROR_KEY, "Id manquant dans le path");
@@ -106,18 +103,10 @@ public class missionController {
         }
         try {
             service.delete(service.get(id));
-            return getAllMissions(request);
+            return getAll(request);
         } catch(Exception e){
             request.setAttribute(ERROR_KEY, "Impossible de supprimer la mission de la base");
         }
         return errorPage();
     }
-
-    /***
-     * Return Error ModalAndView
-     * @return
-     */
-    public ModelAndView errorPage() {
-        return new ModelAndView("error");
-    } //TODO refactor ?
 }
