@@ -2,7 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<h1>${pageTitle}</h1>
+<div class="page-header">
+    <h1>Missions disponibles</h1>
+</div>
 
 <h2>Attention : vérifier dans le sujet du prof quel est le lien entre mission et jeux ???</h2>
 

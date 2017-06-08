@@ -13,7 +13,8 @@ Les objectifs de ce projet sont de mettre en oeuvre les technologies suivantes :
 
 ## Outils
 
-Utilisation de Trello.
+- Utilisation de Trello
+- Utilisation d'un template Bootstrap : https://blackrockdigital.github.io/startbootstrap-sb-admin/tables.html
 
 ## Documentation d'installation Dev
 

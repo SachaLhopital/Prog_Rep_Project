@@ -11,29 +11,33 @@
 <html>
 <head>
     <title>Liscence T Learning</title>
-    <link rel="stylesheet" href="/includes/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/includes/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/includes/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/includes/template/css/sb-admin.css">
+    <link rel="stylesheet" href="/includes/template/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 
-    <div class="container">
-        <nav class="navbar navbar-default">
+    <div class="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">navigation</span>
+                    <a class="navbar-brand" href="/">Licence T Learning</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="/apprenants/"><span class="fa fa-user"></span>&nbsp;Gestion des Apprenants</a></li>
                         <li><a href="/games/"><span class="fa fa-gamepad"></span>&nbsp;Gestion des Le&ccedil;ons</a></li>
                         <li><a href="/missions/"><span class="fa fa-list-alt"></span>&nbsp;Historique des Missions</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div>
             </div><!-- /.container-fluid -->
         </nav>
+        <div id="page-wrapper">
+            <div class="container-fluid">

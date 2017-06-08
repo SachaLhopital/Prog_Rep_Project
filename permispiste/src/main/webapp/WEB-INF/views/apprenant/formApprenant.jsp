@@ -2,7 +2,9 @@
 
 <div class="panel panel-primary">
 
-    <div class="panel-heading">Formulaire des Apprenants</div>
+    <div class="panel-heading">
+        Formulaire des Apprenants
+    </div>
 
     <form name='identification' method="post" action="${actionSubmit}" onsubmit="return teste()">
         <input type="hidden" name="txtId" value="${apprenant.numapprenant}">

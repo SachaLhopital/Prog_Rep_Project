@@ -6,12 +6,13 @@
   Time: 08:14
   To change this template use File | Settings | File Templates.
 --%>
-
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
-    <footer>
-
-    </footer>
-    <script src="<c:url value="/includes/jquery-3.2.1.min.js"/>"></script>
-    <script src="<c:url value="/includes/bootstrap-3.3.7-dist/js/bootstrap.min.js"/>"></script>
+    <!-- jQuery -->
+    <script src="/includes/template/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/includes/template/js/bootstrap.min.js"></script>
 </html>
