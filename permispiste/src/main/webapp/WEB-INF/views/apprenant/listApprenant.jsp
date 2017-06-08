@@ -23,10 +23,13 @@
                         <td>${item.nomapprenant}</td>
                         <td>${item.prenomapprenant}</td>
                         <td>
-                            <a href="/apprenant/detail/${item.numapprenant}">
+                            <a href="/apprenants/detail/${item.numapprenant}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
                                     <span class="fa fa-pencil" aria-hidden="true"></span>
                                 </button>
+                            </a>
+                            <a href="/apprenants/delete/${item.numapprenant}" class="btn btn-danger">
+                                <span class="fa fa-times"></span>
                             </a>
                         </td>
                     </tr>

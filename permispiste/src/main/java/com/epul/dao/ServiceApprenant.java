@@ -4,6 +4,7 @@ import com.epul.conf.ServiceHibernate;
 import com.epul.metier.ApprenantEntity;
 import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -34,5 +35,25 @@ public class ServiceApprenant extends Service {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /***
+     * Last id inserted + 1
+     * @return
+     */
+    public int getNextIdToInsert() {
+        return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( a.numapprenant ) FROM ApprenantEntity a").uniqueResult()) + 1;
+    }
+
+    //todo refactor
+    public void delete(ApprenantEntity apprenantEntity){
+        try{
+            Session session = ServiceHibernate.currentSession();
+            Transaction transaction = session.beginTransaction();
+            session.delete(apprenantEntity);
+            transaction.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

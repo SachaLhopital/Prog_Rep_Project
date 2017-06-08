@@ -1,6 +1,7 @@
 package com.epul.controlleur;
 
 import com.epul.dao.ServiceApprenant;
+import com.epul.exception.CustomException;
 import com.epul.metier.ApprenantEntity;
 import com.epul.metier.MissionEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,13 +36,14 @@ public class ApprenantController extends Controller {
     public ModelAndView insert(HttpServletRequest request) {
         try {
             ApprenantEntity apprenant = new ApprenantEntity();
+            apprenant.setNumapprenant(service.getNextIdToInsert());
             apprenant.setNomapprenant(request.getParameter("txtnom"));
             apprenant.setPrenomapprenant(request.getParameter("txtprenom"));
             service.save(apprenant);
             return getAll(request);
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute(ERROR_KEY, "Impossible de sauvegarder le jeu");
+            request.setAttribute(ERROR_KEY, "Impossible de sauvegarder l'apprenant");
         }
         return errorPage();
     }
@@ -57,17 +59,53 @@ public class ApprenantController extends Controller {
             ApprenantEntity apprenant = service.get(id);
 
             if (apprenant == null) {
-                request.setAttribute(ERROR_KEY, "Impossible d'obtenir la mission pour l'id saisie");
+                request.setAttribute(ERROR_KEY, "Impossible d'obtenir l'apprenant pour l'id saisie");
                 return errorPage();
             }
 
-            request.setAttribute("mission", apprenant);
-            request.setAttribute("actionSubmit", "/missions/edit/");
-            return new ModelAndView("/mission/formMissions");
+            request.setAttribute("apprenant", apprenant);
+            request.setAttribute("actionSubmit", "/apprenants/edit/");
+            return new ModelAndView("/apprenant/formApprenant");
 
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute(ERROR_KEY, "Impossible d'obtenir la mission pour l'id saisie");
+            request.setAttribute(ERROR_KEY, "Impossible d'obtenir l'apprenant pour l'id saisie");
+        }
+        return errorPage();
+    }
+
+    @RequestMapping("/edit/")
+    public ModelAndView updateTrainee(HttpServletRequest request) throws CustomException {
+        if(request.getParameter("txtId") == null || request.getParameter("txtnom").isEmpty() || request.getParameter("txtprenom").isEmpty()) {
+            request.setAttribute(ERROR_KEY, "Il manque des arguments à la méthode updateTrainee");
+            return errorPage();
+        }
+
+        try {
+            ApprenantEntity apprenantEntity = service.get(Integer.parseInt(request.getParameter("txtId")));
+            apprenantEntity.setPrenomapprenant(request.getParameter("txtprenom"));
+            apprenantEntity.setNomapprenant(request.getParameter("txtnom"));
+            service.save(apprenantEntity);
+            return getAll(request);
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            request.setAttribute(ERROR_KEY, "Impossible de mettre à jour l'apprenant");
+        }
+        return errorPage();
+    }
+
+    @RequestMapping("/delete/{id}")
+    public ModelAndView deleteTrainee(@PathVariable("id") int id, HttpServletRequest request) {
+        if(id == 0) {
+            request.setAttribute(ERROR_KEY, "Impossible de supprimer un apprenant sans son id.");
+            return errorPage();
+        }
+        try {
+            service.delete(service.get(id));
+            return getAll(request);
+        } catch(Exception e){
+            request.setAttribute(ERROR_KEY, "Impossible de supprimer l'apprenant de la base");
         }
         return errorPage();
     }

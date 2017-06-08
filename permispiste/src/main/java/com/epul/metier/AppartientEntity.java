@@ -14,6 +14,7 @@ public class AppartientEntity {
 
     @Id
     @Column(name = "NUMJEU")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public int getNumjeu() {
         return numjeu;
     }
