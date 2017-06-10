@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9980c543-6370-43ac-8da8-43256e6cbafd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/gameController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/GameController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/missionController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/MissionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Prog_Rep_Project.iml" afterPath="$PROJECT_DIR$/.idea/Prog_Rep_Project.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/footer.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/header.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/erreur.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/erreur.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/formGames.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/formGames.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/formMissions.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/formMissions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/listMissions.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/listMissions.jsp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -929,12 +914,20 @@
       <workItem from="1494851152290" duration="383000" />
       <workItem from="1494856661160" duration="137000" />
       <workItem from="1496862216037" duration="379000" />
-      <workItem from="1497105140684" duration="2628000" />
+      <workItem from="1497105140684" duration="2709000" />
     </task>
+    <task id="LOCAL-00001" summary="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel).">
+      <created>1497116409198</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497116409198</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3527000" />
+    <option name="totallyTimeSpent" value="3608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
@@ -976,6 +969,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
