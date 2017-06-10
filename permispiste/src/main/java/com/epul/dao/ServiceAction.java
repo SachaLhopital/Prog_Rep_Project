@@ -47,11 +47,13 @@ public class ServiceAction extends Service {
         List<ActionEntity> all = new ArrayList<>();
         try{
             Session session = ServiceHibernate.currentSession();
-            all = session.createQuery("SELECT a FROM ActionEntity a, ObtientEntity o where a.numaction=o.numaction AND o.numapprenant= :idApprenant order by id")
-                    .setParameter("idApprenant",idApprenant).list();
+            List<Object> list = session.createQuery("SELECT o.numaction FROM ObtientEntity o WHERE o.numapprenant = :idApprenant")
+                    .setParameter("idApprenant", idApprenant)
+                    .list();
 
-            for (Iterator iterator1 = all.iterator(); iterator1.hasNext();){
-                ActionEntity action = (ActionEntity) iterator1.next();
+            for (Iterator iterator1 = list.iterator(); iterator1.hasNext();){
+                int numaction = (Integer) iterator1.next();
+                ActionEntity action = get(numaction);
                 all.add(action);
             }
         }catch (Exception e){

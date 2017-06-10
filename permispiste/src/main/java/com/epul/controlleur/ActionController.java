@@ -1,6 +1,7 @@
 package com.epul.controlleur;
 
 import com.epul.dao.ServiceAction;
+import com.epul.dao.ServiceApprenant;
 import com.epul.exception.CustomException;
 import com.epul.metier.ActionEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by Sacha on 16/05/2017.
@@ -42,7 +44,7 @@ public class ActionController extends Controller {
 
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute(ERROR_KEY, "Impossible de sauvegarder la mission");
+            request.setAttribute(ERROR_KEY, "Impossible de sauvegarder l'action.");
         }
         return errorPage();
     }
@@ -55,15 +57,16 @@ public class ActionController extends Controller {
                 return errorPage();
             }
 
-            ActionEntity action = service.get(id);
+            List<ActionEntity> actions = service.getAll(id);
 
-            if (action == null) {
+            if (actions == null) {
                 request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
                 return errorPage();
             }
 
-            request.setAttribute("action", action);
-            request.setAttribute("actionSubmit", "/missions/edit/");
+            request.setAttribute("list", actions);
+            request.setAttribute("trainee", new ServiceApprenant().get(id));
+            request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/listActionsApprenant");
 
         } catch (Exception e) {
@@ -90,7 +93,7 @@ public class ActionController extends Controller {
 
             request.setAttribute("action", action);
             request.setAttribute("actionSubmit", "/action/edit/");
-            return new ModelAndView("/mission/formMissions");
+            return new ModelAndView("/action/formAction");
 
         } catch (Exception e) {
             e.printStackTrace();

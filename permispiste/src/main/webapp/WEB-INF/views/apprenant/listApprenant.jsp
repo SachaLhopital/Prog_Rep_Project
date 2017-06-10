@@ -15,16 +15,21 @@
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
                 <caption>Apprenants actuellement inscrits :</caption>
-                <th>
-                    <td>Nom</td>
-                    <td>Pr&eacute;nom</td>
-                    <td></td>
-                </th>
+                <tr>
+                    <th>Nom</th>
+                    <th>Pr&eacute;nom</th>
+                    <th></th>
+                </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
                         <td>${item.nomapprenant}</td>
                         <td>${item.prenomapprenant}</td>
                         <td>
+                            <a href="/actions/apprenant/${item.numapprenant}">
+                                <button type="button" class="btn btn-primary" aria-label="Left Align">
+                                    <span class="fa fa-list" aria-hidden="true"></span>
+                                </button>
+                            </a>
                             <a href="/apprenants/detail/${item.numapprenant}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
                                     <span class="fa fa-pencil" aria-hidden="true"></span>

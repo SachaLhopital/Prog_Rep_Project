@@ -12,7 +12,7 @@
                 <label class="col-sm-3">Libell&eacute; : </label>
                 <input type="text" name="txtlibelle" value="${mission.libmission}" id ="libelle">
             </div>
-
+        </div>
         <div class="panel-footer">
             <button type="submit" name="bt" class="btn btn-primary">Débuter la mission pour le jeu ${mission.jeu.libellejeu}</button>
         </div>

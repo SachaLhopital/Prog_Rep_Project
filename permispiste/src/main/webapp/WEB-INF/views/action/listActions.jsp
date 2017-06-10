@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<jsp:include page="../commun/header.jsp" />
+<jsp:include page="../commun/header.jsp"/>
 
 <div class="page-header">
-    <h1>Missions de ${trainee.prenomapprenant} ${trainee.nomapprenant}</h1>
+    <h1>Toutes les actions</h1>
 </div>
 
 <%-- Listing des Missions --%>
@@ -12,20 +12,19 @@
     <div class="col-md-12">
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
-                <caption>Missions :</caption>
-                <th>
-                    <td>Jeux</td>
-                    <td>Intitul&eacute; de la mission</td>
-                </th>
+                <caption>Actions :</caption>
+                <tr>
+                    <th>Action</th>
+                    <th>Score minimal</th>
+                    <th></th>
+                </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.game.libellejeu}</td>
-                        <td>${item.libmission}</td>
+                        <td>${item.libaction}</td>
+                        <td>${item.scoremin}/20</td>
                         <td>
-                            <a href="/missions/delete/${item.nummission}">
-                                <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
+                            <a class="btn btn-danger" href="/actions/delete/${item.numaction}">
+                                <span class="fa fa-times" aria-hidden="true"></span>
                             </a>
                         </td>
                     </tr>
@@ -34,4 +33,4 @@
         </div>
     </div>
 </div>
-<jsp:include page="../commun/footer.jsp" />
+<jsp:include page="../commun/footer.jsp"/>

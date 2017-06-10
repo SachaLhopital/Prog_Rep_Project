@@ -4,7 +4,7 @@
 <jsp:include page="../commun/header.jsp" />
 
 <div class="page-header">
-    <h1>Missions de ${trainee.prenomapprenant} ${trainee.nomapprenant}</h1>
+    <h1>Actions de ${trainee.prenomapprenant} ${trainee.nomapprenant}</h1>
 </div>
 
 <%-- Listing des Missions --%>
@@ -13,21 +13,14 @@
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
                 <caption>Missions :</caption>
-                <th>
-                    <td>Jeux</td>
-                    <td>Intitul&eacute; de la mission</td>
-                </th>
+                <tr>
+                    <th>Action</th>
+                    <th>Score minimal</th>
+                </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.game.libellejeu}</td>
-                        <td>${item.libmission}</td>
-                        <td>
-                            <a href="/missions/delete/${item.nummission}">
-                                <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </td>
+                        <td>${item.libaction}</td>
+                        <td>${item.scoremin}/20</td>
                     </tr>
                 </c:forEach>
             </table>

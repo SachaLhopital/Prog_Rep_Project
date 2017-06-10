@@ -15,10 +15,11 @@
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
                 <caption>Historique des Missions :</caption>
-                <th>
-                    <td>Jeux</td>
-                    <td>Intitul&eacute; de la mission</td>
-                </th>
+                <tr>
+                    <th>Jeux</th>
+                    <th>Intitul&eacute; de la mission</th>
+                    <th></th>
+                </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
                         <td>${item.game.libellejeu}</td>
