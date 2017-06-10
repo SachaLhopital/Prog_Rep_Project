@@ -1,7 +1,7 @@
-
-<jsp:include page="../commun/header.jsp" />
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:include page="../commun/header.jsp" />
 
 <div class="page-header">
     <h1>Jeux disponibles</h1>
@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
-                <caption>Jeux disponibles pour un entrainement</caption>
+                <caption>Jeux disponibles pour un entrainement :</caption>
                 <c:forEach var="item" items="${list}">
                     <tr>
                         <td>${item.libellejeu}</td>

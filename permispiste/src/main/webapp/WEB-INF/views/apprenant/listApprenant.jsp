@@ -1,7 +1,7 @@
-
-<jsp:include page="../commun/header.jsp" />
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:include page="../commun/header.jsp" />
 
 <div class="page-header">
     <h1>Liste des Apprenants</h1>
@@ -15,11 +15,11 @@
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
                 <caption>Apprenants actuellement inscrits :</caption>
-                <tr>
+                <th>
                     <td>Nom</td>
                     <td>Pr&eacute;nom</td>
                     <td></td>
-                </tr>
+                </th>
                 <c:forEach var="item" items="${list}">
                     <tr>
                         <td>${item.nomapprenant}</td>
