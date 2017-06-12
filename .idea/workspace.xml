@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9980c543-6370-43ac-8da8-43256e6cbafd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceApprenant.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceApprenant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceObtient.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceObtient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/AppartientEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/AppartientEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/EstAssocieEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/EstAssocieEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/FixeEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/FixeEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/IndicateurEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/IndicateurEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscriptionEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscriptionEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscritEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscritEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntityPK.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntityPK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,9 +19,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,7 +58,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -91,8 +76,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -327,7 +313,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -703,7 +688,8 @@
       <workItem from="1497105140684" duration="2709000" />
       <workItem from="1497280745266" duration="889000" />
       <workItem from="1497290882713" duration="470000" />
-      <workItem from="1497297759406" duration="652000" />
+      <workItem from="1497297759406" duration="757000" />
+      <workItem from="1497303410413" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel).">
       <created>1497116409198</created>
@@ -719,14 +705,21 @@
       <option name="project" value="LOCAL" />
       <updated>1497126048264</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modification du modèle pour l'ajout des relations entre entités. &#10;Fonctionnel mais revoir le script de la base de données qui semble ne pas correspondre au modele.">
+      <created>1497303297977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1497303297977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7265000" />
+    <option name="totallyTimeSpent" value="7372000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -742,7 +735,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34775642" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35181236" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3307436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -770,7 +763,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
     <MESSAGE value="Consultation des actions fonctionnelle." />
-    <option name="LAST_COMMIT_MESSAGE" value="Consultation des actions fonctionnelle." />
+    <MESSAGE value="Modification du modèle pour l'ajout des relations entre entités. &#10;Fonctionnel mais revoir le script de la base de données qui semble ne pas correspondre au modele." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification du modèle pour l'ajout des relations entre entités. &#10;Fonctionnel mais revoir le script de la base de données qui semble ne pas correspondre au modele." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -785,9 +779,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -803,9 +795,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -821,9 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -839,9 +827,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/PermispisteApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -857,9 +859,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -876,9 +876,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -903,9 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
