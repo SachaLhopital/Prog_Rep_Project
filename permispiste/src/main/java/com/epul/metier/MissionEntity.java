@@ -11,10 +11,10 @@ import javax.persistence.*;
 @Table(name = "mission", schema = "permispiste", catalog = "")
 public class MissionEntity {
 
+    public JeuEntity game;
     private int nummission;
     private int numjeu;
     private String libmission;
-    public JeuEntity game;
 
     @Id
     @Column(name = "NUMMISSION")

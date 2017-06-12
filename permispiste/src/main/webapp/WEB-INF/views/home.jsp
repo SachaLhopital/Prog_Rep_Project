@@ -7,8 +7,48 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <jsp:include page="commun/header.jsp" />
+<h1>Bienvenue sur Licence T Learning</h1>
 <div class="jumbotron text-center">
-    <h1>Bienvenue sur Licence T Learning</h1>
     <p><img src="../../includes/images/LtL.png"></p>
+    <p>Cette application permet de gérer votre apprentissage pour passez votre permis T ou TZ.</p>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">${totalApprenants}</div>
+                        <div>Nombre d'inscrits</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/apprenants/">
+                <div class="panel-footer">
+                    <span class="pull-left">Voir les inscrits</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-send-o fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">${totalParties}</div>
+                        <div>Nombre de parties lanc&eacute;es</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <jsp:include page="commun/footer.jsp" />

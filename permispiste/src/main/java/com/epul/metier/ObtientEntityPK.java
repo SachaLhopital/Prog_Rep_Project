@@ -3,6 +3,7 @@ package com.epul.metier;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by lafay on 03/05/2017.
@@ -10,6 +11,7 @@ import java.io.Serializable;
 public class ObtientEntityPK implements Serializable {
     private int numapprenant;
     private int numaction;
+    private Date datejour;
 
     @Column(name = "NUMAPPRENANT")
     @Id
@@ -49,5 +51,15 @@ public class ObtientEntityPK implements Serializable {
         int result = numapprenant;
         result = 31 * result + numaction;
         return result;
+    }
+
+    @Column(name = "DATEJOUR")
+    @Id
+    public Date getDatejour() {
+        return datejour;
+    }
+
+    public void setDatejour(Date datejour) {
+        this.datejour = datejour;
     }
 }

@@ -11,6 +11,7 @@ public class IndicateurEntity {
     private int numindic;
     private int numaction;
     private Integer poids;
+    private String libindic;
 
     @Id
     @Column(name = "NUMINDIC")
@@ -62,5 +63,15 @@ public class IndicateurEntity {
         result = 31 * result + numaction;
         result = 31 * result + (poids != null ? poids.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "LIBINDIC")
+    public String getLibindic() {
+        return libindic;
+    }
+
+    public void setLibindic(String libindic) {
+        this.libindic = libindic;
     }
 }

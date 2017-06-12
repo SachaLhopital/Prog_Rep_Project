@@ -7,6 +7,14 @@
     <h1>Liste des Apprenants</h1>
 </div>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info alert-dismissable">
+            <i class="fa fa-info-circle"></i>Visualisez les missions de l'apprenant en cliquant sur <span class="fa fa-list" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+
 <a href="/apprenants/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouvel apprenant</a>
 
 <%-- Listing des Apprenants --%>

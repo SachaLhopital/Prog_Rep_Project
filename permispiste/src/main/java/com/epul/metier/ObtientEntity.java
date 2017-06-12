@@ -1,6 +1,7 @@
 package com.epul.metier;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 /**
  * Created by lafay on 03/05/2017.
@@ -12,6 +13,9 @@ public class ObtientEntity {
     private int numapprenant;
     private int numaction;
     private Integer valeur;
+    private Date datejour;
+    private Integer valeurdebut;
+    private Integer valeurfin;
 
     @Id
     @Column(name = "NUMAPPRENANT")
@@ -63,5 +67,35 @@ public class ObtientEntity {
         result = 31 * result + numaction;
         result = 31 * result + (valeur != null ? valeur.hashCode() : 0);
         return result;
+    }
+
+    @Id
+    @Column(name = "DATEJOUR")
+    public Date getDatejour() {
+        return datejour;
+    }
+
+    public void setDatejour(Date datejour) {
+        this.datejour = datejour;
+    }
+
+    @Basic
+    @Column(name = "VALEURDEBUT")
+    public Integer getValeurdebut() {
+        return valeurdebut;
+    }
+
+    public void setValeurdebut(Integer valeurdebut) {
+        this.valeurdebut = valeurdebut;
+    }
+
+    @Basic
+    @Column(name = "VALEURFIN")
+    public Integer getValeurfin() {
+        return valeurfin;
+    }
+
+    public void setValeurfin(Integer valeurfin) {
+        this.valeurfin = valeurfin;
     }
 }

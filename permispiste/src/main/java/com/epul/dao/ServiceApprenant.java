@@ -2,11 +2,11 @@ package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
 import com.epul.metier.ApprenantEntity;
-import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.List;
+
+import static java.lang.Math.toIntExact;
 
 /**
  * Created by Sacha on 25/05/2017.
@@ -42,7 +42,19 @@ public class ServiceApprenant extends Service {
      * @return
      */
     public int getNextIdToInsert() {
-        return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( a.numapprenant ) FROM ApprenantEntity a").uniqueResult()) + 1;
+        return ((Integer) ServiceHibernate.currentSession()
+                .createQuery("SELECT max( a.numapprenant ) FROM ApprenantEntity a")
+                .uniqueResult()) + 1;
+    }
+
+    /***
+     * Compte le nombre d'inscrits
+     * @return
+     */
+    public int getCount() {
+        return toIntExact((Long) ServiceHibernate.currentSession()
+                .createQuery("SELECT count(distinct a.numapprenant) FROM ApprenantEntity a")
+                .uniqueResult());
     }
 
     //todo refactor
