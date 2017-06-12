@@ -13,6 +13,8 @@ public class InscritEntity {
     private int numjeu;
     private int numapprenant;
     private Date datejour;
+    private ApprenantEntity apprenant;
+    private JeuEntity jeu;
 
     @Id
     @Column(name = "NUMJEU")
@@ -64,5 +66,25 @@ public class InscritEntity {
         result = 31 * result + numapprenant;
         result = 31 * result + (datejour != null ? datejour.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", referencedColumnName = "NUMAPPRENANT", insertable = false, updatable = false)
+    public ApprenantEntity getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(ApprenantEntity apprenant) {
+        this.apprenant = apprenant;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", insertable = false, updatable = false)
+    public JeuEntity getJeu() {
+        return jeu;
+    }
+
+    public void setJeu(JeuEntity jeu) {
+        this.jeu = jeu;
     }
 }

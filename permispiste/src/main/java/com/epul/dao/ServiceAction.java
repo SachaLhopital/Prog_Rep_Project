@@ -43,25 +43,6 @@ public class ServiceAction extends Service {
         return action;
     }
 
-    public List<ActionEntity> getAll(int idApprenant){
-        List<ActionEntity> all = new ArrayList<>();
-        try{
-            Session session = ServiceHibernate.currentSession();
-            List<Object> list = session.createQuery("SELECT o.numaction FROM ObtientEntity o WHERE o.numapprenant = :idApprenant")
-                    .setParameter("idApprenant", idApprenant)
-                    .list();
-
-            for (Iterator iterator1 = list.iterator(); iterator1.hasNext();){
-                int numaction = (Integer) iterator1.next();
-                ActionEntity action = get(numaction);
-                all.add(action);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return all;
-    }
-
     /***
      * Last id inserted + 1
      * @return

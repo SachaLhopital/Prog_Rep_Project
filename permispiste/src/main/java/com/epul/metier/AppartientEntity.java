@@ -11,6 +11,8 @@ import javax.persistence.*;
 public class AppartientEntity {
     private int numjeu;
     private int numaction;
+    private ActionEntity action;
+    private JeuEntity jeu;
 
     @Id
     @Column(name = "NUMJEU")
@@ -51,5 +53,25 @@ public class AppartientEntity {
         int result = numjeu;
         result = 31 * result + numaction;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", insertable = false, updatable = false)
+    public ActionEntity getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEntity action) {
+        this.action = action;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", insertable = false, updatable = false)
+    public JeuEntity getJeu() {
+        return jeu;
+    }
+
+    public void setJeu(JeuEntity jeu) {
+        this.jeu = jeu;
     }
 }

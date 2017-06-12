@@ -11,7 +11,7 @@ import java.sql.Date;
 public class ObtientEntityPK implements Serializable {
     private int numapprenant;
     private int numaction;
-    private Date datejour;
+//    private Date datejour;
 
     @Column(name = "NUMAPPRENANT")
     @Id
@@ -53,13 +53,13 @@ public class ObtientEntityPK implements Serializable {
         return result;
     }
 
-    @Column(name = "DATEJOUR")
-    @Id
-    public Date getDatejour() {
-        return datejour;
-    }
-
-    public void setDatejour(Date datejour) {
-        this.datejour = datejour;
-    }
+//    @Column(name = "DATEJOUR")
+//    @Id
+//    public Date getDatejour() {
+//        return datejour;
+//    }
+//
+//    public void setDatejour(Date datejour) {
+//        this.datejour = datejour;
+//    }
 }

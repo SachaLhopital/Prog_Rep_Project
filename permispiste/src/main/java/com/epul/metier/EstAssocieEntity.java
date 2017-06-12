@@ -11,6 +11,8 @@ import javax.persistence.*;
 public class EstAssocieEntity {
     private int numaction;
     private int numobjectif;
+    private ActionEntity action;
+    private ObjectifEntity objectif;
 
     @Id
     @Column(name = "NUMACTION")
@@ -50,5 +52,25 @@ public class EstAssocieEntity {
         int result = numaction;
         result = 31 * result + numobjectif;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", insertable = false, updatable = false)
+    public ActionEntity getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEntity action) {
+        this.action = action;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", insertable = false, updatable = false)
+    public ObjectifEntity getObjectif() {
+        return objectif;
+    }
+
+    public void setObjectif(ObjectifEntity objectif) {
+        this.objectif = objectif;
     }
 }

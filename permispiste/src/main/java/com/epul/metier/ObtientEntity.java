@@ -13,9 +13,11 @@ public class ObtientEntity {
     private int numapprenant;
     private int numaction;
     private Integer valeur;
-    private Date datejour;
-    private Integer valeurdebut;
-    private Integer valeurfin;
+//    private Date datejour;
+//    private Integer valeurdebut;
+//    private Integer valeurfin;
+    private ActionEntity action;
+    private ApprenantEntity apprenant;
 
     @Id
     @Column(name = "NUMAPPRENANT")
@@ -69,33 +71,53 @@ public class ObtientEntity {
         return result;
     }
 
-    @Id
-    @Column(name = "DATEJOUR")
-    public Date getDatejour() {
-        return datejour;
+//    @Id
+//    @Column(name = "DATEJOUR")
+//    public Date getDatejour() {
+//        return datejour;
+//    }
+//
+//    public void setDatejour(Date datejour) {
+//        this.datejour = datejour;
+//    }
+//
+//    @Basic
+//    @Column(name = "VALEURDEBUT")
+//    public Integer getValeurdebut() {
+//        return valeurdebut;
+//    }
+//
+//    public void setValeurdebut(Integer valeurdebut) {
+//        this.valeurdebut = valeurdebut;
+//    }
+//
+//    @Basic
+//    @Column(name = "VALEURFIN")
+//    public Integer getValeurfin() {
+//        return valeurfin;
+//    }
+//
+//    public void setValeurfin(Integer valeurfin) {
+//        this.valeurfin = valeurfin;
+//    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", insertable = false, updatable = false)
+    public ActionEntity getAction() {
+        return action;
     }
 
-    public void setDatejour(Date datejour) {
-        this.datejour = datejour;
+    public void setAction(ActionEntity action) {
+        this.action = action;
     }
 
-    @Basic
-    @Column(name = "VALEURDEBUT")
-    public Integer getValeurdebut() {
-        return valeurdebut;
+    @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", referencedColumnName = "NUMAPPRENANT", insertable = false, updatable = false)
+    public ApprenantEntity getApprenant() {
+        return apprenant;
     }
 
-    public void setValeurdebut(Integer valeurdebut) {
-        this.valeurdebut = valeurdebut;
-    }
-
-    @Basic
-    @Column(name = "VALEURFIN")
-    public Integer getValeurfin() {
-        return valeurfin;
-    }
-
-    public void setValeurfin(Integer valeurfin) {
-        this.valeurfin = valeurfin;
+    public void setApprenant(ApprenantEntity apprenant) {
+        this.apprenant = apprenant;
     }
 }

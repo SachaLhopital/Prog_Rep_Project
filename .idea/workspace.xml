@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9980c543-6370-43ac-8da8-43256e6cbafd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ActionMission.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/formAction.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/formAction.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActions.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActions.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceApprenant.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceApprenant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceObtient.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceObtient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/AppartientEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/AppartientEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/EstAssocieEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/EstAssocieEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/FixeEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/FixeEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/IndicateurEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/IndicateurEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscriptionEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscriptionEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscritEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/InscritEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntityPK.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/ObtientEntityPK.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/header.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/formMissions.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/formMissions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/listMissions.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/listMissions.jsp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +53,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -63,9 +71,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1932" />
-    <option name="height" value="1047" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -82,8 +91,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,246 +333,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/permispiste" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18014705" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ApprenantController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceApprenant.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/metier/AppartientEntity.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formApprenant.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listApprenant.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/footer.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/commun/header.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/home.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/mission/listMissions.jsp</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/bootstrap-rtl.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/bootstrap-rtl.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/bootstrap.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/bootstrap.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/plugins/morris.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/sb-admin-rtl.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/sb-admin.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/css/font-awesome.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/css/font-awesome.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/FontAwesome.otf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/bordered-pulled.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/core.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/fixed-width.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/font-awesome.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/icons.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/larger.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/list.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/mixins.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/path.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/rotated-flipped.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/spinning.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/stacked.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/less/variables.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_bordered-pulled.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_core.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_fixed-width.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_icons.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_larger.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_list.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_mixins.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_path.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_rotated-flipped.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_spinning.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_stacked.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/_variables.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/scss/font-awesome.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/bootstrap.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/bootstrap.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/jquery.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/excanvas.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/flot-data.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.pie.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.resize.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.tooltip.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris-data.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/raphael.min.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/traineeController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceTrainee.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formTrainees.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/listTrainees.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap-theme.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/css/bootstrap.min.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/js/bootstrap.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/js/bootstrap.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/bootstrap-3.3.7-dist/js/npm.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/HELP-US-OUT.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/css/font-awesome.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/css/font-awesome.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/FontAwesome.otf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/fontawesome-webfont.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/fontawesome-webfont.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/fontawesome-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/animated.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/bordered-pulled.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/core.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/fixed-width.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/font-awesome.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/icons.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/larger.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/list.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/mixins.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/path.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/rotated-flipped.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/screen-reader.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/stacked.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/less/variables.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_animated.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_bordered-pulled.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_core.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_fixed-width.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_icons.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_larger.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_list.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_mixins.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_path.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_rotated-flipped.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_screen-reader.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_stacked.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/_variables.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/font-awesome-4.7.0/scss/font-awesome.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/includes/jquery-3.2.1.min.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -925,6 +701,9 @@
       <workItem from="1494856661160" duration="137000" />
       <workItem from="1496862216037" duration="379000" />
       <workItem from="1497105140684" duration="2709000" />
+      <workItem from="1497280745266" duration="889000" />
+      <workItem from="1497290882713" duration="470000" />
+      <workItem from="1497297759406" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel).">
       <created>1497116409198</created>
@@ -933,70 +712,53 @@
       <option name="project" value="LOCAL" />
       <updated>1497116409198</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Consultation des actions fonctionnelle.">
+      <created>1497126048264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497126048264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4603000" />
+    <option name="totallyTimeSpent" value="7265000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3263041" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33707264" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33408073" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34775642" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3307436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33707264" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33408073" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1007,7 +769,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
+    <MESSAGE value="Consultation des actions fonctionnelle." />
+    <option name="LAST_COMMIT_MESSAGE" value="Consultation des actions fonctionnelle." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1018,6 +781,60 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/PermispisteApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/PermispisteApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/PermispisteApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">

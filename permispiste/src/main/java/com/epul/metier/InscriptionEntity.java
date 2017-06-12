@@ -11,6 +11,8 @@ import javax.persistence.*;
 public class InscriptionEntity {
     private int numapprenant;
     private int numjeu;
+    private ApprenantEntity apprenant;
+    private JeuEntity jeu;
 
     @Id
     @Column(name = "NUMAPPRENANT")
@@ -50,5 +52,25 @@ public class InscriptionEntity {
         int result = numapprenant;
         result = 31 * result + numjeu;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", referencedColumnName = "NUMAPPRENANT", insertable = false, updatable = false)
+    public ApprenantEntity getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(ApprenantEntity apprenant) {
+        this.apprenant = apprenant;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", insertable = false, updatable = false)
+    public JeuEntity getJeu() {
+        return jeu;
+    }
+
+    public void setJeu(JeuEntity jeu) {
+        this.jeu = jeu;
     }
 }

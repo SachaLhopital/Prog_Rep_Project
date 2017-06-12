@@ -12,6 +12,7 @@ public class IndicateurEntity {
     private int numaction;
     private Integer poids;
     private String libindic;
+    private ActionEntity action;
 
     @Id
     @Column(name = "NUMINDIC")
@@ -73,5 +74,15 @@ public class IndicateurEntity {
 
     public void setLibindic(String libindic) {
         this.libindic = libindic;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", insertable = false, updatable = false)
+    public ActionEntity getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEntity action) {
+        this.action = action;
     }
 }

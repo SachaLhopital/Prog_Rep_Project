@@ -53,7 +53,7 @@ public class ServiceApprenant extends Service {
      */
     public int getCount() {
         return toIntExact((Long) ServiceHibernate.currentSession()
-                .createQuery("SELECT count(distinct a.numapprenant) FROM ApprenantEntity a")
+                .createQuery("SELECT count(a.numapprenant) FROM ApprenantEntity a")
                 .uniqueResult());
     }
 
