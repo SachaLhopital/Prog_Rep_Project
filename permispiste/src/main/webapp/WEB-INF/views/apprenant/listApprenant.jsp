@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-info alert-dismissable">
-            <i class="fa fa-info-circle"></i>Visualisez les missions de l'apprenant en cliquant sur <span class="fa fa-list" aria-hidden="true"></span>
+            <i class="fa fa-info-circle"></i> Visualisez les missions de l'apprenant en cliquant sur <span class="fa fa-list" aria-hidden="true"></span>
         </div>
     </div>
 </div>

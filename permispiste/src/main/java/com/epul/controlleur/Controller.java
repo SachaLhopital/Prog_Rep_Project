@@ -22,6 +22,6 @@ public abstract class Controller {
      * @return
      */
     public ModelAndView errorPage() {
-        return new ModelAndView("error");
+        return new ModelAndView("erreur");
     }
 }

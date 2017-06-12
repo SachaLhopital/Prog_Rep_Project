@@ -52,18 +52,6 @@ public class ServiceMission extends Service {
         return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( m.nummission ) FROM MissionEntity m").uniqueResult()) + 1;
     }
 
-    //Todo : refactor
-    /*public void save(MissionEntity mission){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.save(mission);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }*/
-
     //TOdo : refactor
     public void delete(MissionEntity mission){
         try{
