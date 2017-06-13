@@ -1,23 +1,20 @@
-package com.epul.metier;
+package com.epul.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-@Entity
-@Table(name = "inscrit", schema = "permispiste", catalog = "")
-@IdClass(InscritEntityPK.class)
-public class InscritEntity {
+public class InscritEntityPK implements Serializable {
     private int numjeu;
     private int numapprenant;
     private Date datejour;
-    private ApprenantEntity apprenant;
-    private JeuEntity jeu;
 
-    @Id
     @Column(name = "NUMJEU")
+    @Id
     public int getNumjeu() {
         return numjeu;
     }
@@ -26,8 +23,8 @@ public class InscritEntity {
         this.numjeu = numjeu;
     }
 
-    @Id
     @Column(name = "NUMAPPRENANT")
+    @Id
     public int getNumapprenant() {
         return numapprenant;
     }
@@ -36,8 +33,8 @@ public class InscritEntity {
         this.numapprenant = numapprenant;
     }
 
-    @Id
     @Column(name = "DATEJOUR")
+    @Id
     public Date getDatejour() {
         return datejour;
     }
@@ -51,7 +48,7 @@ public class InscritEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        InscritEntity that = (InscritEntity) o;
+        InscritEntityPK that = (InscritEntityPK) o;
 
         if (numjeu != that.numjeu) return false;
         if (numapprenant != that.numapprenant) return false;
@@ -66,25 +63,5 @@ public class InscritEntity {
         result = 31 * result + numapprenant;
         result = 31 * result + (datejour != null ? datejour.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "NUMAPPRENANT", referencedColumnName = "NUMAPPRENANT", insertable = false, updatable = false)
-    public ApprenantEntity getApprenant() {
-        return apprenant;
-    }
-
-    public void setApprenant(ApprenantEntity apprenant) {
-        this.apprenant = apprenant;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", insertable = false, updatable = false)
-    public JeuEntity getJeu() {
-        return jeu;
-    }
-
-    public void setJeu(JeuEntity jeu) {
-        this.jeu = jeu;
     }
 }

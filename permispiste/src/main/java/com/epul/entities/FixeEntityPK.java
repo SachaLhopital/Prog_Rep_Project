@@ -1,11 +1,11 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 public class FixeEntityPK implements Serializable {
     private int nummission;

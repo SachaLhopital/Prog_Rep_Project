@@ -1,18 +1,16 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
 @Table(name = "indicateur", schema = "permispiste", catalog = "")
 public class IndicateurEntity {
     private int numindic;
-    private int numaction;
-    private Integer poids;
     private String libindic;
-    private ActionEntity action;
+    private Integer poids;
 
     @Id
     @Column(name = "NUMINDIC")
@@ -25,13 +23,13 @@ public class IndicateurEntity {
     }
 
     @Basic
-    @Column(name = "NUMACTION")
-    public int getNumaction() {
-        return numaction;
+    @Column(name = "LIBINDIC")
+    public String getLibindic() {
+        return libindic;
     }
 
-    public void setNumaction(int numaction) {
-        this.numaction = numaction;
+    public void setLibindic(String libindic) {
+        this.libindic = libindic;
     }
 
     @Basic
@@ -52,7 +50,7 @@ public class IndicateurEntity {
         IndicateurEntity that = (IndicateurEntity) o;
 
         if (numindic != that.numindic) return false;
-        if (numaction != that.numaction) return false;
+        if (libindic != null ? !libindic.equals(that.libindic) : that.libindic != null) return false;
         if (poids != null ? !poids.equals(that.poids) : that.poids != null) return false;
 
         return true;
@@ -61,28 +59,8 @@ public class IndicateurEntity {
     @Override
     public int hashCode() {
         int result = numindic;
-        result = 31 * result + numaction;
+        result = 31 * result + (libindic != null ? libindic.hashCode() : 0);
         result = 31 * result + (poids != null ? poids.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "LIBINDIC")
-    public String getLibindic() {
-        return libindic;
-    }
-
-    public void setLibindic(String libindic) {
-        this.libindic = libindic;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", insertable = false, updatable = false)
-    public ActionEntity getAction() {
-        return action;
-    }
-
-    public void setAction(ActionEntity action) {
-        this.action = action;
     }
 }

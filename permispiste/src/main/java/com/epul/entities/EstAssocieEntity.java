@@ -1,16 +1,16 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
-@Table(name = "possede", schema = "permispiste", catalog = "")
-@IdClass(PossedeEntityPK.class)
-public class PossedeEntity {
+@Table(name = "est_associe", schema = "permispiste", catalog = "")
+@IdClass(EstAssocieEntityPK.class)
+public class EstAssocieEntity {
     private int numaction;
-    private int numregle;
+    private int numobjectif;
 
     @Id
     @Column(name = "NUMACTION")
@@ -23,13 +23,13 @@ public class PossedeEntity {
     }
 
     @Id
-    @Column(name = "NUMREGLE")
-    public int getNumregle() {
-        return numregle;
+    @Column(name = "NUMOBJECTIF")
+    public int getNumobjectif() {
+        return numobjectif;
     }
 
-    public void setNumregle(int numregle) {
-        this.numregle = numregle;
+    public void setNumobjectif(int numobjectif) {
+        this.numobjectif = numobjectif;
     }
 
     @Override
@@ -37,10 +37,10 @@ public class PossedeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PossedeEntity that = (PossedeEntity) o;
+        EstAssocieEntity that = (EstAssocieEntity) o;
 
         if (numaction != that.numaction) return false;
-        if (numregle != that.numregle) return false;
+        if (numobjectif != that.numobjectif) return false;
 
         return true;
     }
@@ -48,7 +48,7 @@ public class PossedeEntity {
     @Override
     public int hashCode() {
         int result = numaction;
-        result = 31 * result + numregle;
+        result = 31 * result + numobjectif;
         return result;
     }
 }

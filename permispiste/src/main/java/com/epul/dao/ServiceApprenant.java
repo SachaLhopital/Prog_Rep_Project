@@ -1,7 +1,7 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.metier.ApprenantEntity;
+import com.epul.entities.ApprenantEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;

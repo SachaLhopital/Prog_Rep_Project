@@ -1,8 +1,8 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.metier.ActionEntity;
-import com.epul.metier.ObtientEntity;
+import com.epul.entities.ActionEntity;
+import com.epul.entities.ObtientEntity;
 import org.hibernate.Session;
 
 import java.util.ArrayList;

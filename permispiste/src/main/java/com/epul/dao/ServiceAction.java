@@ -1,7 +1,7 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.metier.ActionEntity;
+import com.epul.entities.ActionEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

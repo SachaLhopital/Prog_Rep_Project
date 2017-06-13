@@ -1,20 +1,21 @@
-package com.epul.metier;
+package com.epul.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-public class InscritEntityPK implements Serializable {
+@Entity
+@Table(name = "inscrit", schema = "permispiste", catalog = "")
+@IdClass(InscritEntityPK.class)
+public class InscritEntity {
     private int numjeu;
     private int numapprenant;
     private Date datejour;
 
-    @Column(name = "NUMJEU")
     @Id
+    @Column(name = "NUMJEU")
     public int getNumjeu() {
         return numjeu;
     }
@@ -23,8 +24,8 @@ public class InscritEntityPK implements Serializable {
         this.numjeu = numjeu;
     }
 
-    @Column(name = "NUMAPPRENANT")
     @Id
+    @Column(name = "NUMAPPRENANT")
     public int getNumapprenant() {
         return numapprenant;
     }
@@ -33,8 +34,8 @@ public class InscritEntityPK implements Serializable {
         this.numapprenant = numapprenant;
     }
 
-    @Column(name = "DATEJOUR")
     @Id
+    @Column(name = "DATEJOUR")
     public Date getDatejour() {
         return datejour;
     }
@@ -48,7 +49,7 @@ public class InscritEntityPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        InscritEntityPK that = (InscritEntityPK) o;
+        InscritEntity that = (InscritEntity) o;
 
         if (numjeu != that.numjeu) return false;
         if (numapprenant != that.numapprenant) return false;

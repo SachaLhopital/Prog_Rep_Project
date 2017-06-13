@@ -8,17 +8,26 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">userepul</property>
         <property name="connection.password">epul</property>
-        <mapping class="com.epul.metier.ActionEntity"/>
-        <mapping class="com.epul.metier.AppartientEntity"/>
-        <mapping class="com.epul.metier.ApprenantEntity"/>
-        <mapping class="com.epul.metier.EstAssocieEntity"/>
-        <mapping class="com.epul.metier.FixeEntity"/>
-        <mapping class="com.epul.metier.IndicateurEntity"/>
-        <mapping class="com.epul.metier.InscriptionEntity"/>
-        <mapping class="com.epul.metier.JeuEntity"/>
-        <mapping class="com.epul.metier.MissionEntity"/>
-        <mapping class="com.epul.metier.ObjectifEntity"/>
-        <mapping class="com.epul.metier.ObtientEntity"/>
+        <mapping class="com.epul.entities.ActionEntity"/>
+        <mapping class="com.epul.entities.AppartientEntity"/>
+        <mapping class="com.epul.entities.AppartientEntityPK"/>
+        <mapping class="com.epul.entities.ApprenantEntity"/>
+        <mapping class="com.epul.entities.CalendrierEntity"/>
+        <mapping class="com.epul.entities.EstAssocieEntity"/>
+        <mapping class="com.epul.entities.EstAssocieEntityPK"/>
+        <mapping class="com.epul.entities.FixeEntity"/>
+        <mapping class="com.epul.entities.FixeEntityPK"/>
+        <mapping class="com.epul.entities.IndicateurEntity"/>
+        <mapping class="com.epul.entities.InscritEntity"/>
+        <mapping class="com.epul.entities.InscritEntityPK"/>
+        <mapping class="com.epul.entities.JeuEntity"/>
+        <mapping class="com.epul.entities.MissionEntity"/>
+        <mapping class="com.epul.entities.ObjectifEntity"/>
+        <mapping class="com.epul.entities.ObtientEntity"/>
+        <mapping class="com.epul.entities.ObtientEntityPK"/>
+        <mapping class="com.epul.entities.PossedeEntity"/>
+        <mapping class="com.epul.entities.PossedeEntityPK"/>
+        <mapping class="com.epul.entities.RegleEntity"/>
 
 
         <!-- DB schema will be updated if needed -->

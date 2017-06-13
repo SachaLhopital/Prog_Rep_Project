@@ -2,8 +2,7 @@ package com.epul.controlleur;
 
 import com.epul.dao.ServiceApprenant;
 import com.epul.exception.CustomException;
-import com.epul.metier.ApprenantEntity;
-import com.epul.metier.MissionEntity;
+import com.epul.entities.ApprenantEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;

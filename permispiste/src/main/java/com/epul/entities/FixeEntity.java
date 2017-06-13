@@ -1,9 +1,9 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
 @Table(name = "fixe", schema = "permispiste", catalog = "")
@@ -11,8 +11,6 @@ import javax.persistence.*;
 public class FixeEntity {
     private int nummission;
     private int numobjectif;
-    private MissionEntity mission;
-    private ObjectifEntity objectif;
 
     @Id
     @Column(name = "NUMMISSION")
@@ -52,25 +50,5 @@ public class FixeEntity {
         int result = nummission;
         result = 31 * result + numobjectif;
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "NUMMISSION", referencedColumnName = "NUMMISSION", insertable = false, updatable = false)
-    public MissionEntity getMission() {
-        return mission;
-    }
-
-    public void setMission(MissionEntity mission) {
-        this.mission = mission;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "NUMOBJECTIF", referencedColumnName = "NUMOBJECTIF", insertable = false, updatable = false)
-    public ObjectifEntity getObjectif() {
-        return objectif;
-    }
-
-    public void setObjectif(ObjectifEntity objectif) {
-        this.objectif = objectif;
     }
 }

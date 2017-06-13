@@ -1,9 +1,9 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
 @Table(name = "apprenant", schema = "permispiste", catalog = "")
