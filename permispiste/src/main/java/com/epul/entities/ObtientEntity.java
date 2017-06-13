@@ -15,6 +15,8 @@ public class ObtientEntity {
     private int numaction;
     private Integer valeurdebut;
     private Integer valeurfin;
+    private ActionEntity action;
+    private ApprenantEntity apprenant;
 
     @Id
     @Column(name = "NUMAPPRENANT")
@@ -92,8 +94,6 @@ public class ObtientEntity {
         return result;
     }
 
-    private ActionEntity action;
-
     @ManyToOne
     @JoinColumn(name = "NUMACTION", insertable=false, updatable=false)
     public ActionEntity getAction() {
@@ -103,8 +103,6 @@ public class ObtientEntity {
     public void setAction(ActionEntity action) {
         this.action = action;
     }
-
-    private ApprenantEntity apprenant;
 
     @ManyToOne
     @JoinColumn(name = "NUMAPPRENANT", insertable=false, updatable=false)

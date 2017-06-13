@@ -48,6 +48,13 @@
                     </div>
                 </div>
             </div>
+            <a href="/actions/apprenant/all">
+                <div class="panel-footer">
+                    <span class="pull-left">Voir les actions</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
         </div>
     </div>
 </div>

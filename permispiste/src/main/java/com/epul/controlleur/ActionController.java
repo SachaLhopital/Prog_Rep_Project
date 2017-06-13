@@ -52,6 +52,27 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    @RequestMapping("/apprenant/all")
+    public ModelAndView getAllGamesLaunched(HttpServletRequest request){
+        try {
+            List<ObtientEntity> obtient = serviceObtient.getAll();
+
+            if (obtient == null) {
+                request.setAttribute(ERROR_KEY, "Impossible d'obtenir les parties lancées.");
+                return errorPage();
+            }
+
+            request.setAttribute("list", obtient);
+            request.setAttribute("actionSubmit", "/actions/edit/");
+            return new ModelAndView("/action/listActionsApprenantAll");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
+        }
+        return errorPage();
+    }
+
     @RequestMapping("/apprenant/{id}")
     public ModelAndView getAll(@PathVariable("id") int id, HttpServletRequest request) {
         try {
