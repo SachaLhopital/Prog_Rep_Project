@@ -2,8 +2,10 @@ package com.epul.controlleur;
 
 import com.epul.dao.ServiceAction;
 import com.epul.dao.ServiceApprenant;
+import com.epul.dao.ServiceObtient;
 import com.epul.exception.CustomException;
-import com.epul.metier.ActionEntity;
+import com.epul.entities.ActionEntity;
+import com.epul.entities.ObtientEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,13 +20,14 @@ import java.util.List;
 @RequestMapping("/actions")
 public class ActionController extends Controller {
 
-    private ServiceAction service = new ServiceAction();
+    private ServiceAction serviceAction = new ServiceAction();
+    private ServiceObtient serviceObtient = new ServiceObtient();
 
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
         request.setAttribute("pageTitle", "Liste des Actions");
-        request.setAttribute("list", service.getAll());
+        request.setAttribute("list", serviceAction.getAll());
         return new ModelAndView("/action/listActions");
     }
 
@@ -37,9 +40,9 @@ public class ActionController extends Controller {
     public ModelAndView insert(HttpServletRequest request) {
         try {
             ActionEntity actionEntity = new ActionEntity();
-            actionEntity.setNumaction(service.getNextIdToInsert());
+            actionEntity.setNumaction(serviceAction.getNextIdToInsert());
             actionEntity.setLibaction("");
-            service.save(actionEntity);
+            serviceAction.save(actionEntity);
             return getAll(request);
 
         } catch (Exception e) {
@@ -57,14 +60,16 @@ public class ActionController extends Controller {
                 return errorPage();
             }
 
-            List<ActionEntity> actions = service.getAll(id);
+            serviceObtient.getAll();
 
-            if (actions == null) {
+            List<ObtientEntity> obtients = serviceObtient.getAllFromApprenant(id);
+
+            if (obtients == null) {
                 request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
                 return errorPage();
             }
 
-            request.setAttribute("list", actions);
+            request.setAttribute("list", obtients);
             request.setAttribute("trainee", new ServiceApprenant().get(id));
             request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/listActionsApprenant");
@@ -84,7 +89,7 @@ public class ActionController extends Controller {
                 return errorPage();
             }
 
-            ActionEntity action = service.get(id);
+            ActionEntity action = serviceAction.get(id);
 
             if (action == null) {
                 request.setAttribute(ERROR_KEY, "Impossible d'obtenir l'action sélectionnée.");
@@ -114,7 +119,7 @@ public class ActionController extends Controller {
             return errorPage();
         }
         try {
-            service.delete(service.get(id));
+            serviceAction.delete(serviceAction.get(id));
             return getAll(request);
         } catch(Exception e){
             request.setAttribute(ERROR_KEY, "Impossible de supprimer l'action.");

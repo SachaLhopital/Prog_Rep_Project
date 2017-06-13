@@ -1,21 +1,19 @@
-package com.epul.metier;
+package com.epul.entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.*;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-public class AppartientEntityPK implements Serializable {
+@Entity
+@Table(name = "appartient", schema = "permispiste", catalog = "")
+@IdClass(AppartientEntityPK.class)
+public class AppartientEntity {
     private int numjeu;
     private int numaction;
 
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "NUMJEU")
     @Id
+    @Column(name = "NUMJEU")
     public int getNumjeu() {
         return numjeu;
     }
@@ -24,8 +22,8 @@ public class AppartientEntityPK implements Serializable {
         this.numjeu = numjeu;
     }
 
-    @Column(name = "NUMACTION")
     @Id
+    @Column(name = "NUMACTION")
     public int getNumaction() {
         return numaction;
     }
@@ -39,7 +37,7 @@ public class AppartientEntityPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AppartientEntityPK that = (AppartientEntityPK) o;
+        AppartientEntity that = (AppartientEntity) o;
 
         if (numjeu != that.numjeu) return false;
         if (numaction != that.numaction) return false;

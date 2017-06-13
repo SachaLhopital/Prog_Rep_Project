@@ -19,8 +19,8 @@
                 </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.libaction}</td>
-                        <td>${item.scoremin}/20</td>
+                        <td>${item.action.libaction}</td>
+                        <td>${item.action.scoremin}/20</td>
                     </tr>
                 </c:forEach>
             </table>

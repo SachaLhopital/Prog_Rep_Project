@@ -1,21 +1,18 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
 @Table(name = "obtient", schema = "permispiste", catalog = "")
 @IdClass(ObtientEntityPK.class)
 public class ObtientEntity {
-
     private int numapprenant;
-    private int numaction;
-
     private Date datejour;
-    private Integer valeur;
+    private int numaction;
     private Integer valeurdebut;
     private Integer valeurfin;
 
@@ -30,26 +27,6 @@ public class ObtientEntity {
     }
 
     @Id
-    @Column(name = "NUMACTION")
-    public int getNumaction() {
-        return numaction;
-    }
-
-    public void setNumaction(int numaction) {
-        this.numaction = numaction;
-    }
-
-    @Basic
-    @Column(name = "VALEUR")
-    public Integer getValeur() {
-        return valeur;
-    }
-
-    public void setValeur(Integer valeur) {
-        this.valeur = valeur;
-    }
-
-    @Id
     @Column(name = "DATEJOUR")
     public Date getDatejour() {
         return datejour;
@@ -57,6 +34,16 @@ public class ObtientEntity {
 
     public void setDatejour(Date datejour) {
         this.datejour = datejour;
+    }
+
+    @Id
+    @Column(name = "NUMACTION")
+    public int getNumaction() {
+        return numaction;
+    }
+
+    public void setNumaction(int numaction) {
+        this.numaction = numaction;
     }
 
     @Basic
@@ -88,7 +75,9 @@ public class ObtientEntity {
 
         if (numapprenant != that.numapprenant) return false;
         if (numaction != that.numaction) return false;
-        if (valeur != null ? !valeur.equals(that.valeur) : that.valeur != null) return false;
+        if (datejour != null ? !datejour.equals(that.datejour) : that.datejour != null) return false;
+        if (valeurdebut != null ? !valeurdebut.equals(that.valeurdebut) : that.valeurdebut != null) return false;
+        if (valeurfin != null ? !valeurfin.equals(that.valeurfin) : that.valeurfin != null) return false;
 
         return true;
     }
@@ -96,8 +85,34 @@ public class ObtientEntity {
     @Override
     public int hashCode() {
         int result = numapprenant;
+        result = 31 * result + (datejour != null ? datejour.hashCode() : 0);
         result = 31 * result + numaction;
-        result = 31 * result + (valeur != null ? valeur.hashCode() : 0);
+        result = 31 * result + (valeurdebut != null ? valeurdebut.hashCode() : 0);
+        result = 31 * result + (valeurfin != null ? valeurfin.hashCode() : 0);
         return result;
+    }
+
+    private ActionEntity action;
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", insertable=false, updatable=false)
+    public ActionEntity getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEntity action) {
+        this.action = action;
+    }
+
+    private ApprenantEntity apprenant;
+
+    @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", insertable=false, updatable=false)
+    public ApprenantEntity getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(ApprenantEntity apprenant) {
+        this.apprenant = apprenant;
     }
 }

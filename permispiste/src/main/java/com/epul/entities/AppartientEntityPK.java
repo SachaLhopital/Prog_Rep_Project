@@ -1,25 +1,15 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-public class InscriptionEntityPK implements Serializable {
-    private int numapprenant;
+public class AppartientEntityPK implements Serializable {
     private int numjeu;
-
-    @Column(name = "NUMAPPRENANT")
-    @Id
-    public int getNumapprenant() {
-        return numapprenant;
-    }
-
-    public void setNumapprenant(int numapprenant) {
-        this.numapprenant = numapprenant;
-    }
+    private int numaction;
 
     @Column(name = "NUMJEU")
     @Id
@@ -31,23 +21,33 @@ public class InscriptionEntityPK implements Serializable {
         this.numjeu = numjeu;
     }
 
+    @Column(name = "NUMACTION")
+    @Id
+    public int getNumaction() {
+        return numaction;
+    }
+
+    public void setNumaction(int numaction) {
+        this.numaction = numaction;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        InscriptionEntityPK that = (InscriptionEntityPK) o;
+        AppartientEntityPK that = (AppartientEntityPK) o;
 
-        if (numapprenant != that.numapprenant) return false;
         if (numjeu != that.numjeu) return false;
+        if (numaction != that.numaction) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = numapprenant;
-        result = 31 * result + numjeu;
+        int result = numjeu;
+        result = 31 * result + numaction;
         return result;
     }
 }

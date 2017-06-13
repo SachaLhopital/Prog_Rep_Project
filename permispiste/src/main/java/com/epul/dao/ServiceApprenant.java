@@ -1,7 +1,7 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.metier.ApprenantEntity;
+import com.epul.entities.ApprenantEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
@@ -53,7 +53,7 @@ public class ServiceApprenant extends Service {
      */
     public int getCount() {
         return toIntExact((Long) ServiceHibernate.currentSession()
-                .createQuery("SELECT count(distinct a.numapprenant) FROM ApprenantEntity a")
+                .createQuery("SELECT count(a.numapprenant) FROM ApprenantEntity a")
                 .uniqueResult());
     }
 

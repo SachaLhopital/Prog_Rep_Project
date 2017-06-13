@@ -1,10 +1,10 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 @Entity
 @Table(name = "inscrit", schema = "permispiste", catalog = "")

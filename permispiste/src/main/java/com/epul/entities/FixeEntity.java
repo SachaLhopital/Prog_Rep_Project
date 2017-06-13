@@ -1,18 +1,19 @@
-package com.epul.metier;
+package com.epul.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.*;
 
 /**
- * Created by lafay on 03/05/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-public class FixeEntityPK implements Serializable {
+@Entity
+@Table(name = "fixe", schema = "permispiste", catalog = "")
+@IdClass(FixeEntityPK.class)
+public class FixeEntity {
     private int nummission;
     private int numobjectif;
 
-    @Column(name = "NUMMISSION")
     @Id
+    @Column(name = "NUMMISSION")
     public int getNummission() {
         return nummission;
     }
@@ -21,8 +22,8 @@ public class FixeEntityPK implements Serializable {
         this.nummission = nummission;
     }
 
-    @Column(name = "NUMOBJECTIF")
     @Id
+    @Column(name = "NUMOBJECTIF")
     public int getNumobjectif() {
         return numobjectif;
     }
@@ -36,7 +37,7 @@ public class FixeEntityPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FixeEntityPK that = (FixeEntityPK) o;
+        FixeEntity that = (FixeEntity) o;
 
         if (nummission != that.nummission) return false;
         if (numobjectif != that.numobjectif) return false;

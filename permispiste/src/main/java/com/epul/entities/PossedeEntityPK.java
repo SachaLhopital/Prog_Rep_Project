@@ -1,19 +1,18 @@
-package com.epul.metier;
+package com.epul.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
-@Entity
-@Table(name = "possede", schema = "permispiste", catalog = "")
-@IdClass(PossedeEntityPK.class)
-public class PossedeEntity {
+public class PossedeEntityPK implements Serializable {
     private int numaction;
     private int numregle;
 
-    @Id
     @Column(name = "NUMACTION")
+    @Id
     public int getNumaction() {
         return numaction;
     }
@@ -22,8 +21,8 @@ public class PossedeEntity {
         this.numaction = numaction;
     }
 
-    @Id
     @Column(name = "NUMREGLE")
+    @Id
     public int getNumregle() {
         return numregle;
     }
@@ -37,7 +36,7 @@ public class PossedeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PossedeEntity that = (PossedeEntity) o;
+        PossedeEntityPK that = (PossedeEntityPK) o;
 
         if (numaction != that.numaction) return false;
         if (numregle != that.numregle) return false;

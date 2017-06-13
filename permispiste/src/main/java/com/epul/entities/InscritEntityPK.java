@@ -1,4 +1,4 @@
-package com.epul.metier;
+package com.epul.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 /**
- * Created by Sachouw on 12/06/2017.
+ * Created by Sachouw on 13/06/2017.
  */
 public class InscritEntityPK implements Serializable {
     private int numjeu;
