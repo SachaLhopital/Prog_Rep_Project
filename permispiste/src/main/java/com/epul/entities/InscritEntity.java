@@ -65,4 +65,26 @@ public class InscritEntity {
         result = 31 * result + (datejour != null ? datejour.hashCode() : 0);
         return result;
     }
+
+    private JeuEntity jeu;
+
+    @ManyToOne
+    public JeuEntity getJeu() {
+        return jeu;
+    }
+
+    public void setJeu(JeuEntity jeu) {
+        this.jeu = jeu;
+    }
+
+    /*private ApprenantEntity apprenant;
+
+    @ManyToOne
+    public ApprenantEntity getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(ApprenantEntity apprenant) {
+        this.apprenant = apprenant;
+    }*/
 }

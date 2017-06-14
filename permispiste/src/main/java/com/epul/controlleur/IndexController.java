@@ -1,14 +1,11 @@
 package com.epul.controlleur;
 
-import com.epul.dao.ServiceAction;
+import com.epul.dao.Service;
 import com.epul.dao.ServiceApprenant;
+import com.epul.dao.ServiceInscrit;
 import com.epul.dao.ServiceObtient;
-import com.epul.metier.ActionEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,8 +17,12 @@ public class IndexController {
 
     @RequestMapping("/")
     public String home(HttpServletRequest request){
+        ServiceObtient serviceObtient =  new ServiceObtient();
+
         request.setAttribute("totalApprenants", new ServiceApprenant().getCount());
-        request.setAttribute("totalParties", new ServiceObtient().getCount());
+        request.setAttribute("totalParties",serviceObtient.getCount());
+        request.setAttribute("moyenneScores", serviceObtient.getScoreAverage());
+        request.setAttribute("nombrePartiesAujourdhui", new ServiceInscrit().getCountToday());
         return "home";
     }
 }
