@@ -69,6 +69,7 @@ public class InscritEntity {
     private JeuEntity jeu;
 
     @ManyToOne
+    @JoinColumn(name = "NUMJEU", insertable=false, updatable=false)
     public JeuEntity getJeu() {
         return jeu;
     }
@@ -77,14 +78,15 @@ public class InscritEntity {
         this.jeu = jeu;
     }
 
-    /*private ApprenantEntity apprenant;
+    private ApprenantEntity apprenant;
 
     @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", insertable=false, updatable=false)
     public ApprenantEntity getApprenant() {
         return apprenant;
     }
 
     public void setApprenant(ApprenantEntity apprenant) {
         this.apprenant = apprenant;
-    }*/
+    }
 }

@@ -11,6 +11,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../commun/header.jsp" />
 <jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>
 
 <div class="page-header">
     <h1>Inscriptions aux Jeux</h1>
@@ -25,41 +26,96 @@
 </div>
 
 <%-- Listing des Inscrits --%>
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel-body">
-            <table class="table table-hover table-striped table-bordered">
-                <caption>Apprenants inscrit pour aujourd'hui :</caption>
-                <tr>
-                    <th>Nom</th>
-                    <th>Pr&eacute;nom</th>
-                    <th>Jeu</th>
-                    <th></th>
-                </tr>
-                <c:forEach var="item" items="${list}">
-                    <c:if test = "${item.datejour lt now}">
-                        <tr>
-                            <td>${item.apprenant.nomapprenant}</td>
-                            <td>${item.apprenant.prenomapprenant}</td>
-                            <td>${item.jeu.libellejeu}</td>
-                            <td>
-                                <a href="/apprenants/">
-                                    <button type="button" class="btn btn-primary" aria-label="Left Align">
-                                        <span class="fa fa-user" aria-hidden="true"></span>
-                                    </button>
-                                </a>
-                                <a href="/games/">
-                                    <button type="button" class="btn btn-info" aria-label="Left Align">
-                                        <span class="fa fa-gamepad" aria-hidden="true"></span>
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                    </c:if>
-                </c:forEach>
-            </table>
+<div>
+    <ul class="nav nav-tabs" id="myTabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="">Prochains candidats</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#history" role="tab" id="history-tab" data-toggle="tab" aria-controls="history" style="" aria-expanded="false">
+                <span class="fa fa-history" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active in" role="tabpanel" id="home">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped table-bordered">
+                            <tr>
+                                <th>Nom</th>
+                                <th>Pr&eacute;nom</th>
+                                <th>Jeu</th>
+                                <th></th>
+                            </tr>
+                            <c:forEach var="item" items="${list}">
+                                <c:if test = "${item.datejour > now}">
+                                    <tr>
+                                        <td>${item.apprenant.nomapprenant}</td>
+                                        <td>${item.apprenant.prenomapprenant}</td>
+                                        <td>${item.jeu.libellejeu}</td>
+                                        <td>
+                                            <a href="/apprenants/">
+                                                <button type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="fa fa-user" aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a href="/games/">
+                                                <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                    <span class="fa fa-gamepad" aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" role="tabpanel" id="history">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped table-bordered">
+                            <tr>
+                                <th>Nom</th>
+                                <th>Pr&eacute;nom</th>
+                                <th>Jeu</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                            <c:forEach var="item" items="${list}">
+                                <c:if test = "${item.datejour < now}">
+                                    <tr>
+                                        <td>${item.apprenant.nomapprenant}</td>
+                                        <td>${item.apprenant.prenomapprenant}</td>
+                                        <td>${item.jeu.libellejeu}</td>
+                                        <td>${item.datejour}</td>
+                                        <td>
+                                            <a href="/apprenants/">
+                                                <button type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="fa fa-user" aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a href="/games/">
+                                                <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                    <span class="fa fa-gamepad" aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <jsp:include page="../commun/footer.jsp" />
 
