@@ -14,6 +14,7 @@
             <table class="table table-hover table-striped table-bordered">
                 <caption>Missions :</caption>
                 <tr>
+                    <th>Apprenant</th>
                     <th>Action</th>
                     <th>Score minimal</th>
                 </tr>

@@ -9,7 +9,9 @@ import javax.persistence.*;
 @Table(name = "mission", schema = "permispiste", catalog = "")
 public class MissionEntity {
     private int nummission;
+    private int numjeu;
     private String libmission;
+    private JeuEntity game;
 
     @Id
     @Column(name = "NUMMISSION")
@@ -31,6 +33,16 @@ public class MissionEntity {
         this.libmission = libmission;
     }
 
+    @Basic
+    @Column(name = "NUMJEU")
+    public int getNumjeu() {
+        return numjeu;
+    }
+
+    public void setNumjeu(int numjeu) {
+        this.numjeu = numjeu;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,5 +61,15 @@ public class MissionEntity {
         int result = nummission;
         result = 31 * result + (libmission != null ? libmission.hashCode() : 0);
         return result;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "NUMJEU", insertable=false, updatable=false)
+    public JeuEntity getGame() {
+        return game;
+    }
+
+    public void setGame(JeuEntity game) {
+        this.game = game;
     }
 }
