@@ -1,8 +1,6 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.metier.ApprenantEntity;
-import com.epul.metier.JeuEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

@@ -1,6 +1,8 @@
 package com.epul.controlleur;
 
+import com.epul.dao.ServiceGame;
 import com.epul.dao.ServiceMission;
+import com.epul.entities.JeuEntity;
 import com.epul.exception.CustomException;
 import com.epul.entities.MissionEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by Sacha on 16/05/2017.
@@ -29,6 +32,24 @@ public class MissionController extends Controller {
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", "/missions/insert/");
+        ServiceGame serviceGame = new ServiceGame();
+        List<JeuEntity> jeux = serviceGame.getAll();
+        request.setAttribute("jeux", jeux);
+        return new ModelAndView("/mission/formMissions");
+    }
+
+    @RequestMapping("/add/{id}")
+    public ModelAndView getForm(@PathVariable("id") int id, HttpServletRequest request) {
+        if(id==0){
+            request.setAttribute(ERROR_KEY, "Id manquant dans le path");
+            return errorPage();
+        }
+        ServiceGame serviceGame = new ServiceGame();
+        JeuEntity jeu = serviceGame.get(id);
+        List<JeuEntity> jeux = serviceGame.getAll();
+        request.setAttribute("actionSubmit", "/missions/insert/");
+        request.setAttribute("jeu", jeu);
+        request.setAttribute("jeux", jeux);
         return new ModelAndView("/mission/formMissions");
     }
 
@@ -37,9 +58,10 @@ public class MissionController extends Controller {
         try {
             MissionEntity mission = new MissionEntity();
             mission.setNummission(service.getNextIdToInsert()); //todo refactor ?
-            mission.setLibmission("todo");
+            mission.setLibmission(request.getParameter("txtlibelle"));
+            mission.setNumjeu(Integer.parseInt(request.getParameter("txtjeu")));
             service.save(mission);
-            return getAll(request);
+            return new ModelAndView("redirect:/missions/") ;
 
         } catch (Exception e) {
             e.printStackTrace();
