@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 25 Juin 2015 à 07:21
--- Version du serveur :  5.6.24
--- Version de PHP :  5.6.8
+-- Généré le :  Ven 16 Juin 2017 à 08:47
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,20 +14,19 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `permispiste`
 --
-CREATE DATABASE `permispiste`;
-use `permispiste`;
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `action`
 --
 
-CREATE TABLE IF NOT EXISTS `action` (
+CREATE TABLE `action` (
   `NUMACTION` int(11) NOT NULL,
   `ACT_NUMACTION` int(11) DEFAULT NULL,
   `LIBACTION` char(25) DEFAULT NULL,
@@ -39,10 +38,25 @@ CREATE TABLE IF NOT EXISTS `action` (
 --
 
 INSERT INTO `action` (`NUMACTION`, `ACT_NUMACTION`, `LIBACTION`, `SCOREMIN`) VALUES
-(1, NULL, 'Tirer à 2m', NULL),
-(2, 1, 'Tirer à 4m', NULL),
-(3, 2, 'Saut 10cm', NULL),
-(4, NULL, 'Et une autre action', NULL);
+(1, NULL, 'Se mettre en tenue', 7),
+(2, 1, 'Préparation véhicule', 7),
+(3, NULL, 'Respect sécurité', 11),
+(4, 3, 'Effectuer manoeuvre', 7),
+(5, NULL, 'Emettre hypothèse', 12),
+(6, 5, 'Proposer solution', 7),
+(7, 6, 'Evaluation solution', 11),
+(8, 7, 'Effectuer solution', 10),
+(9, NULL, 'Accéder mécanique', 7),
+(10, 9, 'Vérifications mécanique', 9),
+(11, 10, 'Analyser panne(s)', 11),
+(12, 10, 'Effectuer niveaux', 10),
+(13, NULL, 'Réaction', 7),
+(14, 13, 'Action face au danger', 13),
+(15, NULL, 'Prise d\'informations', 7),
+(16, 15, 'Placement', 12),
+(17, 15, 'Utilisation outils comm', 9),
+(18, NULL, 'Respect protocole comm', 15),
+(19, NULL, 'Travail rendu à temps', 13);
 
 -- --------------------------------------------------------
 
@@ -50,7 +64,7 @@ INSERT INTO `action` (`NUMACTION`, `ACT_NUMACTION`, `LIBACTION`, `SCOREMIN`) VAL
 -- Structure de la table `appartient`
 --
 
-CREATE TABLE IF NOT EXISTS `appartient` (
+CREATE TABLE `appartient` (
   `NUMJEU` int(11) NOT NULL,
   `NUMACTION` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -70,7 +84,7 @@ INSERT INTO `appartient` (`NUMJEU`, `NUMACTION`) VALUES
 -- Structure de la table `apprenant`
 --
 
-CREATE TABLE IF NOT EXISTS `apprenant` (
+CREATE TABLE `apprenant` (
   `NUMAPPRENANT` int(11) NOT NULL,
   `NOMAPPRENANT` char(25) DEFAULT NULL,
   `PRENOMAPPRENANT` char(25) DEFAULT NULL
@@ -81,8 +95,14 @@ CREATE TABLE IF NOT EXISTS `apprenant` (
 --
 
 INSERT INTO `apprenant` (`NUMAPPRENANT`, `NOMAPPRENANT`, `PRENOMAPPRENANT`) VALUES
-(1, 'Salvatore', 'Crystal'),
-(2, 'Moi', 'Toi');
+(1, 'Caron', 'Antoine'),
+(2, 'Chauslende', 'Adrien'),
+(3, 'Galdeano', 'Alexandre'),
+(4, 'Reynaud', 'Pierre'),
+(11, 'Premilieu', 'Laura'),
+(12, 'Fagno', 'Corinne'),
+(13, 'Rodarie', 'Dimitri'),
+(14, 'Ferjani', 'Gael');
 
 -- --------------------------------------------------------
 
@@ -90,7 +110,7 @@ INSERT INTO `apprenant` (`NUMAPPRENANT`, `NOMAPPRENANT`, `PRENOMAPPRENANT`) VALU
 -- Structure de la table `calendrier`
 --
 
-CREATE TABLE IF NOT EXISTS `calendrier` (
+CREATE TABLE `calendrier` (
   `DATEJOUR` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -114,7 +134,7 @@ INSERT INTO `calendrier` (`DATEJOUR`) VALUES
 -- Structure de la table `est_associe`
 --
 
-CREATE TABLE IF NOT EXISTS `est_associe` (
+CREATE TABLE `est_associe` (
   `NUMACTION` int(11) NOT NULL,
   `NUMOBJECTIF` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -124,12 +144,26 @@ CREATE TABLE IF NOT EXISTS `est_associe` (
 --
 
 INSERT INTO `est_associe` (`NUMACTION`, `NUMOBJECTIF`) VALUES
-(1, 1),
-(2, 1),
-(2, 2),
-(3, 2),
-(3, 3),
-(4, 3);
+(1, 5),
+(2, 5),
+(3, 1),
+(3, 5),
+(3, 6),
+(4, 1),
+(6, 2),
+(7, 2),
+(8, 2),
+(10, 3),
+(11, 3),
+(12, 3),
+(13, 4),
+(14, 4),
+(15, 6),
+(15, 7),
+(16, 6),
+(17, 7),
+(18, 7),
+(19, 8);
 
 -- --------------------------------------------------------
 
@@ -137,7 +171,7 @@ INSERT INTO `est_associe` (`NUMACTION`, `NUMOBJECTIF`) VALUES
 -- Structure de la table `fixe`
 --
 
-CREATE TABLE IF NOT EXISTS `fixe` (
+CREATE TABLE `fixe` (
   `NUMMISSION` int(11) NOT NULL,
   `NUMOBJECTIF` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -148,10 +182,24 @@ CREATE TABLE IF NOT EXISTS `fixe` (
 
 INSERT INTO `fixe` (`NUMMISSION`, `NUMOBJECTIF`) VALUES
 (1, 1),
-(1, 2),
+(1, 4),
+(1, 5),
+(1, 6),
+(2, 2),
 (2, 3),
-(3, 2),
-(3, 3);
+(2, 5),
+(3, 5),
+(3, 7),
+(3, 8),
+(4, 3),
+(4, 4),
+(5, 1),
+(5, 5),
+(5, 7),
+(5, 8),
+(6, 2),
+(7, 7),
+(8, 5);
 
 -- --------------------------------------------------------
 
@@ -159,7 +207,7 @@ INSERT INTO `fixe` (`NUMMISSION`, `NUMOBJECTIF`) VALUES
 -- Structure de la table `indicateur`
 --
 
-CREATE TABLE IF NOT EXISTS `indicateur` (
+CREATE TABLE `indicateur` (
   `NUMINDIC` int(11) NOT NULL,
   `NUMACTION` int(11) NOT NULL,
   `LIBINDIC` char(20) DEFAULT NULL,
@@ -171,7 +219,25 @@ CREATE TABLE IF NOT EXISTS `indicateur` (
 --
 
 INSERT INTO `indicateur` (`NUMINDIC`, `NUMACTION`, `LIBINDIC`, `POIDS`) VALUES
-(1, 1, 'temps', 1);
+(1, 1, NULL, 1),
+(2, 2, NULL, 2),
+(3, 3, NULL, 5),
+(4, 4, NULL, 4),
+(5, 5, NULL, 1),
+(6, 6, NULL, 2),
+(7, 7, NULL, 3),
+(8, 8, NULL, 2),
+(9, 9, NULL, 1),
+(10, 10, NULL, 2),
+(11, 11, NULL, 3),
+(12, 12, NULL, 1),
+(13, 13, NULL, 1),
+(14, 14, NULL, 3),
+(15, 15, NULL, 1),
+(16, 16, NULL, 2),
+(17, 17, NULL, 1),
+(18, 18, NULL, 5),
+(19, 19, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +245,7 @@ INSERT INTO `indicateur` (`NUMINDIC`, `NUMACTION`, `LIBINDIC`, `POIDS`) VALUES
 -- Structure de la table `inscrit`
 --
 
-CREATE TABLE IF NOT EXISTS `inscrit` (
+CREATE TABLE `inscrit` (
   `NUMJEU` int(11) NOT NULL,
   `NUMAPPRENANT` int(11) NOT NULL,
   `DATEJOUR` date NOT NULL
@@ -203,7 +269,7 @@ INSERT INTO `inscrit` (`NUMJEU`, `NUMAPPRENANT`, `DATEJOUR`) VALUES
 -- Structure de la table `jeu`
 --
 
-CREATE TABLE IF NOT EXISTS `jeu` (
+CREATE TABLE `jeu` (
   `NUMJEU` int(11) NOT NULL,
   `LIBELLEJEU` char(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -213,8 +279,8 @@ CREATE TABLE IF NOT EXISTS `jeu` (
 --
 
 INSERT INTO `jeu` (`NUMJEU`, `LIBELLEJEU`) VALUES
-(1, 'Tir au flechette'),
-(2, 'Pétage de plomb');
+(1, 'Jeu n°1'),
+(2, 'Jeu n°2');
 
 -- --------------------------------------------------------
 
@@ -222,7 +288,7 @@ INSERT INTO `jeu` (`NUMJEU`, `LIBELLEJEU`) VALUES
 -- Structure de la table `mission`
 --
 
-CREATE TABLE IF NOT EXISTS `mission` (
+CREATE TABLE `mission` (
   `NUMMISSION` int(11) NOT NULL,
   `NUMJEU` int(11) NOT NULL,
   `LIBMISSION` char(25) DEFAULT NULL
@@ -233,9 +299,14 @@ CREATE TABLE IF NOT EXISTS `mission` (
 --
 
 INSERT INTO `mission` (`NUMMISSION`, `NUMJEU`, `LIBMISSION`) VALUES
-(1, 1, 'Mission apollo'),
-(2, 1, 'Mission Wazzaaaaa'),
-(3, 2, 'Bof bof bof');
+(1, 1, 'Mission A'),
+(2, 1, 'Mission B'),
+(3, 1, 'Mission C'),
+(4, 1, 'Mission 3'),
+(5, 2, 'Mission A2'),
+(6, 2, 'Mission B2'),
+(7, 2, 'Mission C2'),
+(8, 2, 'Mission D2');
 
 -- --------------------------------------------------------
 
@@ -243,7 +314,7 @@ INSERT INTO `mission` (`NUMMISSION`, `NUMJEU`, `LIBMISSION`) VALUES
 -- Structure de la table `objectif`
 --
 
-CREATE TABLE IF NOT EXISTS `objectif` (
+CREATE TABLE `objectif` (
   `NUMOBJECTIF` int(11) NOT NULL,
   `LIBOBECTIF` char(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -253,9 +324,14 @@ CREATE TABLE IF NOT EXISTS `objectif` (
 --
 
 INSERT INTO `objectif` (`NUMOBJECTIF`, `LIBOBECTIF`) VALUES
-(1, 'lune'),
-(2, 'Paris'),
-(3, 'Chez moi');
+(1, 'Réussir manoeuvre'),
+(2, 'Analyse des problèmes'),
+(3, 'Vérifier mécanique'),
+(4, 'Réagir au danger'),
+(5, 'Prise de poste correcte'),
+(6, 'Placement sur la voie'),
+(7, 'Interaction avec pilote'),
+(8, 'Respect délai');
 
 -- --------------------------------------------------------
 
@@ -263,7 +339,7 @@ INSERT INTO `objectif` (`NUMOBJECTIF`, `LIBOBECTIF`) VALUES
 -- Structure de la table `obtient`
 --
 
-CREATE TABLE IF NOT EXISTS `obtient` (
+CREATE TABLE `obtient` (
   `NUMAPPRENANT` int(11) NOT NULL,
   `DATEJOUR` date NOT NULL,
   `NUMACTION` int(11) NOT NULL,
@@ -289,7 +365,7 @@ INSERT INTO `obtient` (`NUMAPPRENANT`, `DATEJOUR`, `NUMACTION`, `VALEURDEBUT`, `
 -- Structure de la table `possede`
 --
 
-CREATE TABLE IF NOT EXISTS `possede` (
+CREATE TABLE `possede` (
   `NUMACTION` int(11) NOT NULL,
   `NUMREGLE` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -310,7 +386,7 @@ INSERT INTO `possede` (`NUMACTION`, `NUMREGLE`) VALUES
 -- Structure de la table `regle`
 --
 
-CREATE TABLE IF NOT EXISTS `regle` (
+CREATE TABLE `regle` (
   `NUMREGLE` int(11) NOT NULL,
   `LIBREGLE` char(25) DEFAULT NULL,
   `SCOREMIN` int(11) DEFAULT NULL
@@ -333,13 +409,16 @@ INSERT INTO `regle` (`NUMREGLE`, `LIBREGLE`, `SCOREMIN`) VALUES
 -- Index pour la table `action`
 --
 ALTER TABLE `action`
-  ADD PRIMARY KEY (`NUMACTION`), ADD KEY `A_POUR_SUCCESSEUR_FK` (`ACT_NUMACTION`);
+  ADD PRIMARY KEY (`NUMACTION`),
+  ADD KEY `A_POUR_SUCCESSEUR_FK` (`ACT_NUMACTION`);
 
 --
 -- Index pour la table `appartient`
 --
 ALTER TABLE `appartient`
-  ADD PRIMARY KEY (`NUMJEU`,`NUMACTION`), ADD KEY `APPARTIENT_FK` (`NUMJEU`), ADD KEY `APPARTIENT2_FK` (`NUMACTION`);
+  ADD PRIMARY KEY (`NUMJEU`,`NUMACTION`),
+  ADD KEY `APPARTIENT_FK` (`NUMJEU`),
+  ADD KEY `APPARTIENT2_FK` (`NUMACTION`);
 
 --
 -- Index pour la table `apprenant`
@@ -357,25 +436,32 @@ ALTER TABLE `calendrier`
 -- Index pour la table `est_associe`
 --
 ALTER TABLE `est_associe`
-  ADD PRIMARY KEY (`NUMACTION`,`NUMOBJECTIF`), ADD KEY `EST_ASSOCIE_FK` (`NUMACTION`), ADD KEY `EST_ASSOCIE2_FK` (`NUMOBJECTIF`);
+  ADD PRIMARY KEY (`NUMACTION`,`NUMOBJECTIF`),
+  ADD KEY `EST_ASSOCIE_FK` (`NUMACTION`),
+  ADD KEY `EST_ASSOCIE2_FK` (`NUMOBJECTIF`);
 
 --
 -- Index pour la table `fixe`
 --
 ALTER TABLE `fixe`
-  ADD PRIMARY KEY (`NUMMISSION`,`NUMOBJECTIF`), ADD KEY `FIXE_FK` (`NUMMISSION`), ADD KEY `FIXE2_FK` (`NUMOBJECTIF`);
+  ADD PRIMARY KEY (`NUMMISSION`,`NUMOBJECTIF`),
+  ADD KEY `FIXE_FK` (`NUMMISSION`),
+  ADD KEY `FIXE2_FK` (`NUMOBJECTIF`);
 
 --
 -- Index pour la table `indicateur`
 --
 ALTER TABLE `indicateur`
-  ADD PRIMARY KEY (`NUMINDIC`), ADD KEY `EST_VALORISE_FK` (`NUMACTION`);
+  ADD PRIMARY KEY (`NUMINDIC`),
+  ADD KEY `EST_VALORISE_FK` (`NUMACTION`);
 
 --
 -- Index pour la table `inscrit`
 --
 ALTER TABLE `inscrit`
-  ADD PRIMARY KEY (`NUMJEU`,`NUMAPPRENANT`,`DATEJOUR`), ADD KEY `fk_inscrit_apprenant` (`NUMAPPRENANT`), ADD KEY `fk_inscrit_calendrier` (`DATEJOUR`);
+  ADD PRIMARY KEY (`NUMJEU`,`NUMAPPRENANT`,`DATEJOUR`),
+  ADD KEY `fk_inscrit_apprenant` (`NUMAPPRENANT`),
+  ADD KEY `fk_inscrit_calendrier` (`DATEJOUR`);
 
 --
 -- Index pour la table `jeu`
@@ -387,7 +473,8 @@ ALTER TABLE `jeu`
 -- Index pour la table `mission`
 --
 ALTER TABLE `mission`
-  ADD PRIMARY KEY (`NUMMISSION`), ADD KEY `SE_COMPOSE_FK` (`NUMJEU`);
+  ADD PRIMARY KEY (`NUMMISSION`),
+  ADD KEY `SE_COMPOSE_FK` (`NUMJEU`);
 
 --
 -- Index pour la table `objectif`
@@ -399,13 +486,18 @@ ALTER TABLE `objectif`
 -- Index pour la table `obtient`
 --
 ALTER TABLE `obtient`
-  ADD PRIMARY KEY (`NUMAPPRENANT`,`DATEJOUR`,`NUMACTION`), ADD KEY `OBTIENT_FK` (`NUMAPPRENANT`), ADD KEY `OBTIENT3_FK` (`DATEJOUR`), ADD KEY `OBTIENT3_FK2` (`NUMACTION`);
+  ADD PRIMARY KEY (`NUMAPPRENANT`,`DATEJOUR`,`NUMACTION`),
+  ADD KEY `OBTIENT_FK` (`NUMAPPRENANT`),
+  ADD KEY `OBTIENT3_FK` (`DATEJOUR`),
+  ADD KEY `OBTIENT3_FK2` (`NUMACTION`);
 
 --
 -- Index pour la table `possede`
 --
 ALTER TABLE `possede`
-  ADD PRIMARY KEY (`NUMACTION`,`NUMREGLE`), ADD KEY `POSSEDE_FK` (`NUMACTION`), ADD KEY `POSSEDE2_FK` (`NUMREGLE`);
+  ADD PRIMARY KEY (`NUMACTION`,`NUMREGLE`),
+  ADD KEY `POSSEDE_FK` (`NUMACTION`),
+  ADD KEY `POSSEDE2_FK` (`NUMREGLE`);
 
 --
 -- Index pour la table `regle`
@@ -421,63 +513,63 @@ ALTER TABLE `regle`
 -- Contraintes pour la table `action`
 --
 ALTER TABLE `action`
-ADD CONSTRAINT `FK_ACTION_A_POUR_SU_ACTION` FOREIGN KEY (`ACT_NUMACTION`) REFERENCES `action` (`NUMACTION`);
+  ADD CONSTRAINT `FK_ACTION_A_POUR_SU_ACTION` FOREIGN KEY (`ACT_NUMACTION`) REFERENCES `action` (`NUMACTION`);
 
 --
 -- Contraintes pour la table `appartient`
 --
 ALTER TABLE `appartient`
-ADD CONSTRAINT `FK_APPARTIE_APPARTIEN_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
-ADD CONSTRAINT `FK_APPARTIE_APPARTIEN_JEU` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
+  ADD CONSTRAINT `FK_APPARTIE_APPARTIEN_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
+  ADD CONSTRAINT `FK_APPARTIE_APPARTIEN_JEU` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
 
 --
 -- Contraintes pour la table `est_associe`
 --
 ALTER TABLE `est_associe`
-ADD CONSTRAINT `FK_EST_ASSO_EST_ASSOC_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
-ADD CONSTRAINT `FK_EST_ASSO_EST_ASSOC_OBJECTIF` FOREIGN KEY (`NUMOBJECTIF`) REFERENCES `objectif` (`NUMOBJECTIF`);
+  ADD CONSTRAINT `FK_EST_ASSO_EST_ASSOC_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
+  ADD CONSTRAINT `FK_EST_ASSO_EST_ASSOC_OBJECTIF` FOREIGN KEY (`NUMOBJECTIF`) REFERENCES `objectif` (`NUMOBJECTIF`);
 
 --
 -- Contraintes pour la table `fixe`
 --
 ALTER TABLE `fixe`
-ADD CONSTRAINT `FK_FIXE_FIXE2_OBJECTIF` FOREIGN KEY (`NUMOBJECTIF`) REFERENCES `objectif` (`NUMOBJECTIF`),
-ADD CONSTRAINT `FK_FIXE_FIXE_MISSION` FOREIGN KEY (`NUMMISSION`) REFERENCES `mission` (`NUMMISSION`);
+  ADD CONSTRAINT `FK_FIXE_FIXE2_OBJECTIF` FOREIGN KEY (`NUMOBJECTIF`) REFERENCES `objectif` (`NUMOBJECTIF`),
+  ADD CONSTRAINT `FK_FIXE_FIXE_MISSION` FOREIGN KEY (`NUMMISSION`) REFERENCES `mission` (`NUMMISSION`);
 
 --
 -- Contraintes pour la table `indicateur`
 --
 ALTER TABLE `indicateur`
-ADD CONSTRAINT `FK_INDICATE_EST_VALOR_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`);
+  ADD CONSTRAINT `FK_INDICATE_EST_VALOR_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`);
 
 --
 -- Contraintes pour la table `inscrit`
 --
 ALTER TABLE `inscrit`
-ADD CONSTRAINT `fk_inscrit_apprenant` FOREIGN KEY (`NUMAPPRENANT`) REFERENCES `apprenant` (`NUMAPPRENANT`),
-ADD CONSTRAINT `fk_inscrit_calendrier` FOREIGN KEY (`DATEJOUR`) REFERENCES `calendrier` (`DATEJOUR`),
-ADD CONSTRAINT `fk_inscrit_jeu` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
+  ADD CONSTRAINT `fk_inscrit_apprenant` FOREIGN KEY (`NUMAPPRENANT`) REFERENCES `apprenant` (`NUMAPPRENANT`),
+  ADD CONSTRAINT `fk_inscrit_calendrier` FOREIGN KEY (`DATEJOUR`) REFERENCES `calendrier` (`DATEJOUR`),
+  ADD CONSTRAINT `fk_inscrit_jeu` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
 
 --
 -- Contraintes pour la table `mission`
 --
 ALTER TABLE `mission`
-ADD CONSTRAINT `FK_MISSION_SE_COMPOS_JEU` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
+  ADD CONSTRAINT `FK_MISSION_SE_COMPOS_JEU` FOREIGN KEY (`NUMJEU`) REFERENCES `jeu` (`NUMJEU`);
 
 --
 -- Contraintes pour la table `obtient`
 --
 ALTER TABLE `obtient`
-ADD CONSTRAINT `FK_OBTIENT_OBTIENT2_CALENDRI` FOREIGN KEY (`DATEJOUR`) REFERENCES `calendrier` (`DATEJOUR`),
-ADD CONSTRAINT `FK_OBTIENT_OBTIENT3_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
-ADD CONSTRAINT `FK_OBTIENT_OBTIENT_APPRENAN` FOREIGN KEY (`NUMAPPRENANT`) REFERENCES `apprenant` (`NUMAPPRENANT`);
+  ADD CONSTRAINT `FK_OBTIENT_OBTIENT2_CALENDRI` FOREIGN KEY (`DATEJOUR`) REFERENCES `calendrier` (`DATEJOUR`),
+  ADD CONSTRAINT `FK_OBTIENT_OBTIENT3_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`),
+  ADD CONSTRAINT `FK_OBTIENT_OBTIENT_APPRENAN` FOREIGN KEY (`NUMAPPRENANT`) REFERENCES `apprenant` (`NUMAPPRENANT`);
 
 --
 -- Contraintes pour la table `possede`
 --
 ALTER TABLE `possede`
-ADD CONSTRAINT `FK_POSSEDE_POSSEDE2_REGLE` FOREIGN KEY (`NUMREGLE`) REFERENCES `regle` (`NUMREGLE`),
-ADD CONSTRAINT `FK_POSSEDE_POSSEDE_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`);
+  ADD CONSTRAINT `FK_POSSEDE_POSSEDE2_REGLE` FOREIGN KEY (`NUMREGLE`) REFERENCES `regle` (`NUMREGLE`),
+  ADD CONSTRAINT `FK_POSSEDE_POSSEDE_ACTION` FOREIGN KEY (`NUMACTION`) REFERENCES `action` (`NUMACTION`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

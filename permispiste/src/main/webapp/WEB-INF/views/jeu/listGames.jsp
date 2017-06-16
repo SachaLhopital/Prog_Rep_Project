@@ -7,7 +7,7 @@
     <h1>Jeux disponibles</h1>
 </div>
 
-<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
+<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span>Ajouter un nouveau jeu</a>
 
 <%-- Listing des Jeux --%>
 <div class="row">
