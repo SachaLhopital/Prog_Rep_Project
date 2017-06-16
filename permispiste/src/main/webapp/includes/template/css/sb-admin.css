@@ -4,6 +4,15 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+/* Custom Styles */
+.bad-grade{
+    color: red;
+}
+
+.good-grade{
+    color: green;
+}
+
 /* Global Styles */
 
 body {

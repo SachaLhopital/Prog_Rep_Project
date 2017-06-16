@@ -4,23 +4,31 @@
 <jsp:include page="../commun/header.jsp" />
 
 <div class="page-header">
-    <h1>Actions de ${trainee.prenomapprenant} ${trainee.nomapprenant}</h1>
+    <h1>Parties de <a href="/apprenants/detail/${trainee.numapprenant}">${trainee.prenomapprenant} ${trainee.nomapprenant}</a></h1>
 </div>
 
-<%-- Listing des Missions --%>
+<%-- Listing des parties --%>
 <div class="row">
     <div class="col-md-12">
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
-                <caption>Missions :</caption>
                 <tr>
                     <th>Action</th>
-                    <th>Score minimal</th>
+                    <th>Score</th>
+                    <th>Date</th>
                 </tr>
                 <c:forEach var="item" items="${list}">
                     <tr>
-                        <td>${item.action.libaction}</td>
-                        <td>${item.action.scoremin}/20</td>
+                        <td><a href="/actions/detail/${item.action.numaction}">${item.action.libaction}</a></td>
+                        <c:choose>
+                            <c:when test="${item.action.scoremin > item.valeurfin}">
+                                <td class="bad-grade">${item.valeurfin}/20</td>
+                            </c:when>
+                            <c:otherwise>
+                                <td class="good-grade">${item.valeurfin}/20</td>
+                            </c:otherwise>
+                        </c:choose>
+                        <td><fmt:formatDate value="${item.datejour}" pattern="yyyy-mm-dd"/></td>
                     </tr>
                 </c:forEach>
             </table>

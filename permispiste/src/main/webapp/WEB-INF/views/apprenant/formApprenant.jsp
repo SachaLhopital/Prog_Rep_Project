@@ -18,11 +18,14 @@
                 <label class="col-sm-3">Pr&eacute;nom : </label>
                 <input type="text" name="txtprenom" value="${apprenant.prenomapprenant}" id ="prenomapprenant">
             </div>
-
+        </div>
         <div class="panel-footer">
             <button type="submit" name="bt" class="btn btn-primary">Sauvegarder</button>
         </div>
     </form>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="/actions/apprenant/${apprenant.numapprenant}">Liste des parties</a></li>
+    </ul>
 </div>
 
 <SCRIPT language="Javascript" type="text/javascript">

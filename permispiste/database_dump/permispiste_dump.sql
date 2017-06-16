@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 -- Base de données :  `permispiste`
 --
 
+CREATE DATABASE `permispiste`;
+use `permispiste`;
+
 -- --------------------------------------------------------
 
 --

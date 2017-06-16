@@ -16,7 +16,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="col-sm-3">Score minimal : </label>
-                <input type="text" name="txtlibelle" value="${action.libaction}" id ="scoremin">
+                <input type="text" name="txtscoremin" value="${action.scoremin}" id ="scoremin">
             </div>
         </div>
 
@@ -30,6 +30,10 @@
     function teste(){
         if(document.identification.txtlibelle.value == ""){
             alert("Veuillez entrer un libellé.")
+            return false;
+        }
+        if(document.identification.txtscoremin.value == ""){
+            alert("Veuillez entrer un score minimal.")
             return false;
         }
         return true;

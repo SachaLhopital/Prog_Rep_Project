@@ -41,7 +41,8 @@ public class ActionController extends Controller {
         try {
             ActionEntity actionEntity = new ActionEntity();
             actionEntity.setNumaction(serviceAction.getNextIdToInsert());
-            actionEntity.setLibaction("");
+            actionEntity.setLibaction(request.getParameter("txtlibelle"));
+            actionEntity.setScoremin(Integer.parseInt(request.getParameter("txtscoremin")));
             serviceAction.save(actionEntity);
             return getAll(request);
 
@@ -118,7 +119,7 @@ public class ActionController extends Controller {
             }
 
             request.setAttribute("action", action);
-            request.setAttribute("actionSubmit", "/action/edit/");
+            request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/formAction");
 
         } catch (Exception e) {
@@ -130,7 +131,11 @@ public class ActionController extends Controller {
 
     @RequestMapping("/edit/")
     public ModelAndView updateAction(HttpServletRequest request) throws CustomException {
-        return errorPage();
+        ActionEntity actionEntity = serviceAction.get(Integer.parseInt(request.getParameter("txtId")));
+        actionEntity.setLibaction(request.getParameter("txtlibelle"));
+        actionEntity.setScoremin(Integer.parseInt(request.getParameter("txtscoremin")));
+        serviceAction.save(actionEntity);
+        return new ModelAndView("redirect:/actions/detail/"+actionEntity.getNumaction());
     }
 
     @RequestMapping("/delete/{id}")
