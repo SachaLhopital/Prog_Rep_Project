@@ -5,40 +5,59 @@
 
 <div class="page-header">
     <h1>Jeux disponibles</h1>
+    <small> Jeux disponibles pour un entrainement</small>
 </div>
 
-<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span>Ajouter un nouveau jeu</a>
+<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
 
-<%-- Listing des Jeux --%>
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel-body">
-            <table class="table table-hover table-striped table-bordered">
-                <caption>Jeux disponibles pour un entrainement :</caption>
-                <c:forEach var="item" items="${list}">
-                    <tr>
-                        <td>${item.libellejeu}</td>
-                        <td>
-                            <a href="/missions/add/${item.numjeu}">
-                                <button type="button" class="btn btn-info" aria-label="Left Align">
-                                    <span class="fa fa-play-circle-o" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                            <a href="/games/detail/${item.numjeu}">
-                                <button type="button" class="btn btn-info" aria-label="Left Align">
-                                    <span class="fa fa-pencil" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                            <a href="/games/delete/${item.numjeu}">
-                                <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
+</br></br>
+
+<c:forEach var="item" items="${list}">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">${item.libellejeu}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>Mission</th>
+                                <th>Objectif Fixé</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach var="mission" items="${item.missions}">
+                                <td>${mission.libmission}</td>
+                                <c:forEach var="objectifFixe" items="${mission.objectifs}">
+                                    <td>${objectifFixe.objectif.libobectif}</td>
+                                </c:forEach>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right">
+                        <a href="/missions/add/${item.numjeu}">
+                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                <span class="fa fa-play-circle-o" aria-hidden="true"></span>
+                            </button>
+                        </a>
+                        <a href="/games/detail/${item.numjeu}">
+                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                <span class="fa fa-pencil" aria-hidden="true"></span>
+                            </button>
+                        </a>
+                        <a href="/games/delete/${item.numjeu}">
+                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
+</c:forEach>
 <jsp:include page="../commun/footer.jsp" />

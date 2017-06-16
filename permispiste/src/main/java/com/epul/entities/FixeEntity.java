@@ -51,4 +51,16 @@ public class FixeEntity {
         result = 31 * result + numobjectif;
         return result;
     }
+
+    private ObjectifEntity objectif;
+
+    @OneToOne
+    @JoinColumn(name = "NUMOBJECTIF", insertable=false, updatable=false)
+    public ObjectifEntity getObjectif() {
+        return objectif;
+    }
+
+    public void setObjectif(ObjectifEntity objectif) {
+        this.objectif = objectif;
+    }
 }

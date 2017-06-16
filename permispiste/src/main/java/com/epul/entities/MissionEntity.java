@@ -1,6 +1,7 @@
 package com.epul.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Sachouw on 13/06/2017.
@@ -71,5 +72,17 @@ public class MissionEntity {
 
     public void setGame(JeuEntity game) {
         this.game = game;
+    }
+
+    private List<FixeEntity> objectifs;
+
+    @OneToMany
+    @JoinColumn(name = "NUMMISSION", insertable=false, updatable=false)
+    public List<FixeEntity> getObjectifs() {
+        return objectifs;
+    }
+
+    public void setObjectifs(List<FixeEntity> objectifs) {
+        this.objectifs = objectifs;
     }
 }
