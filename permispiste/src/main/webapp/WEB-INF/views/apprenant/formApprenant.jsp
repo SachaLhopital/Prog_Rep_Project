@@ -23,8 +23,8 @@
             <button type="submit" name="bt" class="btn btn-primary">Sauvegarder</button>
         </div>
     </form>
-    <ul class="list-group">
-        <li class="list-group-item"><a href="/actions/apprenant/${apprenant.numapprenant}">Liste des parties</a></li>
+    <ul>
+        <li><a href="/actions/apprenant/${apprenant.numapprenant}">Liste des parties</a></li>
     </ul>
 </div>
 

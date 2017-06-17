@@ -1,8 +1,7 @@
 package com.epul.controlleur;
 
-import com.epul.dao.ServiceAction;
-import com.epul.dao.ServiceApprenant;
-import com.epul.dao.ServiceObtient;
+import com.epul.dao.*;
+import com.epul.entities.EstAssocieEntity;
 import com.epul.exception.CustomException;
 import com.epul.entities.ActionEntity;
 import com.epul.entities.ObtientEntity;
@@ -22,6 +21,7 @@ public class ActionController extends Controller {
 
     private ServiceAction serviceAction = new ServiceAction();
     private ServiceObtient serviceObtient = new ServiceObtient();
+    private ServiceEstAssocie serviceEstAssocie = new ServiceEstAssocie();
 
     @Override
     @RequestMapping(value = "/")
@@ -64,7 +64,6 @@ public class ActionController extends Controller {
             }
 
             request.setAttribute("list", obtient);
-            request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/listActionsApprenantAll");
 
         } catch (Exception e) {
@@ -75,7 +74,7 @@ public class ActionController extends Controller {
     }
 
     @RequestMapping("/apprenant/{id}")
-    public ModelAndView getAll(@PathVariable("id") int id, HttpServletRequest request) {
+    public ModelAndView getAllFromApprenant(@PathVariable("id") int id, HttpServletRequest request) {
         try {
             if (id == 0) {
                 request.setAttribute(ERROR_KEY, "Id manquant dans le path");
@@ -93,8 +92,35 @@ public class ActionController extends Controller {
 
             request.setAttribute("list", obtients);
             request.setAttribute("trainee", new ServiceApprenant().get(id));
-            request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/listActionsApprenant");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
+        }
+        return errorPage();
+    }
+
+    @RequestMapping("/objectif/{id}")
+    public ModelAndView getAllFromObjectif(@PathVariable("id") int id, HttpServletRequest request) {
+        try {
+            if (id == 0) {
+                request.setAttribute(ERROR_KEY, "Id manquant dans le path");
+                return errorPage();
+            }
+
+            serviceObtient.getAll();
+
+            List<EstAssocieEntity> estAssocieEntities = serviceEstAssocie.getAllFromObjectif(id);
+
+            if (estAssocieEntities == null) {
+                request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
+                return errorPage();
+            }
+
+            request.setAttribute("list", estAssocieEntities);
+            request.setAttribute("objectif", new ServiceObjectif().get(id));
+            return new ModelAndView("/action/listActionsObjectif");
 
         } catch (Exception e) {
             e.printStackTrace();

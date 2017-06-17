@@ -32,6 +32,25 @@ public class ServiceMission extends Service {
         return missionList;
     }
 
+    public List<MissionEntity> getAllFromJeu(int idJeu){
+        List<MissionEntity> missionList = new ArrayList();
+        try{
+            Session session = ServiceHibernate.currentSession();
+            List<MissionEntity> allMissions = session.createQuery("SELECT m FROM MissionEntity m WHERE m.numjeu = :idJeu order by id")
+                    .setParameter("idJeu",idJeu)
+                    .list();
+
+            for (Iterator iterator1 = allMissions.iterator(); iterator1.hasNext();){
+                MissionEntity mission = (MissionEntity) iterator1.next();
+                missionList.add(mission);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return missionList;
+    }
+
     public MissionEntity get(int id){
         MissionEntity mission = null;
         try{

@@ -1,6 +1,11 @@
 package com.epul.controlleur;
 
+import com.epul.dao.ServiceFixe;
 import com.epul.dao.ServiceGame;
+import com.epul.dao.ServiceMission;
+import com.epul.entities.FixeEntity;
+import com.epul.entities.MissionEntity;
+import com.epul.entities.ObjectifEntity;
 import com.epul.exception.CustomException;
 import com.epul.entities.JeuEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Sacha on 15/05/2017.
@@ -18,13 +27,32 @@ public class GameController extends Controller {
 
     private static String INSERER_JEU = "/games/insert/";
 
-    private ServiceGame service = new ServiceGame();
+    private ServiceGame serviceGame = new ServiceGame();
+    private ServiceMission serviceMission = new ServiceMission();
+    private ServiceFixe serviceFixe = new ServiceFixe();
 
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
+        List<JeuEntity> jeux = serviceGame.getAll();
+        Map<JeuEntity,Map<MissionEntity,List<ObjectifEntity>>> jeuMap = new HashMap<>();
+        for (JeuEntity jeu : jeux){
+            List<MissionEntity> missions = serviceMission.getAllFromJeu(jeu.getNumjeu());
+            Map<MissionEntity,List<ObjectifEntity>> missionsMap = new HashMap<>();
+
+            for (MissionEntity mission : missions){
+                List<ObjectifEntity> objectifs = new ArrayList<>();
+                List<FixeEntity> fixes = serviceFixe.getAllFromMission(mission.getNummission());
+                for (FixeEntity fixe : fixes){
+                    objectifs.add(fixe.getObjectif());
+                }
+                missionsMap.put(mission,objectifs);
+            }
+            jeuMap.put(jeu,missionsMap);
+        }
+
         request.setAttribute("pageTitle", "Liste des Jeux");
-        request.setAttribute("list", service.getAll());
+        request.setAttribute("list", jeuMap);
         return new ModelAndView("/jeu/listGames");
     }
 
@@ -38,9 +66,9 @@ public class GameController extends Controller {
     public ModelAndView insert(HttpServletRequest request) {
         try {
             JeuEntity jeu = new JeuEntity();
-            jeu.setNumjeu(service.getNextIdToInsert());
+            jeu.setNumjeu(serviceGame.getNextIdToInsert());
             jeu.setLibellejeu(request.getParameter("txtlibelle"));
-            service.save(jeu);
+            serviceGame.save(jeu);
             return getAll(request);
 
         } catch (Exception e) {
@@ -58,14 +86,27 @@ public class GameController extends Controller {
                 return errorPage();
             }
 
-            JeuEntity jeu = service.get(id);
+            JeuEntity jeu = serviceGame.get(id);
 
             if (jeu == null) {
                 request.setAttribute(ERROR_KEY, "Impossible d'obtenir un jeu pour l'id saisie");
                 return errorPage();
             }
 
+            List<MissionEntity> missions = serviceMission.getAllFromJeu(jeu.getNumjeu());
+            Map<MissionEntity,List<ObjectifEntity>> missionsMap = new HashMap<>();
+
+            for (MissionEntity mission : missions){
+                List<ObjectifEntity> objectifs = new ArrayList<>();
+                List<FixeEntity> fixes = serviceFixe.getAllFromMission(mission.getNummission());
+                for (FixeEntity fixe : fixes){
+                    objectifs.add(fixe.getObjectif());
+                }
+                missionsMap.put(mission,objectifs);
+            }
+
             request.setAttribute("jeu", jeu);
+            request.setAttribute("missions", missionsMap);
             request.setAttribute("actionSubmit", "/games/edit/");
             return new ModelAndView("/jeu/formGames");
 
@@ -84,9 +125,9 @@ public class GameController extends Controller {
         }
 
         try {
-            JeuEntity jeuToUpdate = service.get(Integer.parseInt(request.getParameter("txtId")));
+            JeuEntity jeuToUpdate = serviceGame.get(Integer.parseInt(request.getParameter("txtId")));
             jeuToUpdate.setLibellejeu(request.getParameter("txtlibelle"));
-            service.save(jeuToUpdate);
+            serviceGame.save(jeuToUpdate);
             return getAll(request);
 
         } catch(Exception e) {
@@ -103,7 +144,7 @@ public class GameController extends Controller {
             return errorPage();
         }
         try {
-            service.delete(service.get(id));
+            serviceGame.delete(serviceGame.get(id));
             return getAll(request);
         } catch(Exception e){
             request.setAttribute(ERROR_KEY, "Impossible de supprimer le jeu de la base");

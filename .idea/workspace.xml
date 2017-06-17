@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9980c543-6370-43ac-8da8-43256e6cbafd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/excanvas.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/flot-data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.pie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.resize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/flot/jquery.flot.tooltip.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris-data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/morris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/js/plugins/morris/raphael.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/database_dump/permispiste_dump.sql" afterPath="$PROJECT_DIR$/permispiste/database_dump/permispiste_dump.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/ActionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/formAction.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/formAction.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenantAll.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/action/listActionsApprenantAll.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/GameController.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/controlleur/GameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceMission.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/dao/ServiceMission.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/EstAssocieEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/EstAssocieEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/ObjectifEntity.java" afterPath="$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/ObjectifEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formApprenant.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/apprenant/formApprenant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/sb-admin.css" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/includes/template/css/sb-admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/formGames.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/formGames.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp" afterPath="$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,8 +89,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,6 +323,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -367,7 +353,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/database_dump/permispiste_dump.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/FixeEntity.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/JeuEntity.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/java/com/epul/entities/MissionEntity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/permispiste/src/main/webapp/WEB-INF/views/jeu/listGames.jsp</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -883,7 +871,8 @@
       <workItem from="1497290882713" duration="470000" />
       <workItem from="1497297759406" duration="757000" />
       <workItem from="1497303410413" duration="340000" />
-      <workItem from="1497539906880" duration="3562000" />
+      <workItem from="1497539906880" duration="3664000" />
+      <workItem from="1497652655586" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel).">
       <created>1497116409198</created>
@@ -913,14 +902,22 @@
       <option name="project" value="LOCAL" />
       <updated>1497303419360</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modification de la liste des parties.&#10;Modification du formulaire Action et Apprenant.">
+      <created>1497604347582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1497604347582</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11272000" />
+    <option name="totallyTimeSpent" value="11994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -936,7 +933,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3555437" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35927504" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3307436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -991,7 +988,8 @@
     <MESSAGE value="Changement d'encodage et légère modification des vues.&#10;Ajout des actions (non fonctionnel)." />
     <MESSAGE value="Consultation des actions fonctionnelle." />
     <MESSAGE value="Modification du modèle pour l'ajout des relations entre entités. &#10;Fonctionnel mais revoir le script de la base de données qui semble ne pas correspondre au modele." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification du modèle pour l'ajout des relations entre entités. &#10;Fonctionnel mais revoir le script de la base de données qui semble ne pas correspondre au modele." />
+    <MESSAGE value="Modification de la liste des parties.&#10;Modification du formulaire Action et Apprenant." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification de la liste des parties.&#10;Modification du formulaire Action et Apprenant." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1002,6 +1000,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/PermispisteApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/permispiste/src/main/java/com/epul/conf/ServiceHibernate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
