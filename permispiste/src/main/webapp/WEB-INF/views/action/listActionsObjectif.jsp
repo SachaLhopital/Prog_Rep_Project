@@ -15,9 +15,9 @@
                 <tr>
                     <th>Action</th>
                 </tr>
-                <c:forEach var="apprenant" items="${list}">
+                <c:forEach var="inscrit" items="${list}">
                     <tr>
-                        <td><a href="/actions/detail/${apprenant.action.numaction}">${apprenant.action.libaction}</a></td>
+                        <td><a href="/actions/detail/${inscrit.action.numaction}">${inscrit.action.libaction}</a></td>
                     </tr>
                 </c:forEach>
             </table>

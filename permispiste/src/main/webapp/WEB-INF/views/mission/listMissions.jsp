@@ -19,10 +19,10 @@
                     <th>Jeux</th>
                     <th>Intitul&eacute; de la mission</th>
                 </tr>
-                <c:forEach var="apprenant" items="${list}">
+                <c:forEach var="inscrit" items="${list}">
                     <tr>
-                        <td>${apprenant.game.libellejeu}</td>
-                        <td>${apprenant.libmission}</td>
+                        <td>${inscrit.game.libellejeu}</td>
+                        <td>${inscrit.libmission}</td>
                     </tr>
                 </c:forEach>
             </table>

@@ -11,7 +11,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../commun/header.jsp" />
 <jsp:useBean id="now" class="java.util.Date"/>
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>
 
 <div class="page-header">
     <h1>Inscriptions aux Jeux</h1>
@@ -22,6 +21,14 @@
         <div class="alert alert-info alert-dismissable">
             <i class="fa fa-info-circle"></i> Visualisez les inscriptions passées en cliquant sur <span class="fa fa-history" aria-hidden="true"></span>
         </div>
+        <div class="alert alert-info">
+            <i class="fa fa-info-circle"></i>
+            Visualisez les détails d'un apprenant en cliquant sur <span class="fa fa-user"></span>
+        </div>
+        <div class="alert alert-info">
+            <i class="fa fa-info-circle"></i>
+            Visualisez les détails d'un jeu en cliquant sur <span class="fa fa-gamepad"></span>
+        </div>
     </div>
 </div>
 
@@ -29,10 +36,12 @@
 <div>
     <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li role="presentation" class="active">
-            <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="">Prochains candidats</a>
+            <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                Prochains candidats
+            </a>
         </li>
         <li role="presentation" class="">
-            <a href="#history" role="tab" id="history-tab" data-toggle="tab" aria-controls="history" style="" aria-expanded="false">
+            <a href="#history" role="tab" id="history-tab" data-toggle="tab" aria-controls="history" aria-expanded="false">
                 <span class="fa fa-history" aria-hidden="true"></span>
             </a>
         </li>
@@ -44,28 +53,23 @@
                     <div class="panel-body">
                         <table class="table table-hover table-striped table-bordered">
                             <tr>
-                                <th>Nom</th>
-                                <th>Pr&eacute;nom</th>
+                                <th>Nom - Prénom</th>
                                 <th>Jeu</th>
-                                <th></th>
                             </tr>
-                            <c:forEach var="apprenant" items="${list}">
-                                <c:if test = "${apprenant.datejour > now}">
+                            <c:forEach var="inscrit" items="${list}">
+                                <c:if test = "${inscrit.datejour > now}">
                                     <tr>
-                                        <td>${apprenant.apprenant.nomapprenant}</td>
-                                        <td>${apprenant.apprenant.prenomapprenant}</td>
-                                        <td>${apprenant.jeu.libellejeu}</td>
                                         <td>
-                                            <a href="/apprenants/">
-                                                <button type="button" class="btn btn-primary" aria-label="Left Align">
-                                                    <span class="fa fa-user" aria-hidden="true"></span>
-                                                </button>
+                                            <a href="/apprenants/detail/${inscrit.apprenant.numapprenant}">
+                                                <span class="fa fa-user" aria-hidden="true"></span>
                                             </a>
-                                            <a href="/games/">
-                                                <button type="button" class="btn btn-info" aria-label="Left Align">
-                                                    <span class="fa fa-gamepad" aria-hidden="true"></span>
-                                                </button>
+                                                ${inscrit.apprenant.nomapprenant} ${inscrit.apprenant.prenomapprenant}
+                                        </td>
+                                        <td>
+                                            <a href="/games/detail/${inscrit.jeu.numjeu}">
+                                                <span class="fa fa-gamepad" aria-hidden="true"></span>
                                             </a>
+                                                ${inscrit.jeu.libellejeu}
                                         </td>
                                     </tr>
                                 </c:if>
@@ -81,31 +85,26 @@
                     <div class="panel-body">
                         <table class="table table-hover table-striped table-bordered">
                             <tr>
-                                <th>Nom</th>
-                                <th>Pr&eacute;nom</th>
+                                <th>Nom - Pr&eacute;nom</th>
                                 <th>Jeu</th>
                                 <th>Date</th>
-                                <th></th>
                             </tr>
-                            <c:forEach var="apprenant" items="${list}">
-                                <c:if test = "${apprenant.datejour < now}">
+                            <c:forEach var="inscrit" items="${list}">
+                                <c:if test = "${inscrit.datejour < now}">
                                     <tr>
-                                        <td>${apprenant.apprenant.nomapprenant}</td>
-                                        <td>${apprenant.apprenant.prenomapprenant}</td>
-                                        <td>${apprenant.jeu.libellejeu}</td>
-                                        <td>${apprenant.datejour}</td>
                                         <td>
-                                            <a href="/apprenants/">
-                                                <button type="button" class="btn btn-primary" aria-label="Left Align">
-                                                    <span class="fa fa-user" aria-hidden="true"></span>
-                                                </button>
+                                            <a href="/apprenants/detail/${inscrit.apprenant.numapprenant}">
+                                                <span class="fa fa-user" aria-hidden="true"></span>
                                             </a>
-                                            <a href="/games/">
-                                                <button type="button" class="btn btn-info" aria-label="Left Align">
-                                                    <span class="fa fa-gamepad" aria-hidden="true"></span>
-                                                </button>
-                                            </a>
+                                                ${inscrit.apprenant.nomapprenant} ${inscrit.apprenant.prenomapprenant}
                                         </td>
+                                        <td>
+                                            <a href="/games/detail/${inscrit.jeu.numjeu}">
+                                                <span class="fa fa-gamepad" aria-hidden="true"></span>
+                                            </a>
+                                                ${inscrit.jeu.libellejeu}
+                                        </td>
+                                        <td><fmt:formatDate value="${inscrit.datejour}" pattern="yyyy-MM-dd"/></td>
                                     </tr>
                                 </c:if>
                             </c:forEach>

@@ -24,7 +24,7 @@ public class ServiceInscrit extends Service {
     public List<InscritEntity> getAll() throws CustomException {
         try{
             return ServiceHibernate.currentSession()
-                    .createQuery("SELECT i FROM InscritEntity i")
+                    .createQuery("SELECT i FROM InscritEntity i ORDER BY i.datejour DESC")
                     .list();
         }catch (Exception e){
             e.printStackTrace();

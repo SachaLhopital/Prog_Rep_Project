@@ -17,10 +17,10 @@
                     <th>Action</th>
                     <th>Score minimal</th>
                 </tr>
-                <c:forEach var="apprenant" items="${list}">
+                <c:forEach var="inscrit" items="${list}">
                     <tr>
-                        <td>${apprenant.libaction}</td>
-                        <td>${apprenant.scoremin}</td>
+                        <td>${inscrit.libaction}</td>
+                        <td>${inscrit.scoremin}</td>
                     </tr>
                 </c:forEach>
             </table>

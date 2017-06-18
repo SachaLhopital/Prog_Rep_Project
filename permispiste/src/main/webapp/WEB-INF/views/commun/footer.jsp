@@ -12,8 +12,8 @@
             </div>
         </div>
     </body>
-    <!-- jQuery -->
-    <script src="/includes/template/js/jquery.js"></script>
+    <!-- JQuery -->
+    <script src="/includes/javascript/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="/includes/template/js/bootstrap.min.js"></script>
+    <script src="/includes/javascript/bootstrap.min.js"></script>
 </html>

@@ -37,6 +37,7 @@
                         <li><a href="/missions/"><span class="fa fa-list-alt"></span>&nbsp;Missions</a></li>
                         <li><a href="/actions/"><span class="fa fa-dot-circle-o"></span>&nbsp;Actions</a></li>
                         <li><a href="/actions/apprenant/all/"><span class="fa fa-history"></span>&nbsp;Historique des Parties</a></li>
+                        <li><a href="/inscrits/"><span class="fa fa-calendar-o"></span>&nbsp;Inscriptions</a></li>
                     </ul>
                 </div>
             </div><!-- /.container-fluid -->

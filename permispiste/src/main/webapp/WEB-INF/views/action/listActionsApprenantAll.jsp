@@ -21,36 +21,36 @@
 </div>
 
 <%-- Listing des parties --%>
-<c:forEach var="apprenant" items="${list}">
+<c:forEach var="inscrit" items="${list}">
     <c:choose>
-        <c:when test="${empty apprenant.partiesJouees}">
+        <c:when test="${empty inscrit.partiesJouees}">
             <caption>
-                <a href="/apprenants/detail/${apprenant.numapprenant}">
+                <a href="/apprenants/detail/${inscrit.numapprenant}">
                     <span class="fa fa-user" aria-hidden="true"></span>
                 </a>
-                    ${apprenant.nomapprenant} ${apprenant.prenomapprenant}
+                    ${inscrit.nomapprenant} ${inscrit.prenomapprenant}
             </caption>
             <div class="alert alert-info">
                 Cet apprenant n'a pas encore fait d'entrainement.
             </div>
         </c:when>
-        <c:when test="${not empty apprenant.partiesJouees}">
+        <c:when test="${not empty inscrit.partiesJouees}">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-body">
                         <table class="table table-hover table-striped table-bordered">
                             <caption>
-                                <a href="/apprenants/detail/${apprenant.numapprenant}">
+                                <a href="/apprenants/detail/${inscrit.numapprenant}">
                                     <span class="fa fa-user" aria-hidden="true"></span>
                                 </a>
-                                ${apprenant.nomapprenant} ${apprenant.prenomapprenant}
+                                ${inscrit.nomapprenant} ${inscrit.prenomapprenant}
                             </caption>
                             <tr>
                                 <th>Action</th>
                                 <th>Score</th>
                                 <th>Date</th>
                             </tr>
-                            <c:forEach var="obtient" items="${apprenant.partiesJouees}">
+                            <c:forEach var="obtient" items="${inscrit.partiesJouees}">
                                 <tr>
                                     <td>
                                         <a href="/actions/detail/${obtient.action.numaction}">
