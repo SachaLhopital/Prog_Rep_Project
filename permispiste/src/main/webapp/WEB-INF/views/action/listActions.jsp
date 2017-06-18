@@ -7,6 +7,8 @@
     <h1>Toutes les actions</h1>
 </div>
 
+<a href="/actions/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter une nouvelle action</a>
+
 <%-- Listing des Missions --%>
 <div class="row">
     <div class="col-md-12">

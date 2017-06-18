@@ -28,7 +28,7 @@
                                 <td class="good-grade">${inscrit.valeurfin}/20</td>
                             </c:otherwise>
                         </c:choose>
-                        <td><fmt:formatDate value="${inscrit.datejour}" pattern="yyyy-mm-dd"/></td>
+                        <td><fmt:formatDate value="${inscrit.datejour}" pattern="yyyy-MM-dd"/></td>
                     </tr>
                 </c:forEach>
             </table>

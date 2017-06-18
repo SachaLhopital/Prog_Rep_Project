@@ -22,6 +22,7 @@ public class ApprenantController extends Controller {
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
         request.setAttribute("list", service.getAll());
+        request.setAttribute("total", service.countAll());
         return new ModelAndView("/apprenant/listApprenant");
     }
 

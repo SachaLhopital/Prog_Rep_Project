@@ -10,6 +10,8 @@
 
 <a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
 
+</br></br>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-info alert-dismissable">
@@ -17,8 +19,6 @@
         </div>
     </div>
 </div>
-
-</br></br>
 
 <c:forEach var="inscrit" items="${list}">
     <c:set var="numeroJeu" value="${numeroJeu + 1}"/>

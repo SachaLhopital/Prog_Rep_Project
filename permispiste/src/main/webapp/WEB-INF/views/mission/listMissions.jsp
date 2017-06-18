@@ -7,14 +7,11 @@
     <h1>Missions disponibles</h1>
 </div>
 
-<h2>Attention : v&eacute;rifier dans le sujet du prof quel est le lien entre mission et jeux ???</h2>
-
 <%-- Listing des Jeux --%>
 <div class="row">
     <div class="col-md-12">
         <div class="panel-body">
             <table class="table table-hover table-striped table-bordered">
-                <caption>Historique des Missions :</caption>
                 <tr>
                     <th>Jeux</th>
                     <th>Intitul&eacute; de la mission</th>
