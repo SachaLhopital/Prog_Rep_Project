@@ -7,34 +7,73 @@
     <h1>Toutes les parties</h1>
 </div>
 
-<%-- Listing des parties --%>
 <div class="row">
-    <div class="col-md-12">
-        <div class="panel-body">
-            <table class="table table-hover table-striped table-bordered">
-                <tr>
-                    <th>Apprenant</th>
-                    <th>Action</th>
-                    <th>Score</th>
-                    <th>Date</th>
-                </tr>
-                <c:forEach var="item" items="${list}">
-                    <tr>
-                        <td><a href="/apprenants/detail/${item.apprenant.numapprenant}">${item.apprenant.nomapprenant} ${item.apprenant.prenomapprenant}</a></td>
-                        <td><a href="/actions/detail/${item.action.numaction}">${item.action.libaction}</a></td>
-                        <c:choose>
-                            <c:when test="${item.action.scoremin > item.valeurfin}">
-                                <td class="bad-grade">${item.valeurfin}/20</td>
-                            </c:when>
-                            <c:otherwise>
-                                <td class="good-grade">${item.valeurfin}/20</td>
-                            </c:otherwise>
-                        </c:choose>
-                        <td><fmt:formatDate value="${item.datejour}" pattern="yyyy-mm-dd"/></td>
-                    </tr>
-                </c:forEach>
-            </table>
+    <div class="col-lg-12">
+        <div class="alert alert-info">
+            <i class="fa fa-info-circle"></i>
+            Visualisez les détails de l'apprenant en cliquant sur <span class="fa fa-user" aria-hidden="true"></span>
+        </div>
+        <div class="alert alert-info">
+            <i class="fa fa-info-circle"></i>
+            Visualisez les détails d'une action en cliquant sur <span class="fa fa-dot-circle-o"></span>
         </div>
     </div>
 </div>
+
+<%-- Listing des parties --%>
+<c:forEach var="apprenant" items="${list}">
+    <c:choose>
+        <c:when test="${empty apprenant.partiesJouees}">
+            <caption>
+                <a href="/apprenants/detail/${apprenant.numapprenant}">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                </a>
+                    ${apprenant.nomapprenant} ${apprenant.prenomapprenant}
+            </caption>
+            <div class="alert alert-info">
+                Cet apprenant n'a pas encore fait d'entrainement.
+            </div>
+        </c:when>
+        <c:when test="${not empty apprenant.partiesJouees}">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped table-bordered">
+                            <caption>
+                                <a href="/apprenants/detail/${apprenant.numapprenant}">
+                                    <span class="fa fa-user" aria-hidden="true"></span>
+                                </a>
+                                ${apprenant.nomapprenant} ${apprenant.prenomapprenant}
+                            </caption>
+                            <tr>
+                                <th>Action</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                            <c:forEach var="obtient" items="${apprenant.partiesJouees}">
+                                <tr>
+                                    <td>
+                                        <a href="/actions/detail/${obtient.action.numaction}">
+                                            <span class="fa fa-dot-circle-o"></span>
+                                        </a>
+                                            ${obtient.action.libaction}
+                                    </td>
+                                    <c:choose>
+                                        <c:when test="${obtient.action.scoremin > obtient.valeurfin}">
+                                            <td class="bad-grade">${obtient.valeurfin}/20</td>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <td class="good-grade">${obtient.valeurfin}/20</td>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <td><fmt:formatDate value="${obtient.datejour}" pattern="yyyy-MM-dd"/></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </c:when>
+    </c:choose>
+</c:forEach>
 <jsp:include page="../commun/footer.jsp" />
