@@ -13,6 +13,10 @@ import static java.lang.Math.toIntExact;
  */
 public class ServiceApprenant extends Service {
 
+    /***
+     * Récupère tous les apprenants
+     * @return
+     */
     public List<ApprenantEntity> getAll(){
         try{
             return ServiceHibernate
@@ -24,6 +28,11 @@ public class ServiceApprenant extends Service {
         return null;
     }
 
+    /***
+     * Récupère un apprenant avec son id
+     * @param id
+     * @return
+     */
     public ApprenantEntity get(int id){
         try{
             return (ApprenantEntity) ServiceHibernate
@@ -51,7 +60,7 @@ public class ServiceApprenant extends Service {
      * Compte le nombre d'inscrits
      * @return
      */
-    public int getCount() {
+    public int countAll() {
         return toIntExact((Long) ServiceHibernate.currentSession()
                 .createQuery("SELECT count(a.numapprenant) FROM ApprenantEntity a")
                 .uniqueResult());

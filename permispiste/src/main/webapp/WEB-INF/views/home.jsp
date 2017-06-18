@@ -7,11 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <jsp:include page="commun/header.jsp" />
+
 <h1>Bienvenue sur Licence T Learning</h1>
 <div class="jumbotron text-center">
     <p><img src="../../includes/images/LtL.png"></p>
     <p>Cette application permet de gérer votre apprentissage pour passez votre permis T ou TZ.</p>
 </div>
+
+<%-- Recaps --%>
 <div class="row">
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-primary">

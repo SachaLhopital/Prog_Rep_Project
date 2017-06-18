@@ -30,14 +30,38 @@
                     </button>
                 </div>
 
-                <div class="navbar-collapse collapse">
+                <li class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/apprenants/"><span class="fa fa-user"></span>&nbsp;Apprenants</a></li>
-                        <li><a href="/games/"><span class="fa fa-gamepad"></span>&nbsp;Jeux</a></li>
-                        <li><a href="/missions/"><span class="fa fa-list-alt"></span>&nbsp;Missions</a></li>
-                        <li><a href="/actions/"><span class="fa fa-dot-circle-o"></span>&nbsp;Actions</a></li>
-                        <li><a href="/actions/apprenant/all/"><span class="fa fa-history"></span>&nbsp;Historique des Parties</a></li>
-                        <li><a href="/inscrits/"><span class="fa fa-calendar-o"></span>&nbsp;Inscriptions</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"
+                                    id="dropdownApprenant"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="true">
+                                <span class="fa fa-user"></span>&nbsp;Apprenants
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownApprenant">
+                                <li><a href="/apprenants/">Liste</a></li>
+                                <li><a href="/actions/apprenant/all/">Historique des Parties</a></li>
+                                <li><a href="/inscrits/">Inscriptions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"
+                                    id="dropdownJeux"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="true">
+                                <span class="fa fa-gamepad"></span>&nbsp;Jeux
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownApprenant">
+                                <li><a href="/games/">Liste complète</a></li>
+                                <li><a href="/missions/">Missions</a></li>
+                                <li><a href="/actions/">Actions</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/simulations/"><span class="fa fa-play-circle"></span>&nbsp;Simulations</a></li>
                     </ul>
                 </div>

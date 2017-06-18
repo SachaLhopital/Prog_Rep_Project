@@ -4,7 +4,7 @@
 <jsp:include page="../commun/header.jsp" />
 
 <div class="page-header">
-    <h1>Liste des Apprenants</h1>
+    <h1>Liste des Apprenants (${total})</h1>
 </div>
 
 <div class="row">

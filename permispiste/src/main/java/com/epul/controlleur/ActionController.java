@@ -1,11 +1,8 @@
 package com.epul.controlleur;
 
 import com.epul.dao.*;
-import com.epul.entities.ApprenantEntity;
-import com.epul.entities.EstAssocieEntity;
+import com.epul.entities.*;
 import com.epul.exception.CustomException;
-import com.epul.entities.ActionEntity;
-import com.epul.entities.ObtientEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,27 +22,52 @@ public class ActionController extends Controller {
     private ServiceObtient serviceObtient = new ServiceObtient();
     private ServiceEstAssocie serviceEstAssocie = new ServiceEstAssocie();
 
+    /***
+     * Affiche la liste des Actions
+     * @param request
+     * @return
+     */
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
-        request.setAttribute("pageTitle", "Liste des Actions");
         request.setAttribute("list", serviceAction.getAll());
         return new ModelAndView("/action/listActions");
     }
 
+    /***
+     * Redirige vers le formulaire d'ajout d'une action
+     * @param request
+     * @return
+     */
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
-        request.setAttribute("actionSubmit", "/action/insert/");
+        request.setAttribute("listObjectifs", new ServiceObjectif().getAll());
+        request.setAttribute("actionSubmit", "/actions/insert/");
         return new ModelAndView("/action/formAction");
     }
+
+    /***
+     * Enregistre l'action, en lien avec son objectif
+     * @param request
+     * @return
+     */
+    @RequestMapping("/insert/")
     @Override
     public ModelAndView insert(HttpServletRequest request) {
         try {
+            //Action
             ActionEntity actionEntity = new ActionEntity();
             actionEntity.setNumaction(serviceAction.getNextIdToInsert());
             actionEntity.setLibaction(request.getParameter("txtlibelle"));
             actionEntity.setScoremin(Integer.parseInt(request.getParameter("txtscoremin")));
             serviceAction.save(actionEntity);
+
+            //EstAssocie
+            EstAssocieEntity estAssocie = new EstAssocieEntity();
+            estAssocie.setNumaction(actionEntity.getNumaction());
+            estAssocie.setNumobjectif(Integer.parseInt(request.getParameter("objectif")));
+            serviceEstAssocie.save(estAssocie);
+
             return getAll(request);
 
         } catch (Exception e) {

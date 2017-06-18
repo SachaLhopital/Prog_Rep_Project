@@ -1,6 +1,5 @@
 package com.epul.controlleur;
 
-import com.epul.dao.Service;
 import com.epul.dao.ServiceApprenant;
 import com.epul.dao.ServiceInscrit;
 import com.epul.dao.ServiceObtient;
@@ -19,7 +18,7 @@ public class IndexController {
     public String home(HttpServletRequest request){
         ServiceObtient serviceObtient =  new ServiceObtient();
 
-        request.setAttribute("totalApprenants", new ServiceApprenant().getCount());
+        request.setAttribute("totalApprenants", new ServiceApprenant().countAll());
         request.setAttribute("totalParties",serviceObtient.getCount());
         request.setAttribute("moyenneScores", serviceObtient.getScoreAverage());
         request.setAttribute("nombrePartiesAujourdhui", new ServiceInscrit().getCountToday());
