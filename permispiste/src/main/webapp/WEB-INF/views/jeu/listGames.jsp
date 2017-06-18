@@ -2,24 +2,37 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../commun/header.jsp"/>
+<c:set var="numeroJeu" value="0"/>
 
 <div class="page-header">
-    <h1>Jeux disponibles</h1>
-    <small> Jeux disponibles pour un entrainement</small>
+    <h1>Jeux disponibles</h1><small> Jeux disponibles pour un entrainement</small>
 </div>
 
 <a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info alert-dismissable">
+            <i class="fa fa-info-circle"></i> Cliquez sur un jeu pour afficher les missions et objectifs associés.
+        </div>
+    </div>
+</div>
+
 </br></br>
 
 <c:forEach var="inscrit" items="${list}">
+    <c:set var="numeroJeu" value="${numeroJeu + 1}"/>
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">${inscrit.key.libellejeu}</h3>
+            <div class="panel panel-info">
+                <div class="panel-heading" data-toggle="collapse" data-target="#jeu${numeroJeu}">
+                    <div class="row">
+                        <h2 class="panel-title">
+                                &nbsp;${inscrit.key.libellejeu} <span class="fa fa-caret-down pull-right"></span>&nbsp;
+                        </h2>
+                    </div>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body collapse" id="jeu${numeroJeu}">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
@@ -33,13 +46,26 @@
                                 <tr>
                                     <td>${mission.key.libmission}</td>
                                     <td>
-                                        <ul>
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <tbody>
                                             <c:forEach var="objectif" items="${mission.value}">
-                                                <li>
-                                                    <a href="/actions/objectif/${objectif.numobjectif}">${objectif.libobjectif}</a>
-                                                </li>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/actions/objectif/${objectif.numobjectif}">
+                                                            ${objectif.libobjectif}
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                        <c:forEach var="estAssocie" items="${objectif.estAssocie}">
+                                                            <li>${estAssocie.action.libaction}</li>
+                                                        </c:forEach>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
                                             </c:forEach>
-                                        </ul>
+                                            </tbody>
+                                        </table>
                                     </td>
                                 </tr>
                             </c:forEach>

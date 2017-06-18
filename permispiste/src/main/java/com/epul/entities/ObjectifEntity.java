@@ -1,6 +1,7 @@
 package com.epul.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Sachouw on 13/06/2017.
@@ -49,5 +50,17 @@ public class ObjectifEntity {
         int result = numobjectif;
         result = 31 * result + (libobjectif != null ? libobjectif.hashCode() : 0);
         return result;
+    }
+
+    private List<EstAssocieEntity> estAssocie;
+
+    @OneToMany
+    @JoinColumn(name="NUMOBJECTIF", insertable = false, updatable = false)
+    public List<EstAssocieEntity> getEstAssocie() {
+        return estAssocie;
+    }
+
+    public void setEstAssocie(List<EstAssocieEntity> estAssocie) {
+        this.estAssocie = estAssocie;
     }
 }

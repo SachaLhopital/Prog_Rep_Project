@@ -56,12 +56,22 @@ public class GameController extends Controller {
         return new ModelAndView("/jeu/listGames");
     }
 
+    /***
+     * Retourne le formulaire d'un jeu
+     * @param request
+     * @return
+     */
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", INSERER_JEU);
         return new ModelAndView("/jeu/formGames");
     }
 
+    /***
+     * Insert un jeu dans la bdd et redirige vers la vue générale
+     * @param request
+     * @return
+     */
     @RequestMapping("/insert/")
     public ModelAndView insert(HttpServletRequest request) {
         try {
@@ -78,6 +88,12 @@ public class GameController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige vers la vue détail d'un jeu
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/detail/{id}")
     public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -117,6 +133,12 @@ public class GameController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige vers le formulaire précomplété d'un jeu
+     * @param request
+     * @return
+     * @throws CustomException
+     */
     @RequestMapping("/edit/")
     public ModelAndView updateGame(HttpServletRequest request) throws CustomException {
         if(request.getParameter("txtId") == null || request.getParameter("txtlibelle").isEmpty()) {
@@ -137,6 +159,12 @@ public class GameController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Supprime un jeu
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public ModelAndView deleteGame(@PathVariable("id") int id, HttpServletRequest request) {
         if(id == 0) {
@@ -150,13 +178,5 @@ public class GameController extends Controller {
             request.setAttribute(ERROR_KEY, "Impossible de supprimer le jeu de la base");
         }
         return errorPage();
-    }
-
-    /***
-     * Return Error ModalAndView
-     * @return
-     */
-    public ModelAndView errorPage() {
-        return new ModelAndView("error");
     }
 }

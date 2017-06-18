@@ -19,31 +19,34 @@
         </div>
     </form>
 </div>
-<div class="panel-list">
-    List des missions associées au jeu
-    <table class="table table-bordered table-hover table-striped">
-        <thead>
-        <tr>
-            <th>Mission</th>
-            <th>Objectifs</th>
-        </tr>
-        </thead>
-        <c:forEach var="mission" items="${missions}">
+
+<c:if test = "${jeu.numjeu != 0}">
+    <div class="panel-list">
+        Liste des missions associées au jeu
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
             <tr>
-                <td>${mission.key.libmission}</td>
-                <td>
-                    <ul>
-                        <c:forEach var="objectif" items="${mission.value}">
-                            <li>
-                                    <a href="/actions/objectif/${objectif.numobjectif}">${objectif.libobjectif}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </td>
+                <th>Mission</th>
+                <th>Objectifs</th>
             </tr>
-        </c:forEach>
-    </table>
-</div>
+            </thead>
+            <c:forEach var="mission" items="${missions}">
+                <tr>
+                    <td>${mission.key.libmission}</td>
+                    <td>
+                        <ul>
+                            <c:forEach var="objectif" items="${mission.value}">
+                                <li>
+                                        <a href="/actions/objectif/${objectif.numobjectif}">${objectif.libobjectif}</a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+</c:if>
 
 <SCRIPT language="Javascript" type="text/javascript">
     function teste() {
