@@ -18,19 +18,11 @@
                 <tr>
                     <th>Jeux</th>
                     <th>Intitul&eacute; de la mission</th>
-                    <th></th>
                 </tr>
-                <c:forEach var="item" items="${list}">
+                <c:forEach var="apprenant" items="${list}">
                     <tr>
-                        <td>${item.game.libellejeu}</td>
-                        <td>${item.libmission}</td>
-                        <td>
-                            <a href="/missions/delete/${item.nummission}">
-                                <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </td>
+                        <td>${apprenant.game.libellejeu}</td>
+                        <td>${apprenant.libmission}</td>
                     </tr>
                 </c:forEach>
             </table>

@@ -17,18 +17,18 @@
                     <th>Score</th>
                     <th>Date</th>
                 </tr>
-                <c:forEach var="item" items="${list}">
+                <c:forEach var="apprenant" items="${list}">
                     <tr>
-                        <td><a href="/actions/detail/${item.action.numaction}">${item.action.libaction}</a></td>
+                        <td><a href="/actions/detail/${apprenant.action.numaction}">${apprenant.action.libaction}</a></td>
                         <c:choose>
-                            <c:when test="${item.action.scoremin > item.valeurfin}">
-                                <td class="bad-grade">${item.valeurfin}/20</td>
+                            <c:when test="${apprenant.action.scoremin > apprenant.valeurfin}">
+                                <td class="bad-grade">${apprenant.valeurfin}/20</td>
                             </c:when>
                             <c:otherwise>
-                                <td class="good-grade">${item.valeurfin}/20</td>
+                                <td class="good-grade">${apprenant.valeurfin}/20</td>
                             </c:otherwise>
                         </c:choose>
-                        <td><fmt:formatDate value="${item.datejour}" pattern="yyyy-mm-dd"/></td>
+                        <td><fmt:formatDate value="${apprenant.datejour}" pattern="yyyy-mm-dd"/></td>
                     </tr>
                 </c:forEach>
             </table>

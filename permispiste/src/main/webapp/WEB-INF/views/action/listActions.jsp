@@ -16,17 +16,11 @@
                 <tr>
                     <th>Action</th>
                     <th>Score minimal</th>
-                    <th></th>
                 </tr>
-                <c:forEach var="item" items="${list}">
+                <c:forEach var="apprenant" items="${list}">
                     <tr>
-                        <td>${item.libaction}</td>
-                        <td>${item.scoremin}/20</td>
-                        <td>
-                            <a class="btn btn-danger" href="/actions/delete/${item.numaction}">
-                                <span class="fa fa-times" aria-hidden="true"></span>
-                            </a>
-                        </td>
+                        <td>${apprenant.libaction}</td>
+                        <td>${apprenant.scoremin}</td>
                     </tr>
                 </c:forEach>
             </table>

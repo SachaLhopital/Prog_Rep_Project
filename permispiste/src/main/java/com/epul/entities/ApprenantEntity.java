@@ -1,6 +1,7 @@
 package com.epul.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Sachouw on 13/06/2017.
@@ -63,5 +64,18 @@ public class ApprenantEntity {
         result = 31 * result + (nomapprenant != null ? nomapprenant.hashCode() : 0);
         result = 31 * result + (prenomapprenant != null ? prenomapprenant.hashCode() : 0);
         return result;
+    }
+
+    private List<ObtientEntity> partiesJouees;
+
+    @OneToMany
+    @JoinColumn(name="NUMAPPRENANT", insertable = false, updatable = false)
+    @OrderBy("datejour DESC")
+    public List<ObtientEntity> getPartiesJouees() {
+        return partiesJouees;
+    }
+
+    public void setPartiesJouees(List<ObtientEntity> partiesJouees) {
+        this.partiesJouees = partiesJouees;
     }
 }

@@ -13,13 +13,13 @@
             <div class="form-group">
                 <label class="col-sm-3">Jeu : </label>
                 <select type="text" name="txtjeu" id="jeu">
-                    <c:forEach var="item" items="${jeux}">
+                    <c:forEach var="apprenant" items="${jeux}">
                         <c:choose>
-                            <c:when test="${item.numjeu == jeu.numjeu}">
-                                <option value="${item.numjeu}" selected>${item.libellejeu}</option>
+                            <c:when test="${apprenant.numjeu == jeu.numjeu}">
+                                <option value="${apprenant.numjeu}" selected>${apprenant.libellejeu}</option>
                             </c:when>
                             <c:otherwise>
-                                <option value="${item.numjeu}">${item.libellejeu}</option>
+                                <option value="${apprenant.numjeu}">${apprenant.libellejeu}</option>
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>

@@ -49,12 +49,12 @@
                                 <th>Jeu</th>
                                 <th></th>
                             </tr>
-                            <c:forEach var="item" items="${list}">
-                                <c:if test = "${item.datejour > now}">
+                            <c:forEach var="apprenant" items="${list}">
+                                <c:if test = "${apprenant.datejour > now}">
                                     <tr>
-                                        <td>${item.apprenant.nomapprenant}</td>
-                                        <td>${item.apprenant.prenomapprenant}</td>
-                                        <td>${item.jeu.libellejeu}</td>
+                                        <td>${apprenant.apprenant.nomapprenant}</td>
+                                        <td>${apprenant.apprenant.prenomapprenant}</td>
+                                        <td>${apprenant.jeu.libellejeu}</td>
                                         <td>
                                             <a href="/apprenants/">
                                                 <button type="button" class="btn btn-primary" aria-label="Left Align">
@@ -87,13 +87,13 @@
                                 <th>Date</th>
                                 <th></th>
                             </tr>
-                            <c:forEach var="item" items="${list}">
-                                <c:if test = "${item.datejour < now}">
+                            <c:forEach var="apprenant" items="${list}">
+                                <c:if test = "${apprenant.datejour < now}">
                                     <tr>
-                                        <td>${item.apprenant.nomapprenant}</td>
-                                        <td>${item.apprenant.prenomapprenant}</td>
-                                        <td>${item.jeu.libellejeu}</td>
-                                        <td>${item.datejour}</td>
+                                        <td>${apprenant.apprenant.nomapprenant}</td>
+                                        <td>${apprenant.apprenant.prenomapprenant}</td>
+                                        <td>${apprenant.jeu.libellejeu}</td>
+                                        <td>${apprenant.datejour}</td>
                                         <td>
                                             <a href="/apprenants/">
                                                 <button type="button" class="btn btn-primary" aria-label="Left Align">

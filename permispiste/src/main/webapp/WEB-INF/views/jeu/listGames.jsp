@@ -12,12 +12,12 @@
 
 </br></br>
 
-<c:forEach var="item" items="${list}">
+<c:forEach var="apprenant" items="${list}">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">${item.key.libellejeu}</h3>
+                    <h3 class="panel-title">${apprenant.key.libellejeu}</h3>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -29,7 +29,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="mission" items="${item.value}">
+                            <c:forEach var="mission" items="${apprenant.value}">
                                 <tr>
                                     <td>${mission.key.libmission}</td>
                                     <td>
@@ -47,17 +47,17 @@
                         </table>
                     </div>
                     <div class="text-right">
-                        <a href="/missions/add/${item.key.numjeu}">
+                        <a href="/missions/add/${apprenant.key.numjeu}">
                             <button type="button" class="btn btn-info" aria-label="Left Align">
                                 <span class="fa fa-play-circle-o" aria-hidden="true"></span>
                             </button>
                         </a>
-                        <a href="/games/detail/${item.key.numjeu}">
+                        <a href="/games/detail/${apprenant.key.numjeu}">
                             <button type="button" class="btn btn-info" aria-label="Left Align">
                                 <span class="fa fa-pencil" aria-hidden="true"></span>
                             </button>
                         </a>
-                        <a href="/games/delete/${item.key.numjeu}">
+                        <a href="/games/delete/${apprenant.key.numjeu}">
                             <button type="button" class="btn btn-danger" aria-label="Left Align">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>

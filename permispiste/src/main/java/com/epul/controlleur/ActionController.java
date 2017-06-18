@@ -1,6 +1,7 @@
 package com.epul.controlleur;
 
 import com.epul.dao.*;
+import com.epul.entities.ApprenantEntity;
 import com.epul.entities.EstAssocieEntity;
 import com.epul.exception.CustomException;
 import com.epul.entities.ActionEntity;
@@ -19,6 +20,7 @@ import java.util.List;
 @RequestMapping("/actions")
 public class ActionController extends Controller {
 
+    private ServiceApprenant serviceApprenant = new ServiceApprenant();
     private ServiceAction serviceAction = new ServiceAction();
     private ServiceObtient serviceObtient = new ServiceObtient();
     private ServiceEstAssocie serviceEstAssocie = new ServiceEstAssocie();
@@ -53,22 +55,27 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige sur la vue d'historique des parties
+     * @param request
+     * @return
+     */
     @RequestMapping("/apprenant/all")
     public ModelAndView getAllGamesLaunched(HttpServletRequest request){
         try {
-            List<ObtientEntity> obtient = serviceObtient.getAll();
+            List<ApprenantEntity> partiesJouees = serviceApprenant.getAll();
 
-            if (obtient == null) {
-                request.setAttribute(ERROR_KEY, "Impossible d'obtenir les parties lancées.");
+            if (partiesJouees == null) {
+                request.setAttribute(ERROR_KEY, "Impossible d'obtenir les parties lancées et/ou les joueurs");
                 return errorPage();
             }
 
-            request.setAttribute("list", obtient);
+            request.setAttribute("list", partiesJouees);
             return new ModelAndView("/action/listActionsApprenantAll");
 
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
+            request.setAttribute(ERROR_KEY, "Impossible d'obtenir les informations pour afficher l'historique des parties");
         }
         return errorPage();
     }
@@ -83,7 +90,7 @@ public class ActionController extends Controller {
 
             serviceObtient.getAll();
 
-            List<ObtientEntity> obtients = serviceObtient.getAllFromApprenant(id);
+            List<ObtientEntity> obtients = serviceObtient.getAllForApprenant(id);
 
             if (obtients == null) {
                 request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");

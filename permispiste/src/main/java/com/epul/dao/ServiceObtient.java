@@ -2,6 +2,7 @@ package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
 import com.epul.entities.ActionEntity;
+import com.epul.entities.ApprenantEntity;
 import com.epul.entities.ObtientEntity;
 import org.hibernate.Session;
 
@@ -52,7 +53,7 @@ public class ServiceObtient extends Service{
      * @param idApprenant
      * @return
      */
-    public List<ObtientEntity> getAllFromApprenant(int idApprenant){
+    public List<ObtientEntity> getAllForApprenant(int idApprenant){
         List<ObtientEntity> all = new ArrayList<>();
         try{
             Session session = ServiceHibernate.currentSession();

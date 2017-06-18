@@ -28,22 +28,22 @@
                     <th>Pr&eacute;nom</th>
                     <th></th>
                 </tr>
-                <c:forEach var="item" items="${list}">
+                <c:forEach var="apprenant" items="${list}">
                     <tr>
-                        <td>${item.nomapprenant}</td>
-                        <td>${item.prenomapprenant}</td>
+                        <td>${apprenant.nomapprenant}</td>
+                        <td>${apprenant.prenomapprenant}</td>
                         <td>
-                            <a href="/actions/apprenant/${item.numapprenant}">
+                            <a href="/actions/apprenant/${apprenant.numapprenant}">
                                 <button type="button" class="btn btn-primary" aria-label="Left Align">
                                     <span class="fa fa-list" aria-hidden="true"></span>
                                 </button>
                             </a>
-                            <a href="/apprenants/detail/${item.numapprenant}">
+                            <a href="/apprenants/detail/${apprenant.numapprenant}">
                                 <button type="button" class="btn btn-info" aria-label="Left Align">
                                     <span class="fa fa-pencil" aria-hidden="true"></span>
                                 </button>
                             </a>
-                            <a href="/apprenants/delete/${item.numapprenant}" class="btn btn-danger">
+                            <a href="/apprenants/delete/${apprenant.numapprenant}" class="btn btn-danger">
                                 <span class="fa fa-times"></span>
                             </a>
                         </td>
