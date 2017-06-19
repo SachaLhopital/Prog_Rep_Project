@@ -2,6 +2,7 @@ package com.epul.controlleur;
 
 import com.epul.dao.*;
 import com.epul.entities.*;
+import com.epul.exception.CustomException;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,6 +28,7 @@ public class SimulationController extends Controller{
     private ServiceApprenant serviceApprenant= new ServiceApprenant();
     private ServiceObtient serviceObtient = new ServiceObtient();
     private ServiceGame serviceJeu = new ServiceGame();
+    private ServiceInscrit serviceInscrit = new ServiceInscrit();
 
 
     @Override
@@ -67,11 +69,24 @@ public class SimulationController extends Controller{
 
 
         //inscription de l'aprenant
-        InscritEntity inscription = new InscritEntity();
-        inscription.setNumapprenant(apprenantEntity.getNumapprenant());
-        inscription.setDatejour(calendrierEntity.getDatejour());
-        inscription.setNumjeu(numJeu);
-        new ServiceInscrit().save(inscription);
+        //verification de l'inscription
+
+        InscritEntity inscription;
+        try{
+            inscription = serviceInscrit.getInscription(numApprenant,numJeu);
+        } catch (CustomException e) {
+            e.printStackTrace();
+            inscription = null;
+
+        }
+        if(inscription == null){
+            inscription = new InscritEntity();
+            inscription.setNumjeu(numJeu);
+            inscription.setNumapprenant(numApprenant);
+            inscription.setDatejour(calendrierEntity.getDatejour());
+            new ServiceInscrit().save(inscription);
+        }
+
 
         //génération de valeurs aléatoires et affichage
         //récupération des missions
@@ -92,12 +107,19 @@ public class SimulationController extends Controller{
 
         //atribution d'une note aléatoire
         for(ActionEntity actionEntity:actions){
-            ObtientEntity obtientEntity = new ObtientEntity();
-            obtientEntity.setNumaction(actionEntity.getNumaction());
-            obtientEntity.setNumapprenant(numApprenant);
+            ObtientEntity obtientEntity = serviceObtient.get(numApprenant,actionEntity.getNumaction());
+            if(obtientEntity == null){
+                obtientEntity = new ObtientEntity();
+                obtientEntity.setNumapprenant(numApprenant);
+                obtientEntity.setNumaction(actionEntity.getNumaction());
+                /*obtientEntity.setAction(actionEntity);
+                obtientEntity.setApprenant(apprenantEntity);*/
+            }
+
             obtientEntity.setDatejour(calendrierEntity.getDatejour());
             obtientEntity.setValeurdebut(1);
             obtientEntity.setValeurfin(new Random().nextInt(MAX_NOTE));
+
             serviceObtient.save(obtientEntity);
         }
 

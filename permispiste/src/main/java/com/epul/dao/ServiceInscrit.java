@@ -43,4 +43,17 @@ public class ServiceInscrit extends Service {
                         "WHERE i.datejour = current_date")
                 .uniqueResult());
     }
+
+    public InscritEntity getInscription(int idApprenant, int numjeu) throws CustomException {
+        try{
+            return (InscritEntity) ServiceHibernate.currentSession()
+                    .createQuery("SELECT i FROM InscritEntity i WHERE i.numapprenant = :idApprenant and i.numjeu = :numjeu ORDER BY i.datejour DESC")
+                    .setParameter("idApprenant",idApprenant)
+                    .setParameter("numjeu",numjeu)
+                    .getSingleResult();
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new CustomException("ERROR", "Impossible de récupérer les inscriptions");
+        }
+    }
 }
