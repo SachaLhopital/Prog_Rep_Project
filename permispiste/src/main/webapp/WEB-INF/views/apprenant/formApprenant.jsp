@@ -21,9 +21,6 @@
         </div>
         <div class="panel-footer">
             <button type="submit" name="bt" class="btn btn-primary">Sauvegarder</button>
-            <a href="/actions/apprenant/${apprenant.numapprenant}">
-                <button type="button" class="btn btn-primary">Voir ses parties</button>
-            </a>
         </div>
     </form>
 </div>

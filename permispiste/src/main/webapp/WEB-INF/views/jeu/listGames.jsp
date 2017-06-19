@@ -83,11 +83,6 @@
                                 <span class="fa fa-pencil" aria-hidden="true"></span>
                             </button>
                         </a>
-                        <a href="/games/delete/${inscrit.key.numjeu}">
-                            <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                <span class="fa fa-times" aria-hidden="true"></span>
-                            </button>
-                        </a>
                     </div>
                 </div>
             </div>

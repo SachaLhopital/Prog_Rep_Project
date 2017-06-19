@@ -6,6 +6,7 @@ import com.epul.entities.ObtientEntity;
 import com.epul.exception.CustomException;
 import org.hibernate.Session;
 
+import javax.persistence.NoResultException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

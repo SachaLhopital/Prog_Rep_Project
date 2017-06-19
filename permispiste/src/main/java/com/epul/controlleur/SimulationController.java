@@ -3,11 +3,11 @@ package com.epul.controlleur;
 import com.epul.dao.*;
 import com.epul.entities.*;
 import com.epul.exception.CustomException;
-import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -39,21 +39,15 @@ public class SimulationController extends Controller{
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getForm(HttpServletRequest request) {
+        request.setAttribute("apprenants",serviceApprenant.getAll());
         return new ModelAndView("/simulation/formConnexionSimulation");
     }
 
     @RequestMapping(value = "/verif_user")
     public ModelAndView checkUser(HttpServletRequest request) {
-        List<ApprenantEntity> apprenants = serviceApprenant.getAll();
-        for(ApprenantEntity apprenant:apprenants){
-            if(apprenant.getNomapprenant().equals(request.getParameter("txtNom"))){
-                request.setAttribute("jeux",serviceJeu.getAll());
-                request.setAttribute("num_apprenant",apprenant.getNumapprenant());
-                return new ModelAndView("/simulation/listGames");
-            }
-        }
-        request.setAttribute(ERROR_KEY,"Apprenant non reconu.");
-        return new ModelAndView("/simulation/formConnexionSimulation");
+        request.setAttribute("jeux",serviceJeu.getAll());
+        request.setAttribute("num_apprenant", Integer.parseInt(request.getParameter("num_apprenant")));
+        return new ModelAndView("/simulation/listGames");
     }
 
     @RequestMapping(value = "/select_game")
@@ -69,24 +63,11 @@ public class SimulationController extends Controller{
 
 
         //inscription de l'aprenant
-        //verification de l'inscription
-
-        InscritEntity inscription;
-        try{
-            inscription = serviceInscrit.getInscription(numApprenant,numJeu);
-        } catch (CustomException e) {
-            e.printStackTrace();
-            inscription = null;
-
-        }
-        if(inscription == null){
-            inscription = new InscritEntity();
-            inscription.setNumjeu(numJeu);
-            inscription.setNumapprenant(numApprenant);
-            inscription.setDatejour(calendrierEntity.getDatejour());
-            new ServiceInscrit().save(inscription);
-        }
-
+        InscritEntity inscription = new InscritEntity();
+        inscription.setNumjeu(numJeu);
+        inscription.setNumapprenant(numApprenant);
+        inscription.setDatejour(calendrierEntity.getDatejour());
+        serviceInscrit.save(inscription);
 
         //génération de valeurs aléatoires et affichage
         //récupération des missions
@@ -107,19 +88,12 @@ public class SimulationController extends Controller{
 
         //atribution d'une note aléatoire
         for(ActionEntity actionEntity:actions){
-            ObtientEntity obtientEntity = serviceObtient.get(numApprenant,actionEntity.getNumaction());
-            if(obtientEntity == null){
-                obtientEntity = new ObtientEntity();
-                obtientEntity.setNumapprenant(numApprenant);
-                obtientEntity.setNumaction(actionEntity.getNumaction());
-                /*obtientEntity.setAction(actionEntity);
-                obtientEntity.setApprenant(apprenantEntity);*/
-            }
-
+            ObtientEntity obtientEntity = new ObtientEntity();
+            obtientEntity.setNumapprenant(numApprenant);
+            obtientEntity.setNumaction(actionEntity.getNumaction());
             obtientEntity.setDatejour(calendrierEntity.getDatejour());
             obtientEntity.setValeurdebut(1);
             obtientEntity.setValeurfin(new Random().nextInt(MAX_NOTE));
-
             serviceObtient.save(obtientEntity);
         }
 

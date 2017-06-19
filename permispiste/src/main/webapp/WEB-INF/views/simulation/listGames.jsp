@@ -8,9 +8,6 @@
     <h1>Jeux disponibles</h1><small> Jeux disponibles pour un entrainement</small>
 </div>
 
-<a href="/games/add/" class="btn btn-default"><span class="fa fa-plus"></span> Ajouter un nouveau jeu</a>
-
-
 </br></br>
 
 <form name='selectionJeu' method="post" action="/simulations/select_game" onsubmit="return teste()">

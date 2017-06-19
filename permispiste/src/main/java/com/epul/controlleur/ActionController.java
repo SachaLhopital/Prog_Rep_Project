@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("/actions")
 public class ActionController extends Controller {
 
+    private ServiceObjectif serviceObjectif = new ServiceObjectif();
     private ServiceApprenant serviceApprenant = new ServiceApprenant();
     private ServiceAction serviceAction = new ServiceAction();
     private ServiceObtient serviceObtient = new ServiceObtient();
@@ -41,7 +42,7 @@ public class ActionController extends Controller {
      */
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
-        request.setAttribute("listObjectifs", new ServiceObjectif().getAll());
+        request.setAttribute("listObjectifs", serviceObjectif.getAll());
         request.setAttribute("actionSubmit", "/actions/insert/");
         return new ModelAndView("/action/formAction");
     }
@@ -174,6 +175,7 @@ public class ActionController extends Controller {
             }
 
             request.setAttribute("action", action);
+            request.setAttribute("listObjectifs", serviceObjectif.getAll());
             request.setAttribute("actionSubmit", "/actions/edit/");
             return new ModelAndView("/action/formAction");
 
