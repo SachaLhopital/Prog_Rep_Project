@@ -7,7 +7,7 @@
     <h1>Actions requises pour l'objectif "${objectif.libobjectif}"</h1>
 </div>
 
-<%-- Listing des parties --%>
+<%-- Listing des Actions --%>
 <div class="row">
     <div class="col-md-12">
         <div class="panel-body">

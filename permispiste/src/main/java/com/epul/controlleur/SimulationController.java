@@ -2,12 +2,9 @@ package com.epul.controlleur;
 
 import com.epul.dao.*;
 import com.epul.entities.*;
-import com.epul.exception.CustomException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -30,19 +27,27 @@ public class SimulationController extends Controller{
     private ServiceGame serviceJeu = new ServiceGame();
     private ServiceInscrit serviceInscrit = new ServiceInscrit();
 
-
     @Override
     public ModelAndView getAll(HttpServletRequest request) {
         return null;
     }
 
-    @Override
+    /***
+     * Redirige sur le formulaire de selection d'un apprenant
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/")
     public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("apprenants",serviceApprenant.getAll());
         return new ModelAndView("/simulation/formConnexionSimulation");
     }
 
+    /***
+     * Redirige sur le formulaire de selection du jeu
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/verif_user")
     public ModelAndView checkUser(HttpServletRequest request) {
         request.setAttribute("jeux",serviceJeu.getAll());
@@ -50,17 +55,20 @@ public class SimulationController extends Controller{
         return new ModelAndView("/simulation/listGames");
     }
 
+    /***
+     * Effectue une simulation (calcul aléatoirement les scores obtenus et enregistre en base)
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/select_game")
     public ModelAndView getListGames(HttpServletRequest request) {
 
         int numApprenant = Integer.parseInt(request.getParameter("num_apprenant"));
         int numJeu = Integer.parseInt(request.getParameter("num_jeu"));
 
-        ApprenantEntity apprenantEntity = serviceApprenant.get(numApprenant);
         CalendrierEntity calendrierEntity = new CalendrierEntity();
         calendrierEntity.setDatejour(Date.valueOf(LocalDate.now()));
         new ServiceCalendrier().save(calendrierEntity);
-
 
         //inscription de l'aprenant
         InscritEntity inscription = new InscritEntity();
@@ -76,14 +84,11 @@ public class SimulationController extends Controller{
         //récupération des actions
         List<ActionEntity> actions = new ArrayList<>();
         for(MissionEntity mission:missions){
-
             for(FixeEntity fixeEntity:mission.getObjectifs()){
                 for(EstAssocieEntity estAssocieEntity:fixeEntity.getObjectif().getEstAssocie()){
                     actions.add(estAssocieEntity.getAction());
                 }
-
             }
-
         }
 
         //atribution d'une note aléatoire
@@ -99,7 +104,6 @@ public class SimulationController extends Controller{
 
         try {
             serviceObtient.getAll();
-
             List<ObtientEntity> obtients = serviceObtient.getAllForApprenant(numApprenant);
 
             if (obtients == null) {
@@ -110,22 +114,11 @@ public class SimulationController extends Controller{
             request.setAttribute("list", obtients);
             request.setAttribute("trainee", new ServiceApprenant().get(numApprenant));
             return new ModelAndView("/action/listActionsApprenant");
-
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute(ERROR_KEY, "Impossible d'obtenir les action pour l'apprenant sélectionné.");
         }
         return errorPage();
-
-
-
-    }
-
-
-
-    @Override
-    public ModelAndView insert(HttpServletRequest request) {
-        return null;
     }
 
     @Override

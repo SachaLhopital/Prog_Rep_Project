@@ -21,6 +21,11 @@ public class MissionController extends Controller {
 
     private ServiceMission service = new ServiceMission();
 
+    /***
+     * Récupère toutes les missions
+     * @param request
+     * @return
+     */
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
@@ -29,6 +34,11 @@ public class MissionController extends Controller {
         return new ModelAndView("/mission/listMissions");
     }
 
+    /***
+     * Redirige vers le formulaire d'ajout d'une mission
+     * @param request
+     * @return
+     */
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", "/missions/insert/");
@@ -38,6 +48,12 @@ public class MissionController extends Controller {
         return new ModelAndView("/mission/formMissions");
     }
 
+    /***
+     * Redirige vers le formulaire d'ajout d'une mission pour un jeu
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/add/{id}")
     public ModelAndView getForm(@PathVariable("id") int id, HttpServletRequest request) {
         if(id==0){
@@ -53,6 +69,11 @@ public class MissionController extends Controller {
         return new ModelAndView("/mission/formMissions");
     }
 
+    /***
+     * Insert une mission en base
+     * @param request
+     * @return
+     */
     @RequestMapping("/insert/")
     public ModelAndView insert(HttpServletRequest request) {
         try {
@@ -70,6 +91,12 @@ public class MissionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Récupère les détails d'une mission
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/detail/{id}")
     public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -96,27 +123,12 @@ public class MissionController extends Controller {
         return errorPage();
     }
 
-    @RequestMapping("/edit/")
-    public ModelAndView updateMission(HttpServletRequest request) throws CustomException {
-        /*if(request.getParameter("txtId") == null || request.getParameter("txtlibelle").isEmpty()) {
-            request.setAttribute(ERROR_KEY, "Il manque des arguments à la méthode update games");
-            return errorPage();
-        }
-
-        try {
-            JeuEntity jeuToUpdate = service.get(Integer.parseInt(request.getParameter("txtId")));
-            jeuToUpdate.setLibellejeu(request.getParameter("txtlibelle"));
-            service.save(jeuToUpdate);
-            return getAllGames(request);
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            request.setAttribute(ERROR_KEY, "Impossible de mettre à jour le jeu");
-        }*/
-        //TODO : really necessary ?...
-        return errorPage();
-    }
-
+    /***
+     * Supprime une mission
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public ModelAndView deleteMission(@PathVariable("id") int id, HttpServletRequest request) {
         if(id == 0) {

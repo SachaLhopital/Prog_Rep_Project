@@ -15,6 +15,10 @@ import java.util.List;
  */
 public class ServiceGame extends Service {
 
+    /***
+     * Récupère tous les jeux
+     * @return
+     */
     public List<JeuEntity> getAll(){
         List<JeuEntity> mesJeux = new ArrayList();
         try{
@@ -34,6 +38,11 @@ public class ServiceGame extends Service {
         return mesJeux;
     }
 
+    /***
+     * Récupère les jeu avec son id
+     * @param id_jeu
+     * @return
+     */
     public JeuEntity get(int id_jeu){
         JeuEntity jeu = null;
         try{
@@ -51,16 +60,5 @@ public class ServiceGame extends Service {
      */
     public int getNextIdToInsert() {
         return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( j.numjeu ) FROM JeuEntity j").uniqueResult()) + 1;
-    }
-
-    public void delete(JeuEntity jeuEntity){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.delete(jeuEntity);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }

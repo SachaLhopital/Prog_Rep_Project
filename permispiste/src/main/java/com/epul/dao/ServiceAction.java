@@ -14,6 +14,10 @@ import java.util.List;
  */
 public class ServiceAction extends Service {
 
+    /***
+     * Récupère les actions
+     * @return
+     */
     public List<ActionEntity> getAll(){
         List<ActionEntity> actionList = new ArrayList();
         try{
@@ -31,6 +35,11 @@ public class ServiceAction extends Service {
         return actionList;
     }
 
+    /***
+     * Récupère une action avec son id
+     * @param id
+     * @return
+     */
     public ActionEntity get(int id){
         ActionEntity action = null;
         try{
@@ -49,17 +58,5 @@ public class ServiceAction extends Service {
      */
     public int getNextIdToInsert() {
         return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( a.numaction ) FROM ActionEntity a").uniqueResult()) + 1;
-    }
-
-    //TOdo : refactor
-    public void delete(ActionEntity action){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.delete(action);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }

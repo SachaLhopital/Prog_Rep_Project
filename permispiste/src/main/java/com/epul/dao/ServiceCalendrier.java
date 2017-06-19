@@ -15,6 +15,10 @@ import java.util.List;
  */
 public class ServiceCalendrier extends Service {
 
+    /***
+     * Récupère toutes les lignes du calendrier
+     * @return
+     */
     public List<CalendrierEntity> getAll(){
         List<CalendrierEntity> calendrierEntityList = new ArrayList();
         try{
@@ -32,6 +36,10 @@ public class ServiceCalendrier extends Service {
         return calendrierEntityList;
     }
 
+    /***
+     * Sauvegarde une nouvelle ligne dans Calendrier
+     * @param entityObject
+     */
     @Override
     public void save(Object entityObject) {
         for(CalendrierEntity calendrierEntity:getAll()){

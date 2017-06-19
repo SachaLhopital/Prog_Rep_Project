@@ -12,6 +12,11 @@ import java.util.List;
  * Created by Louis on 17/06/2017.
  */
 public class ServiceObjectif extends Service {
+
+    /***
+     * Récupère tous les objectifs
+     * @return
+     */
     public List<ObjectifEntity> getAll(){
         List<ObjectifEntity> objectifEntities = new ArrayList<>();
         try{
@@ -29,6 +34,11 @@ public class ServiceObjectif extends Service {
         return objectifEntities;
     }
 
+    /***
+     * Récupère un objectif avec son id
+     * @param id
+     * @return
+     */
     public ObjectifEntity get(int id){
         ObjectifEntity objectif = null;
         try{

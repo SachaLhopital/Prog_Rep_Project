@@ -8,10 +8,17 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * Gestion des Erreurs
  * Created by lafay on 18/05/2017.
  */
 @Controller
 public class ErrorControler {
+
+    /***
+     * Redirige vers les erreurs
+     * @param httpRequest
+     * @return
+     */
     @RequestMapping(value = "/errors", method = RequestMethod.GET)
     public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {
 
@@ -41,6 +48,11 @@ public class ErrorControler {
         return errorPage;
     }
 
+    /***
+     * Retourne le code d'erreur HTTP
+     * @param httpRequest
+     * @return
+     */
     private int getErrorCode(HttpServletRequest httpRequest) {
         return (Integer) httpRequest
                 .getAttribute("javax.servlet.error.status_code");

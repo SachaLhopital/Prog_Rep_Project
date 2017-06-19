@@ -53,7 +53,6 @@ public class ActionController extends Controller {
      * @return
      */
     @RequestMapping("/insert/")
-    @Override
     public ModelAndView insert(HttpServletRequest request) {
         try {
             //Action
@@ -103,6 +102,12 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige vers la liste des parties d'un apprenant
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/apprenant/{id}")
     public ModelAndView getAllFromApprenant(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -131,6 +136,12 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Récupère les objectifs d'une action
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/objectif/{id}")
     public ModelAndView getAllFromObjectif(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -159,6 +170,12 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige sur le formulaire d'une action prérempli
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/detail/{id}")
     public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -186,15 +203,27 @@ public class ActionController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Enregistre les modifications d'une action
+     * @param request
+     * @return
+     * @throws CustomException
+     */
     @RequestMapping("/edit/")
     public ModelAndView updateAction(HttpServletRequest request) throws CustomException {
         ActionEntity actionEntity = serviceAction.get(Integer.parseInt(request.getParameter("txtId")));
         actionEntity.setLibaction(request.getParameter("txtlibelle"));
         actionEntity.setScoremin(Integer.parseInt(request.getParameter("txtscoremin")));
         serviceAction.save(actionEntity);
-        return new ModelAndView("redirect:/actions/detail/"+actionEntity.getNumaction());
+        return getAll(request);
     }
 
+    /***
+     * Supprime une action
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public ModelAndView deleteAction(@PathVariable("id") int id, HttpServletRequest request) {
         if(id == 0) {

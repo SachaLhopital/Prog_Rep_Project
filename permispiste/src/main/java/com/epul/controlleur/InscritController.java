@@ -16,6 +16,11 @@ public class InscritController extends Controller {
 
     ServiceInscrit service = new ServiceInscrit();
 
+    /***
+     * Récupère la liste des inscriptions
+     * @param request
+     * @return
+     */
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
@@ -30,20 +35,7 @@ public class InscritController extends Controller {
     }
 
     @Override
-    public ModelAndView getForm(HttpServletRequest request) {
-        //Todo
-        return null;
-    }
-
-    @Override
-    public ModelAndView insert(HttpServletRequest request) {
-        //Todo
-        return null;
-    }
-
-    @Override
     public ModelAndView get(int id, HttpServletRequest request) {
-        //Todo
         return null;
     }
 }

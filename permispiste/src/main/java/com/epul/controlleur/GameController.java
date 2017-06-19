@@ -31,6 +31,11 @@ public class GameController extends Controller {
     private ServiceMission serviceMission = new ServiceMission();
     private ServiceFixe serviceFixe = new ServiceFixe();
 
+    /***
+     * Récupère tous les jeux
+     * @param request
+     * @return
+     */
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
@@ -39,21 +44,23 @@ public class GameController extends Controller {
         for (JeuEntity jeu : jeux){
             List<MissionEntity> missions = serviceMission.getAllFromJeu(jeu.getNumjeu());
             Map<MissionEntity,List<ObjectifEntity>> missionsMap = new HashMap<>();
-
-            for (MissionEntity mission : missions){
-                List<ObjectifEntity> objectifs = new ArrayList<>();
-                List<FixeEntity> fixes = serviceFixe.getAllFromMission(mission.getNummission());
-                for (FixeEntity fixe : fixes){
-                    objectifs.add(fixe.getObjectif());
-                }
-                missionsMap.put(mission,objectifs);
-            }
+            missionsMap = extractObjectifsForMissions(missions, missionsMap);
             jeuMap.put(jeu,missionsMap);
         }
-
-        request.setAttribute("pageTitle", "Liste des Jeux");
         request.setAttribute("list", jeuMap);
         return new ModelAndView("/jeu/listGames");
+    }
+
+    private Map<MissionEntity, List<ObjectifEntity>> extractObjectifsForMissions(List<MissionEntity> missions, Map<MissionEntity, List<ObjectifEntity>> missionsMap) {
+        for (MissionEntity mission : missions){
+            List<ObjectifEntity> objectifs = new ArrayList<>();
+            List<FixeEntity> fixes = serviceFixe.getAllFromMission(mission.getNummission());
+            for (FixeEntity fixe : fixes){
+                objectifs.add(fixe.getObjectif());
+            }
+            missionsMap.put(mission,objectifs);
+        }
+        return missionsMap;
     }
 
     /***
@@ -111,16 +118,7 @@ public class GameController extends Controller {
 
             List<MissionEntity> missions = serviceMission.getAllFromJeu(jeu.getNumjeu());
             Map<MissionEntity,List<ObjectifEntity>> missionsMap = new HashMap<>();
-
-            for (MissionEntity mission : missions){
-                List<ObjectifEntity> objectifs = new ArrayList<>();
-                List<FixeEntity> fixes = serviceFixe.getAllFromMission(mission.getNummission());
-                for (FixeEntity fixe : fixes){
-                    objectifs.add(fixe.getObjectif());
-                }
-                missionsMap.put(mission,objectifs);
-            }
-
+            missionsMap = extractObjectifsForMissions(missions, missionsMap);
             request.setAttribute("jeu", jeu);
             request.setAttribute("missions", missionsMap);
             request.setAttribute("actionSubmit", "/games/edit/");

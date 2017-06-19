@@ -13,8 +13,6 @@ public abstract class Controller {
     String ERROR_KEY = "messageErreur";
 
     public abstract ModelAndView getAll(HttpServletRequest request);
-    public abstract ModelAndView getForm(HttpServletRequest request);
-    public abstract ModelAndView insert(HttpServletRequest request);
     public abstract ModelAndView get(@PathVariable("id") int id, HttpServletRequest request);
 
     /***

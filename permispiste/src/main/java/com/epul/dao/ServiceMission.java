@@ -1,7 +1,6 @@
 package com.epul.dao;
 
 import com.epul.conf.ServiceHibernate;
-import com.epul.entities.JeuEntity;
 import com.epul.entities.MissionEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,6 +14,10 @@ import java.util.List;
  */
 public class ServiceMission extends Service {
 
+    /***
+     * Récupère toutes les missions
+     * @return
+     */
     public List<MissionEntity> getAll(){
         List<MissionEntity> missionList = new ArrayList();
         try{
@@ -32,6 +35,11 @@ public class ServiceMission extends Service {
         return missionList;
     }
 
+    /***
+     * Récupère les missions d'un jeu
+     * @param idJeu
+     * @return
+     */
     public List<MissionEntity> getAllFromJeu(int idJeu){
         List<MissionEntity> missionList = new ArrayList();
         try{
@@ -51,6 +59,11 @@ public class ServiceMission extends Service {
         return missionList;
     }
 
+    /***
+     * Récupère les missions avec son id
+     * @param id
+     * @return
+     */
     public MissionEntity get(int id){
         MissionEntity mission = null;
         try{
@@ -69,17 +82,5 @@ public class ServiceMission extends Service {
      */
     public int getNextIdToInsert() {
         return ((Integer) ServiceHibernate.currentSession().createQuery("SELECT max( m.nummission ) FROM MissionEntity m").uniqueResult()) + 1;
-    }
-
-    //TOdo : refactor
-    public void delete(MissionEntity mission){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.delete(mission);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }

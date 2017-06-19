@@ -18,6 +18,11 @@ public class ApprenantController extends Controller {
 
     private ServiceApprenant service = new ServiceApprenant();
 
+    /***
+     * Récupère tous les apprenants et les affiche sour forme d'une liste
+     * @param request
+     * @return
+     */
     @Override
     @RequestMapping(value = "/")
     public ModelAndView getAll(HttpServletRequest request) {
@@ -26,12 +31,22 @@ public class ApprenantController extends Controller {
         return new ModelAndView("/apprenant/listApprenant");
     }
 
+    /***
+     * Redirige vers le formulaire d'ajout d'un apprenant
+     * @param request
+     * @return
+     */
     @RequestMapping("/add/")
     public ModelAndView getForm(HttpServletRequest request) {
         request.setAttribute("actionSubmit", "/apprenants/insert/");
         return new ModelAndView("/apprenant/formApprenant");
     }
 
+    /***
+     * Insert l'adhérent dans la base
+     * @param request
+     * @return
+     */
     @RequestMapping("/insert/")
     public ModelAndView insert(HttpServletRequest request) {
         try {
@@ -48,6 +63,12 @@ public class ApprenantController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Redirige sur le formulaire d'un adhérent précomplété
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/detail/{id}")
     public ModelAndView get(@PathVariable("id") int id, HttpServletRequest request) {
         try {
@@ -74,6 +95,12 @@ public class ApprenantController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Update un apprenant à partir du formulaire
+     * @param request
+     * @return
+     * @throws CustomException
+     */
     @RequestMapping("/edit/")
     public ModelAndView updateTrainee(HttpServletRequest request) throws CustomException {
         if(request.getParameter("txtId") == null || request.getParameter("txtnom").isEmpty() || request.getParameter("txtprenom").isEmpty()) {
@@ -95,6 +122,12 @@ public class ApprenantController extends Controller {
         return errorPage();
     }
 
+    /***
+     * Supprime un apprenant
+     * @param id
+     * @param request
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public ModelAndView deleteTrainee(@PathVariable("id") int id, HttpServletRequest request) {
         if(id == 0) {

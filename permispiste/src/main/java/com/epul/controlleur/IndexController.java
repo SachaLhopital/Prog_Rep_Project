@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class IndexController {
 
+    /***
+     * Redirige sur la page d'accueil
+     * @param request
+     * @return
+     */
     @RequestMapping("/")
     public String home(HttpServletRequest request){
         ServiceObtient serviceObtient =  new ServiceObtient();

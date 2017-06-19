@@ -9,6 +9,11 @@ import java.util.List;
  * Created by Louis on 17/06/2017.
  */
 public class ServiceFixe extends Service {
+
+    /***
+     * Récupère toutes les lignes de la table Fixe
+     * @return
+     */
     public List<FixeEntity> getAll(){
         try{
             return ServiceHibernate
@@ -20,6 +25,11 @@ public class ServiceFixe extends Service {
         return null;
     }
 
+    /***
+     * Récupère les lignes Fixe d'une mission
+     * @param idMission
+     * @return
+     */
     public List<FixeEntity> getAllFromMission(int idMission){
         try{
             return ServiceHibernate

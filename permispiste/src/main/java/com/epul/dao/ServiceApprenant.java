@@ -65,16 +65,4 @@ public class ServiceApprenant extends Service {
                 .createQuery("SELECT count(a.numapprenant) FROM ApprenantEntity a")
                 .uniqueResult());
     }
-
-    //todo refactor
-    public void delete(ApprenantEntity apprenantEntity){
-        try{
-            Session session = ServiceHibernate.currentSession();
-            Transaction transaction = session.beginTransaction();
-            session.delete(apprenantEntity);
-            transaction.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 }
